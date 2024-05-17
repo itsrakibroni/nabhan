@@ -122,6 +122,25 @@
 }
 
 .hero-1 {
+    .hero-left-wrapper {
+        position: absolute;
+        left: -237px;
+        bottom: 390px;
+        transform: rotate(90deg);
+        & div {
+            display: inline-block;
+        }
+        .scroll-me,
+        .contact-number a {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--white-color);
+        }
+        .scroll-me{
+            margin-left: 95px;
+            padding-right: 35px;
+        }
+    }
     .hero-social-wrapper {
         position: absolute;
         right: 90px;

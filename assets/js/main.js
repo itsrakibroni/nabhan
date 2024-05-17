@@ -773,11 +773,19 @@
     ///////////////////////////////////////////////////////
     // GSAP Register
 
-    window.gsap.registerPlugin(
-        window.ScrollTrigger,
-        window.ScrollSmoother,
-        window.TweenMax
-    );
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, TweenMax, ScrollToPlugin);
+	
+	gsap.config({
+		nullTargetWarn: false,
+	});
+
+	let smoother = ScrollSmoother.create({
+		smooth: 2,
+		effects: true,
+		smoothTouch: 0.1,
+		normalizeScroll: false,
+		ignoreMobileResize: true,
+	});
 
     /////////////////////////////////////////////////////
     // Magnate Animation
@@ -800,6 +808,86 @@
             y: ((( event.clientY - bounding.top)/magnetButton.offsetHeight) - 0.5) * strength,
             ease: Power4.easeOut
         })
+    }
+
+    /*===========================================
+	=         Custom Cursor         =
+    =============================================*/
+    if (!$('body').hasClass("hide-magic-cursor")) {
+        var mouse = {
+            x: 0,
+            y: 0
+        };
+        var pos = {
+            x: 0,
+            y: 0
+        };
+        var ratio = 0.65;
+
+        var magicCursor = document.getElementById("awesome-cursor-circle");
+
+        gsap.set(magicCursor, { xPercent: -50, yPercent: -50, scale: 0.5, borderWidth: '4px' });
+
+        document.addEventListener("mousemove", mousemoveHandler);
+
+        function mousemoveHandler(e) {
+
+            let tl = gsap.timeline({
+                defaults: {
+                    x: e.clientX,
+                    y: e.clientY,
+                }
+            })
+
+            tl.to(magicCursor, {
+                ease: "power2.out"
+            })
+        }
+
+        $(".parallax-wrap").mouseenter(function (e) {
+            gsap.to(this, { duration: 0.3, scale: 2 });
+            gsap.to(magicCursor, { duration: 0.3, scale: 0.9, borderWidth: '2px', opacity: 1 });
+            gsap.to($(this).children(), { duration: 0.3, scale: 0.5 });
+            active = true;
+        });
+
+        $(".parallax-wrap").mouseleave(function (e) {
+            gsap.to(magicCursor, { duration: 0.3, scale: 0.5, borderWidth: '4px', opacity: 1, borderColor: 'rgba(255,255,255,.5)' });
+            active = false;
+        });
+
+        $(".parallax-wrap").mousemove(function (e) {
+            parallaxCursor(e, this, 2);
+            callParallax(e, this);
+        });
+
+        function callParallax(e, parent) {
+            parallaxIt(e, parent, parent.querySelector(".parallax-element"), 20);
+        }
+
+        function parallaxIt(e, parent, target, movement) {
+            var boundingRect = parent.getBoundingClientRect();
+            var relX = e.pageX - boundingRect.left;
+            var relY = e.pageY - boundingRect.top;
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            gsap.to(target, {
+                duration: 0.3,
+                x: (relX - boundingRect.width / 2) / boundingRect.width * movement,
+                y: (relY - boundingRect.height / 2 - scrollTop) / boundingRect.height * movement,
+                ease: Power2.easeOut
+            });
+        }
+
+        function parallaxCursor(e, parent, movement) {
+            var rect = parent.getBoundingClientRect();
+            var relX = e.pageX - rect.left;
+            var relY = e.pageY - rect.top;
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            pos.x = rect.left + rect.width / 2 + (relX - rect.width / 2) / movement;
+            pos.y = rect.top + rect.height / 2 + (relY - rect.height / 2 - scrollTop) / movement;
+            gsap.to(magicCursor, { duration: 0.3, x: pos.x, y: pos.y });
+        }
     }
 
 
@@ -825,3 +913,5 @@
 
 
 })(jQuery);
+
+

@@ -42,10 +42,16 @@
 
 </head>
 
-<body>
+<body id="body" class="magic-cursor">
     <!--********************************
         Code Start From Here
     ******************************** -->
+
+    <!-- Start magic cursor -->
+   <div id="magic-cursor">
+        <div id="ball"></div>
+    </div>
+    <!-- End magic cursor -->
 
     <!--==============================
     Preloader
@@ -359,103 +365,554 @@
         </div>
     </header>
 
-    <!--==============================
-    Hero Area
-    ==============================-->
-    <div class="hero-wrapper hero-1" id="hero">
-        <div class="container">
-            <div class="hero-style1">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="hero-sub_title">Hi there! <img src="assets/images/hero/hand.png" alt="">I am</p>
-                        <h1 class="hero-title wow img-custom-anim-left" data-wow-delay="0.1s" data-wow-duration="1.5s">STEVEN NABHAN</h1>
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-lg-4">
-                                <div class="contact_mail color1">
-                                    <a href="mailto:hellowcontacts@gmail.com">hellowcontacts@gmail.com</a>
-                                </div>
+    <!-- Scroll Smoother -->
+
+   <div id="smooth-wrapper" class="page-wrapper theme-bg" >
+    <div id="smooth-content">
+
+       <main>
+
+            <!--==============================
+            Hero Area
+            ==============================-->
+            <div class="hero-wrapper hero-1" id="hero">
+                <div class="container">
+                    <div class="hero-left-wrapper d-none d-xxl-block">
+                        <div class="contact-number">
+                            <a href="tel:+91 0369 201 003"><img class="pr-35" src="assets/images/icons/dial_pad.svg" alt="">+91 0369 201 003</a>
+                        </div>
+                        <a href=".about-area-1">
+                            <div class="scroll-me">Scroll</div>
+                            <div class="hero-social_arrow mb-30">
+                                <img src="assets/images/icons/arrow-left-right.svg" alt="">
                             </div>
-                            <div class="col-lg-4">
-                                <div class="hero-thumb text-center">
-                                    <img src="assets/images/hero/hero-img.png" alt="">
+                        </a>
+                    </div>
+                    <div class="hero-style1">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="hero-sub_title">Hi there! <img src="assets/images/hero/hand.png" alt="">I am</p>
+                                <h1 class="hero-title wow img-custom-anim-left" data-wow-delay="0.1s" data-wow-duration="1.5s">STEVEN NABHAN</h1>
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-lg-4">
+                                        <div class="contact_mail color1">
+                                            <a href="mailto:hellowcontacts@gmail.com">hellowcontacts@gmail.com</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="hero-thumb text-center">
+                                            <img src="assets/images/hero/hero-img.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p class="hero-text wow img-custom-anim-right" data-wow-delay="0.1s" data-wow-duration="1.5s">
+                                            I’m a Product designer and creative web developer with a passion for solving problems through simple and interactive designs.
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <p class="hero-text wow img-custom-anim-right" data-wow-delay="0.1s" data-wow-duration="1.5s">
-                                    I’m a Product designer and creative web developer with a passion for solving problems through simple and interactive designs.
-                                </p>
+                                <h1 class="hero-title title-font2 text-lg-end wow img-custom-anim-right" data-wow-delay="0.1s" data-wow-duration="1.7s">UI/UX DESIGNER</h1>
+                                <p class="place-title text-lg-end wow img-custom-anim-right" data-wow-delay="0.1s" data-wow-duration="1.7s">Based in London</p>
                             </div>
                         </div>
-                        <h1 class="hero-title title-font2 text-lg-end wow img-custom-anim-right" data-wow-delay="0.1s" data-wow-duration="1.7s">UI/UX DESIGNER</h1>
-                        <p class="place-title text-lg-end wow img-custom-anim-right" data-wow-delay="0.1s" data-wow-duration="1.7s">Based in London</p>
+                    </div>
+                    <div class="hero-social-wrapper d-none d-xxl-block">
+                        <div class="follow-me">Follow Me</div>
+                        <div class="hero-social_arrow mb-30">
+                            <img src="assets/images/icons/arrow-down-bottom.svg" alt="">
+                        </div>
+                        <div class="hero-social">
+                            <div class="parallax-wrap">
+                                <div class="parallax-element">
+                                    <a class="facebook" href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="parallax-wrap">
+                                <div class="parallax-element">
+                                    <a class="twitter" href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="parallax-wrap">
+                                <div class="parallax-element">
+                                    <a class="instagram" href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="parallax-wrap">
+                                <div class="parallax-element">
+                                    <a class="dribbble" href="#">
+                                        <i class="fab fa-dribbble"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="hero-social-wrapper d-none d-xxl-block">
-            <div class="follow-me">Follow Me</div>
-            <div class="hero-social_arrow mb-30">
-                <img src="assets/images/icons/arrow-down-bottom.svg" alt="">
-            </div>
-            <div class="hero-social">
-                <div class="parallax-wrap">
-                    <div class="parallax-element">
-                        <a class="facebook" href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="parallax-wrap">
-                    <div class="parallax-element">
-                        <a class="twitter" href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="parallax-wrap">
-                    <div class="parallax-element">
-                        <a class="instagram" href="#">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="parallax-wrap">
-                    <div class="parallax-element">
-                        <a class="dribbble" href="#">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--======== / Hero Section ========-->
+            <!--======== / Hero Section ========-->
 
-    <!--==============================
-    About Area
-    ==============================-->
-    <div class="about-area-1 space bg-theme">
-        <div class="about-img-1-1 shape-mockup img-custom-anim-left wow animated" data-bottom="140px" data-left="0"
-            data-top="-100px" data-wow-delay="0.1s" data-wow-duration="1.5s">
-            <img alt="img" src="assets/img/normal/about_1-1.jpg">
-        </div>
-        <div class="container">
-            <div class="row align-items-center justify-content-end">
-                <div class="col-lg-6">
-                    <div class="overflow-hidden">
-                        <div class="about-content-wrap ">
-                            <div class="title-area mb-0">
-                                <h2 class="sec-title">Unlock Revenue Growth for Your Business</h2>
-                                <p class="sec-text mt-35">If you ask our clients what it’s like working with 36, they’ll
-                                    talk about how much we care about their success. For us, real relationships fuel real
-                                    success. We love building brands</p>
-                                <p class="sec-text mt-30">We are a creative agency working with brands building insightful
-                                    strategy, creating unique designs and crafting value</p>
-                                <div class="btn-wrap mt-50">
-                                    <a class="link-btn" href="about.html">
+            <!--==============================
+            About Area
+            ==============================-->
+            <div class="about-area-1 space bg-theme" id="about-area-1">
+                <div class="about-img-1-1 shape-mockup img-custom-anim-left wow" data-wow-delay="0.1s" data-wow-duration="1.5s">
+                    <img alt="img" src="assets/img/normal/about_1-1.jpg">
+                </div>
+                <div class="container">
+                    <div class="row align-items-center justify-content-end">
+                        <div class="col-lg-6">
+                            <div class="overflow-hidden">
+                                <div class="about-content-wrap ">
+                                    <div class="title-area mb-0">
+                                        <h2 class="sec-title">Unlock Revenue Growth for Your Business</h2>
+                                        <p class="sec-text mt-35">If you ask our clients what it’s like working with 36, they’ll
+                                            talk about how much we care about their success. For us, real relationships fuel real
+                                            success. We love building brands</p>
+                                        <p class="sec-text mt-30">We are a creative agency working with brands building insightful
+                                            strategy, creating unique designs and crafting value</p>
+                                        <div class="btn-wrap mt-50">
+                                            <a class="link-btn" href="about.html">
+                                                    <span class="link-effect">
+                                                        <span class="effect-1">ABOUT US</span>
+                                                        <span class="effect-1">ABOUT US</span>
+                                                    </span>
+                                                <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--==============================
+            Faq Area
+            ==============================-->
+            <div class="faq-area-1 space overflow-hidden">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-8">
+                            <div class="title-area text-center ">
+                                <h2 class="sec-title">What We Can Do for Our Clients</h2>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="accordion-area accordion" id="faqAccordion">
+
+                                <div class="accordion-card active">
+                                    <div class="accordion-header" id="collapse-item-1">
+                                        <button aria-controls="collapse-1" aria-expanded="true" class="accordion-button "
+                                                data-bs-target="#collapse-1" data-bs-toggle="collapse" type="button"><span
+                                                class="faq-number">01</span> Branding Design
+                                        </button>
+                                    </div>
+                                    <div aria-labelledby="collapse-item-1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#faqAccordion"
+                                        id="collapse-1">
+                                        <div class="accordion-body">
+                                            <p class="faq-text">We design high quality websites that make users come back for more.
+                                                A good website tells a story that will make users fully immerse themselves
+                                                operating</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="accordion-card ">
+                                    <div class="accordion-header" id="collapse-item-2">
+                                        <button aria-controls="collapse-2" aria-expanded="false" class="accordion-button collapsed"
+                                                data-bs-target="#collapse-2" data-bs-toggle="collapse" type="button"><span
+                                                class="faq-number">02</span> Illustration Modelling
+                                        </button>
+                                    </div>
+                                    <div aria-labelledby="collapse-item-2" class="accordion-collapse collapse "
+                                        data-bs-parent="#faqAccordion"
+                                        id="collapse-2">
+                                        <div class="accordion-body">
+                                            <p class="faq-text">We design high quality websites that make users come back for more.
+                                                A good website tells a story that will make users fully immerse themselves
+                                                operating</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="accordion-card ">
+                                    <div class="accordion-header" id="collapse-item-3">
+                                        <button aria-controls="collapse-3" aria-expanded="false" class="accordion-button collapsed"
+                                                data-bs-target="#collapse-3" data-bs-toggle="collapse" type="button"><span
+                                                class="faq-number">03</span> Website Development
+                                        </button>
+                                    </div>
+                                    <div aria-labelledby="collapse-item-3" class="accordion-collapse collapse "
+                                        data-bs-parent="#faqAccordion"
+                                        id="collapse-3">
+                                        <div class="accordion-body">
+                                            <p class="faq-text">We design high quality websites that make users come back for more.
+                                                A good website tells a story that will make users fully immerse themselves
+                                                operating</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-card ">
+                                    <div class="accordion-header" id="collapse-item-4">
+                                        <button aria-controls="collapse-4" aria-expanded="false" class="accordion-button collapsed"
+                                                data-bs-target="#collapse-4" data-bs-toggle="collapse" type="button"><span
+                                                class="faq-number">04</span> Digital Marketing
+                                        </button>
+                                    </div>
+                                    <div aria-labelledby="collapse-item-4" class="accordion-collapse collapse "
+                                        data-bs-parent="#faqAccordion"
+                                        id="collapse-4">
+                                        <div class="accordion-body">
+                                            <p class="faq-text">We design high quality websites that make users come back for more.
+                                                A good website tells a story that will make users fully immerse themselves
+                                                operating</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--==============================
+                Portfolio Area
+            ==============================-->
+            <div class="portfolio-area-1 space-bottom overflow-hidden" data-bg-src="assets/img/bg/portfolio-1-bg.png">
+                <div class="container">
+                    <div class="row justify-content-between masonary-active">
+                        <div class="col-lg-6 filter-item">
+                            <div class="portfolio-wrap mt-lg-140">
+                                <div class="portfolio-thumb wow img-custom-anim-top animated" data-wow-delay="0.2s"
+                                    data-wow-duration="1.5s">
+                                    <a href="project-details.html">
+                                        <img alt="portfolio" src="assets/img/portfolio/portfolio1_1.jpg">
+                                    </a>
+                                </div>
+                                <div class="portfolio-details">
+                                    <ul class="portfolio-meta">
+                                        <li><a href="blog.html">Branding</a></li>
+                                        <li><a href="blog.html">Development</a></li>
+                                        <li><a href="blog.html">Marketing</a></li>
+                                    </ul>
+                                    <h3 class="portfolio-title"><a href="project-details.html">Money Laundering Compliance
+                                        Scanner</a></h3>
+                                    <a class="link-btn" href="project-details.html">
                                             <span class="link-effect">
-                                                <span class="effect-1">ABOUT US</span>
-                                                <span class="effect-1">ABOUT US</span>
+                                                <span class="effect-1">VIEW PROJECT</span>
+                                                <span class="effect-1">VIEW PROJECT</span>
+                                            </span>
+                                        <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 filter-item">
+                            <div class="portfolio-wrap mt-140 mt-lg-0">
+                                <div class="portfolio-thumb wow img-custom-anim-left animated" data-wow-delay="0.2s"
+                                    data-wow-duration="1.5s">
+                                    <a href="project-details.html">
+                                        <img alt="portfolio" src="assets/img/portfolio/portfolio1_2.jpg">
+                                    </a>
+                                </div>
+                                <div class="portfolio-details">
+                                    <ul class="portfolio-meta">
+                                        <li><a href="blog.html">Branding</a></li>
+                                        <li><a href="blog.html">Development</a></li>
+                                        <li><a href="blog.html">Marketing</a></li>
+                                    </ul>
+                                    <h3 class="portfolio-title"><a href="project-details.html">Decentralized Lending Platform for
+                                        Students</a></h3>
+                                    <a class="link-btn" href="project-details.html">
+                                            <span class="link-effect">
+                                                <span class="effect-1">VIEW PROJECT</span>
+                                                <span class="effect-1">VIEW PROJECT</span>
+                                            </span>
+                                        <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 filter-item">
+                            <div class="portfolio-wrap mt-140">
+                                <div class="portfolio-thumb wow img-custom-anim-top animated" data-wow-delay="0.2s"
+                                    data-wow-duration="1.5s">
+                                    <a href="project-details.html">
+                                        <img alt="portfolio" src="assets/img/portfolio/portfolio1_3.jpg">
+                                    </a>
+                                </div>
+                                <div class="portfolio-details">
+                                    <ul class="portfolio-meta">
+                                        <li><a href="blog.html">Branding</a></li>
+                                        <li><a href="blog.html">Development</a></li>
+                                        <li><a href="blog.html">Marketing</a></li>
+                                    </ul>
+                                    <h3 class="portfolio-title"><a href="project-details.html">Anti Money Laundering Compliance
+                                        Scanner</a></h3>
+                                    <a class="link-btn" href="project-details.html">
+                                            <span class="link-effect">
+                                                <span class="effect-1">VIEW PROJECT</span>
+                                                <span class="effect-1">VIEW PROJECT</span>
+                                            </span>
+                                        <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 filter-item">
+                            <div class="portfolio-wrap mt-140">
+                                <div class="portfolio-thumb wow img-custom-anim-left animated" data-wow-delay="0.2s"
+                                    data-wow-duration="1.5s">
+                                    <a href="project-details.html">
+                                        <img alt="portfolio" src="assets/img/portfolio/portfolio1_4.jpg">
+                                    </a>
+                                </div>
+                                <div class="portfolio-details">
+                                    <ul class="portfolio-meta">
+                                        <li><a href="blog.html">Branding</a></li>
+                                        <li><a href="blog.html">Development</a></li>
+                                        <li><a href="blog.html">Marketing</a></li>
+                                    </ul>
+                                    <h3 class="portfolio-title"><a href="project-details.html">Shopify Redesign for a Nova Scotia
+                                        Winery</a></h3>
+                                    <a class="link-btn" href="project-details.html">
+                                            <span class="link-effect">
+                                                <span class="effect-1">VIEW PROJECT</span>
+                                                <span class="effect-1">VIEW PROJECT</span>
+                                            </span>
+                                        <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto filter-item">
+                            <div class="btn-wrap mt-140">
+                                <a class="circle-btn btn gsap-magnetic mx-lg-5" href="project.html">
+                                        <span class="link-effect">
+                                            <span class="effect-1">VIEW ALL</span>
+                                            <span class="effect-1">VIEW ALL</span>
+                                        </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--==============================
+            Team Area
+            ==============================-->
+            <div class="team-area-1 space overflow-hidden">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="title-area text-center">
+                                <h2 class="sec-title">Our Team Behind The Studio</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row gy-4 justify-content-center">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-card">
+                                <div class="team-card_img">
+                                    <img alt="Team Image" src="assets/img/team/team-1-1.png">
+                                </div>
+                                <div class="team-card_content">
+                                    <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
+                                    <span class="team-card_desig">Web Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-card">
+                                <div class="team-card_img">
+                                    <img alt="Team Image" src="assets/img/team/team-1-2.png">
+                                </div>
+                                <div class="team-card_content">
+                                    <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
+                                    <span class="team-card_desig">Web Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-card">
+                                <div class="team-card_img">
+                                    <img alt="Team Image" src="assets/img/team/team-1-3.png">
+                                </div>
+                                <div class="team-card_content">
+                                    <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
+                                    <span class="team-card_desig">Web Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-card">
+                                <div class="team-card_img">
+                                    <img alt="Team Image" src="assets/img/team/team-1-4.png">
+                                </div>
+                                <div class="team-card_content">
+                                    <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
+                                    <span class="team-card_desig">Web Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--==============================
+            Testimonial Area
+            ==============================-->
+            <div class="testimonial-area-1 space bg-theme">
+                <div class="testimonial-img-1-1 shape-mockup wow img-custom-anim-right animated" data-bottom="140px"
+                    data-right="0" data-top="-100px" data-wow-delay="0.2s" data-wow-duration="1.5s">
+                    <img alt="img" src="assets/img/testimonial/testi_thumb1_1.jpg">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="title-area ">
+                                <h2 class="sec-title">Testimonials</h2>
+                            </div>
+                            <div class="quote-icon ">
+                                <img alt="icon" src="assets/img/icon/quote.svg">
+                            </div>
+                            <div class="row global-carousel testi-slider1" data-dots="true" data-ml-dots="true" data-slide-show="1"
+                                data-xl-dots="true">
+                                <div class="col-lg-4">
+                                    <div class="testi-box ">
+                                        <p class="testi-box_text">“It’s a pleasure working with Bunker. They understood our new
+                                            brand positioning guidelines and translated them beautifully and consistently into our
+                                            on-going marketing comms. The team is responsive, quick and always willing help winning
+                                            partnership”</p>
+                                        <div class="testi-box_profile">
+                                            <h4 class="testi-box_name">Daniyel Karlos</h4>
+                                            <span class="testi-box_desig">Senior Director of Marketing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="testi-box ">
+                                        <p class="testi-box_text">“It’s a pleasure working with Bunker. They understood our new
+                                            brand positioning guidelines and translated them beautifully and consistently into our
+                                            on-going marketing comms. The team is responsive, quick and always willing help winning
+                                            partnership”</p>
+                                        <div class="testi-box_profile">
+                                            <h4 class="testi-box_name">Daniyel Karlos</h4>
+                                            <span class="testi-box_desig">Senior Director of Marketing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="testi-box ">
+                                        <p class="testi-box_text">“It’s a pleasure working with Bunker. They understood our new
+                                            brand positioning guidelines and translated them beautifully and consistently into our
+                                            on-going marketing comms. The team is responsive, quick and always willing help winning
+                                            partnership”</p>
+                                        <div class="testi-box_profile">
+                                            <h4 class="testi-box_name">Daniyel Karlos</h4>
+                                            <span class="testi-box_desig">Senior Director of Marketing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--==============================
+            Blog Area
+            ==============================-->
+            <section class="blog-area space">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-7 col-xl-6 col-lg-8">
+                            <div class="title-area text-center">
+                                <h2 class="sec-title">Read Our Articles and News</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gy-40 justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <a href="blog-details.html">
+                                        <img alt="blog image" src="assets/img/blog/blog_1_1.png">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="post-meta-item blog-meta">
+                                        <a href="blog.html">March 26, 2024</a>
+                                        <a href="blog.html">Branding</a>
+                                    </div>
+                                    <h4 class="blog-title"><a href="blog-details.html">Everything You Should Know About Return</a>
+                                    </h4>
+                                    <a class="link-btn" href="blog-details.html">
+                                            <span class="link-effect">
+                                                <span class="effect-1">READ MORE</span>
+                                                <span class="effect-1">READ MORE</span>
+                                            </span>
+                                        <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <a href="blog-details.html">
+                                        <img alt="blog image" src="assets/img/blog/blog_1_2.png">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="post-meta-item blog-meta">
+                                        <a href="blog.html">March 26, 2024</a>
+                                        <a href="blog.html">Branding</a>
+                                    </div>
+                                    <h4 class="blog-title"><a href="blog-details.html">6 Big Commerce Design Tips For Big
+                                        Results</a></h4>
+                                    <a class="link-btn" href="blog-details.html">
+                                            <span class="link-effect">
+                                                <span class="effect-1">READ MORE</span>
+                                                <span class="effect-1">READ MORE</span>
+                                            </span>
+                                        <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <a href="blog-details.html">
+                                        <img alt="blog image" src="assets/img/blog/blog_1_3.png">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="post-meta-item blog-meta">
+                                        <a href="blog.html">March 26, 2024</a>
+                                        <a href="blog.html">Branding</a>
+                                    </div>
+                                    <h4 class="blog-title"><a href="blog-details.html">Four Steps to Conduct a Successful
+                                        Usability</a></h4>
+                                    <a class="link-btn" href="blog-details.html">
+                                            <span class="link-effect">
+                                                <span class="effect-1">READ MORE</span>
+                                                <span class="effect-1">READ MORE</span>
                                             </span>
                                         <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
                                     </a>
@@ -464,569 +921,137 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+
+            <!--==============================
+                Footer Area
+            ==============================-->
+            <footer class="footer-wrapper footer-layout1 overflow-hidden bg-smoke">
+                <div class="container">
+                    <div class="footer-top space">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-lg-6">
+                                <h2 class="footer-top-title">
+                                    Let’s Work Together
+                                </h2>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="footer-top-wrap">
+                                    <p class="mb-30">We are digital agency that helps businesses develop immersive and engaging user
+                                        experiences</p>
+                                    <a class="btn" href="contact.html">
+                                            <span class="link-effect">
+                                                <span class="effect-1">LET'S TALK WITH US</span>
+                                                <span class="effect-1">LET'S TALK WITH US</span>
+                                            </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-menu-area">
+                        <div class="row gy-3 justify-content-between">
+                            <div class="col-xxl-6 col-lg-7">
+                                <ul class="footer-menu-list">
+                                    <li>
+                                        <a href="about.html">
+                                                <span class="link-effect">
+                                                    <span class="effect-1">ABOUT COMPANY</span>
+                                                    <span class="effect-1">ABOUT COMPANY</span>
+                                                </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="project.html">
+                                                <span class="link-effect">
+                                                    <span class="effect-1">OUR CAREERS</span>
+                                                    <span class="effect-1">OUR CAREERS</span>
+                                                </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="service.html">
+                                                <span class="link-effect">
+                                                    <span class="effect-1">SERVICES</span>
+                                                    <span class="effect-1">SERVICES</span>
+                                                </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">
+                                                <span class="link-effect">
+                                                    <span class="effect-1">CONTACT</span>
+                                                    <span class="effect-1">CONTACT</span>
+                                                </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xxl-6 col-lg-5 text-lg-end">
+                                <ul class="footer-menu-list">
+                                    <li>
+                                        <a href="about.html">
+                                                <span class="link-effect">
+                                                    <span class="effect-1">PRIVACY POLICY</span>
+                                                    <span class="effect-1">PRIVACY POLICY</span>
+                                                </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="project.html">
+                                                <span class="link-effect">
+                                                    <span class="effect-1">TERMS & CONDITIONS</span>
+                                                    <span class="effect-1">TERMS & CONDITIONS</span>
+                                                </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-wrap">
+                    <div class="container">
+                        <div class="row gy-3 justify-content-between align-items-center">
+                            <div class="col-md-6">
+                                <div class="social-btn style3">
+                                    <a href="https://www.facebook.com/">
+                                            <span class="link-effect">
+                                                <span class="effect-1"><i class="fab fa-facebook"></i></span>
+                                                <span class="effect-1"><i class="fab fa-facebook"></i></span>
+                                            </span>
+                                    </a>
+                                    <a href="https://instagram.com/">
+                                            <span class="link-effect">
+                                                <span class="effect-1"><i class="fab fa-instagram"></i></span>
+                                                <span class="effect-1"><i class="fab fa-instagram"></i></span>
+                                            </span>
+                                    </a>
+                                    <a href="https://twitter.com/">
+                                            <span class="link-effect">
+                                                <span class="effect-1"><i class="fab fa-twitter"></i></span>
+                                                <span class="effect-1"><i class="fab fa-twitter"></i></span>
+                                            </span>
+                                    </a>
+                                    <a href="https://dribbble.com/">
+                                            <span class="link-effect">
+                                                <span class="effect-1"><i class="fab fa-dribbble"></i></span>
+                                                <span class="effect-1"><i class="fab fa-dribbble"></i></span>
+                                            </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 align-self-center text-lg-end">
+                                <p class="copyright-text">Copyright © 2024
+                                    <a href="https://themeforest.net/user/themegenix">ThemeGenix</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+      </div>
     </div>
-
-    <!--==============================
-    Faq Area
-    ==============================-->
-    <div class="faq-area-1 space overflow-hidden">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-8">
-                    <div class="title-area text-center ">
-                        <h2 class="sec-title">What We Can Do for Our Clients</h2>
-                    </div>
-                </div>
-                <div class="col-xl-8">
-                    <div class="accordion-area accordion" id="faqAccordion">
-
-                        <div class="accordion-card active">
-                            <div class="accordion-header" id="collapse-item-1">
-                                <button aria-controls="collapse-1" aria-expanded="true" class="accordion-button "
-                                        data-bs-target="#collapse-1" data-bs-toggle="collapse" type="button"><span
-                                        class="faq-number">01</span> Branding Design
-                                </button>
-                            </div>
-                            <div aria-labelledby="collapse-item-1" class="accordion-collapse collapse show"
-                                data-bs-parent="#faqAccordion"
-                                id="collapse-1">
-                                <div class="accordion-body">
-                                    <p class="faq-text">We design high quality websites that make users come back for more.
-                                        A good website tells a story that will make users fully immerse themselves
-                                        operating</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="accordion-card ">
-                            <div class="accordion-header" id="collapse-item-2">
-                                <button aria-controls="collapse-2" aria-expanded="false" class="accordion-button collapsed"
-                                        data-bs-target="#collapse-2" data-bs-toggle="collapse" type="button"><span
-                                        class="faq-number">02</span> Illustration Modelling
-                                </button>
-                            </div>
-                            <div aria-labelledby="collapse-item-2" class="accordion-collapse collapse "
-                                data-bs-parent="#faqAccordion"
-                                id="collapse-2">
-                                <div class="accordion-body">
-                                    <p class="faq-text">We design high quality websites that make users come back for more.
-                                        A good website tells a story that will make users fully immerse themselves
-                                        operating</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="accordion-card ">
-                            <div class="accordion-header" id="collapse-item-3">
-                                <button aria-controls="collapse-3" aria-expanded="false" class="accordion-button collapsed"
-                                        data-bs-target="#collapse-3" data-bs-toggle="collapse" type="button"><span
-                                        class="faq-number">03</span> Website Development
-                                </button>
-                            </div>
-                            <div aria-labelledby="collapse-item-3" class="accordion-collapse collapse "
-                                data-bs-parent="#faqAccordion"
-                                id="collapse-3">
-                                <div class="accordion-body">
-                                    <p class="faq-text">We design high quality websites that make users come back for more.
-                                        A good website tells a story that will make users fully immerse themselves
-                                        operating</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-card ">
-                            <div class="accordion-header" id="collapse-item-4">
-                                <button aria-controls="collapse-4" aria-expanded="false" class="accordion-button collapsed"
-                                        data-bs-target="#collapse-4" data-bs-toggle="collapse" type="button"><span
-                                        class="faq-number">04</span> Digital Marketing
-                                </button>
-                            </div>
-                            <div aria-labelledby="collapse-item-4" class="accordion-collapse collapse "
-                                data-bs-parent="#faqAccordion"
-                                id="collapse-4">
-                                <div class="accordion-body">
-                                    <p class="faq-text">We design high quality websites that make users come back for more.
-                                        A good website tells a story that will make users fully immerse themselves
-                                        operating</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--==============================
-        Portfolio Area
-    ==============================-->
-    <div class="portfolio-area-1 space-bottom overflow-hidden" data-bg-src="assets/img/bg/portfolio-1-bg.png">
-        <div class="container">
-            <div class="row justify-content-between masonary-active">
-                <div class="col-lg-6 filter-item">
-                    <div class="portfolio-wrap mt-lg-140">
-                        <div class="portfolio-thumb wow img-custom-anim-top animated" data-wow-delay="0.2s"
-                            data-wow-duration="1.5s">
-                            <a href="project-details.html">
-                                <img alt="portfolio" src="assets/img/portfolio/portfolio1_1.jpg">
-                            </a>
-                        </div>
-                        <div class="portfolio-details">
-                            <ul class="portfolio-meta">
-                                <li><a href="blog.html">Branding</a></li>
-                                <li><a href="blog.html">Development</a></li>
-                                <li><a href="blog.html">Marketing</a></li>
-                            </ul>
-                            <h3 class="portfolio-title"><a href="project-details.html">Money Laundering Compliance
-                                Scanner</a></h3>
-                            <a class="link-btn" href="project-details.html">
-                                    <span class="link-effect">
-                                        <span class="effect-1">VIEW PROJECT</span>
-                                        <span class="effect-1">VIEW PROJECT</span>
-                                    </span>
-                                <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 filter-item">
-                    <div class="portfolio-wrap mt-140 mt-lg-0">
-                        <div class="portfolio-thumb wow img-custom-anim-left animated" data-wow-delay="0.2s"
-                            data-wow-duration="1.5s">
-                            <a href="project-details.html">
-                                <img alt="portfolio" src="assets/img/portfolio/portfolio1_2.jpg">
-                            </a>
-                        </div>
-                        <div class="portfolio-details">
-                            <ul class="portfolio-meta">
-                                <li><a href="blog.html">Branding</a></li>
-                                <li><a href="blog.html">Development</a></li>
-                                <li><a href="blog.html">Marketing</a></li>
-                            </ul>
-                            <h3 class="portfolio-title"><a href="project-details.html">Decentralized Lending Platform for
-                                Students</a></h3>
-                            <a class="link-btn" href="project-details.html">
-                                    <span class="link-effect">
-                                        <span class="effect-1">VIEW PROJECT</span>
-                                        <span class="effect-1">VIEW PROJECT</span>
-                                    </span>
-                                <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7 filter-item">
-                    <div class="portfolio-wrap mt-140">
-                        <div class="portfolio-thumb wow img-custom-anim-top animated" data-wow-delay="0.2s"
-                            data-wow-duration="1.5s">
-                            <a href="project-details.html">
-                                <img alt="portfolio" src="assets/img/portfolio/portfolio1_3.jpg">
-                            </a>
-                        </div>
-                        <div class="portfolio-details">
-                            <ul class="portfolio-meta">
-                                <li><a href="blog.html">Branding</a></li>
-                                <li><a href="blog.html">Development</a></li>
-                                <li><a href="blog.html">Marketing</a></li>
-                            </ul>
-                            <h3 class="portfolio-title"><a href="project-details.html">Anti Money Laundering Compliance
-                                Scanner</a></h3>
-                            <a class="link-btn" href="project-details.html">
-                                    <span class="link-effect">
-                                        <span class="effect-1">VIEW PROJECT</span>
-                                        <span class="effect-1">VIEW PROJECT</span>
-                                    </span>
-                                <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 filter-item">
-                    <div class="portfolio-wrap mt-140">
-                        <div class="portfolio-thumb wow img-custom-anim-left animated" data-wow-delay="0.2s"
-                            data-wow-duration="1.5s">
-                            <a href="project-details.html">
-                                <img alt="portfolio" src="assets/img/portfolio/portfolio1_4.jpg">
-                            </a>
-                        </div>
-                        <div class="portfolio-details">
-                            <ul class="portfolio-meta">
-                                <li><a href="blog.html">Branding</a></li>
-                                <li><a href="blog.html">Development</a></li>
-                                <li><a href="blog.html">Marketing</a></li>
-                            </ul>
-                            <h3 class="portfolio-title"><a href="project-details.html">Shopify Redesign for a Nova Scotia
-                                Winery</a></h3>
-                            <a class="link-btn" href="project-details.html">
-                                    <span class="link-effect">
-                                        <span class="effect-1">VIEW PROJECT</span>
-                                        <span class="effect-1">VIEW PROJECT</span>
-                                    </span>
-                                <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto filter-item">
-                    <div class="btn-wrap mt-140">
-                        <a class="circle-btn btn gsap-magnetic mx-lg-5" href="project.html">
-                                <span class="link-effect">
-                                    <span class="effect-1">VIEW ALL</span>
-                                    <span class="effect-1">VIEW ALL</span>
-                                </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--==============================
-    Team Area
-    ==============================-->
-    <div class="team-area-1 space overflow-hidden">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="title-area text-center">
-                        <h2 class="sec-title">Our Team Behind The Studio</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row gy-4 justify-content-center">
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-card">
-                        <div class="team-card_img">
-                            <img alt="Team Image" src="assets/img/team/team-1-1.png">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
-                            <span class="team-card_desig">Web Developer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-card">
-                        <div class="team-card_img">
-                            <img alt="Team Image" src="assets/img/team/team-1-2.png">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
-                            <span class="team-card_desig">Web Developer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-card">
-                        <div class="team-card_img">
-                            <img alt="Team Image" src="assets/img/team/team-1-3.png">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
-                            <span class="team-card_desig">Web Developer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-card">
-                        <div class="team-card_img">
-                            <img alt="Team Image" src="assets/img/team/team-1-4.png">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
-                            <span class="team-card_desig">Web Developer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--==============================
-    Testimonial Area
-    ==============================-->
-    <div class="testimonial-area-1 space bg-theme">
-        <div class="testimonial-img-1-1 shape-mockup wow img-custom-anim-right animated" data-bottom="140px"
-            data-right="0" data-top="-100px" data-wow-delay="0.2s" data-wow-duration="1.5s">
-            <img alt="img" src="assets/img/testimonial/testi_thumb1_1.jpg">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="title-area ">
-                        <h2 class="sec-title">Testimonials</h2>
-                    </div>
-                    <div class="quote-icon ">
-                        <img alt="icon" src="assets/img/icon/quote.svg">
-                    </div>
-                    <div class="row global-carousel testi-slider1" data-dots="true" data-ml-dots="true" data-slide-show="1"
-                        data-xl-dots="true">
-                        <div class="col-lg-4">
-                            <div class="testi-box ">
-                                <p class="testi-box_text">“It’s a pleasure working with Bunker. They understood our new
-                                    brand positioning guidelines and translated them beautifully and consistently into our
-                                    on-going marketing comms. The team is responsive, quick and always willing help winning
-                                    partnership”</p>
-                                <div class="testi-box_profile">
-                                    <h4 class="testi-box_name">Daniyel Karlos</h4>
-                                    <span class="testi-box_desig">Senior Director of Marketing</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="testi-box ">
-                                <p class="testi-box_text">“It’s a pleasure working with Bunker. They understood our new
-                                    brand positioning guidelines and translated them beautifully and consistently into our
-                                    on-going marketing comms. The team is responsive, quick and always willing help winning
-                                    partnership”</p>
-                                <div class="testi-box_profile">
-                                    <h4 class="testi-box_name">Daniyel Karlos</h4>
-                                    <span class="testi-box_desig">Senior Director of Marketing</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="testi-box ">
-                                <p class="testi-box_text">“It’s a pleasure working with Bunker. They understood our new
-                                    brand positioning guidelines and translated them beautifully and consistently into our
-                                    on-going marketing comms. The team is responsive, quick and always willing help winning
-                                    partnership”</p>
-                                <div class="testi-box_profile">
-                                    <h4 class="testi-box_name">Daniyel Karlos</h4>
-                                    <span class="testi-box_desig">Senior Director of Marketing</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!--==============================
-    Blog Area
-    ==============================-->
-    <section class="blog-area space">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xxl-7 col-xl-6 col-lg-8">
-                    <div class="title-area text-center">
-                        <h2 class="sec-title">Read Our Articles and News</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row gy-40 justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <a href="blog-details.html">
-                                <img alt="blog image" src="assets/img/blog/blog_1_1.png">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta-item blog-meta">
-                                <a href="blog.html">March 26, 2024</a>
-                                <a href="blog.html">Branding</a>
-                            </div>
-                            <h4 class="blog-title"><a href="blog-details.html">Everything You Should Know About Return</a>
-                            </h4>
-                            <a class="link-btn" href="blog-details.html">
-                                    <span class="link-effect">
-                                        <span class="effect-1">READ MORE</span>
-                                        <span class="effect-1">READ MORE</span>
-                                    </span>
-                                <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <a href="blog-details.html">
-                                <img alt="blog image" src="assets/img/blog/blog_1_2.png">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta-item blog-meta">
-                                <a href="blog.html">March 26, 2024</a>
-                                <a href="blog.html">Branding</a>
-                            </div>
-                            <h4 class="blog-title"><a href="blog-details.html">6 Big Commerce Design Tips For Big
-                                Results</a></h4>
-                            <a class="link-btn" href="blog-details.html">
-                                    <span class="link-effect">
-                                        <span class="effect-1">READ MORE</span>
-                                        <span class="effect-1">READ MORE</span>
-                                    </span>
-                                <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <a href="blog-details.html">
-                                <img alt="blog image" src="assets/img/blog/blog_1_3.png">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta-item blog-meta">
-                                <a href="blog.html">March 26, 2024</a>
-                                <a href="blog.html">Branding</a>
-                            </div>
-                            <h4 class="blog-title"><a href="blog-details.html">Four Steps to Conduct a Successful
-                                Usability</a></h4>
-                            <a class="link-btn" href="blog-details.html">
-                                    <span class="link-effect">
-                                        <span class="effect-1">READ MORE</span>
-                                        <span class="effect-1">READ MORE</span>
-                                    </span>
-                                <img alt="icon" src="assets/img/icon/arrow-left-top.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--==============================
-        Footer Area
-    ==============================-->
-    <footer class="footer-wrapper footer-layout1 overflow-hidden bg-smoke">
-        <div class="container">
-            <div class="footer-top space">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-6">
-                        <h2 class="footer-top-title">
-                            Let’s Work Together
-                        </h2>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="footer-top-wrap">
-                            <p class="mb-30">We are digital agency that helps businesses develop immersive and engaging user
-                                experiences</p>
-                            <a class="btn" href="contact.html">
-                                    <span class="link-effect">
-                                        <span class="effect-1">LET'S TALK WITH US</span>
-                                        <span class="effect-1">LET'S TALK WITH US</span>
-                                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-menu-area">
-                <div class="row gy-3 justify-content-between">
-                    <div class="col-xxl-6 col-lg-7">
-                        <ul class="footer-menu-list">
-                            <li>
-                                <a href="about.html">
-                                        <span class="link-effect">
-                                            <span class="effect-1">ABOUT COMPANY</span>
-                                            <span class="effect-1">ABOUT COMPANY</span>
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="project.html">
-                                        <span class="link-effect">
-                                            <span class="effect-1">OUR CAREERS</span>
-                                            <span class="effect-1">OUR CAREERS</span>
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="service.html">
-                                        <span class="link-effect">
-                                            <span class="effect-1">SERVICES</span>
-                                            <span class="effect-1">SERVICES</span>
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="contact.html">
-                                        <span class="link-effect">
-                                            <span class="effect-1">CONTACT</span>
-                                            <span class="effect-1">CONTACT</span>
-                                        </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xxl-6 col-lg-5 text-lg-end">
-                        <ul class="footer-menu-list">
-                            <li>
-                                <a href="about.html">
-                                        <span class="link-effect">
-                                            <span class="effect-1">PRIVACY POLICY</span>
-                                            <span class="effect-1">PRIVACY POLICY</span>
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="project.html">
-                                        <span class="link-effect">
-                                            <span class="effect-1">TERMS & CONDITIONS</span>
-                                            <span class="effect-1">TERMS & CONDITIONS</span>
-                                        </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-wrap">
-            <div class="container">
-                <div class="row gy-3 justify-content-between align-items-center">
-                    <div class="col-md-6">
-                        <div class="social-btn style3">
-                            <a href="https://www.facebook.com/">
-                                    <span class="link-effect">
-                                        <span class="effect-1"><i class="fab fa-facebook"></i></span>
-                                        <span class="effect-1"><i class="fab fa-facebook"></i></span>
-                                    </span>
-                            </a>
-                            <a href="https://instagram.com/">
-                                    <span class="link-effect">
-                                        <span class="effect-1"><i class="fab fa-instagram"></i></span>
-                                        <span class="effect-1"><i class="fab fa-instagram"></i></span>
-                                    </span>
-                            </a>
-                            <a href="https://twitter.com/">
-                                    <span class="link-effect">
-                                        <span class="effect-1"><i class="fab fa-twitter"></i></span>
-                                        <span class="effect-1"><i class="fab fa-twitter"></i></span>
-                                    </span>
-                            </a>
-                            <a href="https://dribbble.com/">
-                                    <span class="link-effect">
-                                        <span class="effect-1"><i class="fab fa-dribbble"></i></span>
-                                        <span class="effect-1"><i class="fab fa-dribbble"></i></span>
-                                    </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 align-self-center text-lg-end">
-                        <p class="copyright-text">Copyright © 2024
-                            <a href="https://themeforest.net/user/themegenix">ThemeGenix</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <!--********************************
             Code End  Here
@@ -1046,16 +1071,22 @@
 
     <!-- Jquery -->
     <script src="assets/plugins/vendor/jquery.js"></script>
-    <script src="assets/plugins/slick/slick.min.js"></script>
     <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/gsap/three.js"></script>
+    <script src="assets/plugins/gsap/gsap.js"></script>
+    <script src="assets/plugins/gsap/gsap-scroll-smoother.js"></script>
+    <script src="assets/plugins/gsap/gsap-scroll-trigger.js"></script>
+    <script src="assets/plugins/gsap/gsap-scroll-to-plugin.js"></script>
+    <script src="assets/plugins/gsap/gsap-split-text.js"></script>
+    <script src="assets/plugins/gsap/webgl.js"></script>
+
+
+
+    <script src="assets/plugins/slick/slick.min.js"></script>
     <script src="assets/plugins/magnific-popup/magnific-popup.min.js"></script>
     <script src="assets/plugins/counter/jquery.counterup.min.js"></script>
     <script src="assets/plugins/isotope/imagesloaded.pkgd.min.js"></script>
     <script src="assets/plugins/isotope/isotope.pkgd.min.js"></script>
-    <script src="assets/plugins/gsap/gsap.min.js"></script>
-    <script src="assets/plugins/scroollSomoother/ScrollSmoother.min.js"></script>
-    <script src="assets/plugins/gsap/ScrollTrigger.min.js"></script>
-    <script src="assets/plugins/splittype/SplitText.min.js"></script>
     <script src="assets/plugins/twinmax/twinmax.js"></script>
     <script src="assets/plugins/imageRevealHover/imageRevealHover.js"></script>
     <script src="assets/plugins/jarallax/jarallax.min.js"></script>
@@ -1065,6 +1096,8 @@
     
     <!-- Main Js File -->
     <script src="assets/js/main.js"></script>
+    <!-- Cursor -->
+    <script src="assets/plugins/cursor/cursor.js"></script>
 </body>
 
 
