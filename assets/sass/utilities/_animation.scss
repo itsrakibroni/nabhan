@@ -315,3 +315,57 @@
       opacity: 1;
   }
 }
+
+/*Text-Animation**********************/
+.text-anim-right {
+  animation: text-anim-right 1.3s forwards cubic-bezier(.645,.045,.355,1) .4s;
+  opacity: 0;
+}
+@keyframes text-anim-right {
+  0% {
+      transform: translateX(5%);
+      clip-path: inset(0 0 0 100%);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateX(0);
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+  }
+}
+.text-anim-left {
+  animation: text-anim-left 1.3s forwards cubic-bezier(.645,.045,.355,1) .4s;
+  opacity: 0;
+}
+@keyframes text-anim-left {
+  0% {
+      transform: translateX(-5%);
+      clip-path: inset(0 100% 0 0);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateX(0);
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+  }
+}
+
+.text-anim-top {
+  animation: text-anim-top 1.3s forwards cubic-bezier(.645,.045,.355,1);
+  opacity: 0;
+}
+@keyframes text-anim-top {
+  0% {
+      transform: translateY(-5%);
+      clip-path: inset(0 0 100% 0);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateY(0);
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+  }
+}

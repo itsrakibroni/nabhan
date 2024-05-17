@@ -193,13 +193,44 @@
     }
     &.circle-btn {
         border-radius: 50%;
-        height: 180px;
-        width: 180px;
-        line-height: 180px;
+        height: 190px;
+        width: 190px;
+        line-height: 190px;
+        font-weight: 600;
         padding: 0;
         display: inline-flex;
+        gap: 10px;
         align-items: center;
         justify-content: center;
+        .btn-circle-dot {
+            position: absolute;
+            bottom: 0;
+            left: 32px;
+            width: 20px;
+            height: 20px;
+            background-color: $theme-color;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 50%;
+            -webkit-transition: all 0.5s ease-out;
+            -moz-transition: all 0.5s ease-out;
+            -ms-transition: all 0.5s ease-out;
+            -o-transition: all 0.5s ease-out;
+            transition: all 0.5s ease-out;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        &:hover{
+			.btn-circle-dot {
+                width: 420px;
+                height: 420px;
+			}
+		}
         &.style2 {
             .link-effect {
                 height: 48px;
@@ -209,6 +240,9 @@
             }
         }
     }
+}
+.circle-btn.btn.tp-hover-btn {
+    background-color: $white-color;
 }
 // Icon Btn
 .icon-btn {

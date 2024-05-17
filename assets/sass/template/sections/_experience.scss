@@ -1,0 +1,53 @@
+/*experience area 1***********************/
+.experience-wrap-area {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .single-experience-list {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px 0 30px;
+        &:first-child {
+            border-top: 1px solid rgb(255,255,255,.1);
+        }
+        .experience-place{
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 600;
+            color: $title-color;
+            transition: 1.0s;
+        }
+        .experience-year,
+        .experience-tag{
+            font-size: 18px;
+            line-height: 28px;
+            color: $gray-color;
+            letter-spacing: -0.14px;
+            transition: 1.0s;
+        }
+        &:hover {
+            .experience-place {
+                transform: translate3d(1.5rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+                transform-style: preserve-3d;
+            }
+            .experience-year {
+                transform: translate3d(-1.5rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+                transform-style: preserve-3d;
+            } 
+        }
+    }
+}
+
+@include sm {
+    .experience-wrap-area .single-experience-list {
+        display: block;
+    }
+    .experience-wrap-area .single-experience-list .experience-tag {
+        margin-bottom: -0.5em;
+        display: block;
+    }
+    .experience-wrap-area .single-experience-list {
+        transition: 1.0s;       
+    }
+}

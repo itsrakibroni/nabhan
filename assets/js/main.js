@@ -610,19 +610,29 @@
 	=        Masonary Active         =
     =============================================*/
     $(".masonary-active").imagesLoaded(function () {
-        var $filter = ".masonary-active",
-            $filterItem = ".filter-item";
+        // Initialize Isotope
+        var iso = new Isotope('.masonary-active', {
+            itemSelector: '.filter-item',
+            layoutMode: 'fitRows'
+        });
+        
+        // Filter items on button click
+        var filtersElem = document.querySelector('.portfolio-filter');
+        filtersElem.addEventListener('click', function(event) {
+            // Only work with button clicks
+            if (!matchesSelector(event.target, 'li')) {
+                return;
+            }
+            var filterValue = event.target.getAttribute('data-filter');
+            iso.arrange({ filter: filterValue });
 
-        if ($($filter).length > 0) {
-            var $grid = $($filter).isotope({
-                itemSelector: $filterItem,
-                filter: "*",
-                masonry: {
-                    // use outer width of grid-sizer for columnWidth
-                    columnWidth: 1,
-                },
-            });
-        }
+            // Change active class on buttons
+            var currentActive = filtersElem.querySelector('.current_menu_item');
+            if (currentActive) {
+                currentActive.classList.remove('current_menu_item');
+            }
+            event.target.classList.add('current_menu_item');
+        });
     });
 
 
@@ -787,6 +797,89 @@
 		ignoreMobileResize: true,
 	});
 
+
+    /*===========================================
+	=         Button Hover Animation         =
+    =============================================*/
+	$('.tp-hover-btn').on('mouseenter', function (e) {
+		var x = e.pageX - $(this).offset().left;
+		var y = e.pageY - $(this).offset().top;
+
+		$(this).find('.btn-circle-dot').css({
+			top: y,
+			left: x
+		});
+	});
+
+	$('.tp-hover-btn').on('mouseout', function (e) {
+		var x = e.pageX - $(this).offset().left;
+		var y = e.pageY - $(this).offset().top;
+
+		$(this).find('.btn-circle-dot').css({
+			top: y,
+			left: x
+		});
+	});
+
+
+	var hoverBtns = gsap.utils.toArray(".tp-hover-btn-wrapper");
+
+	const hoverBtnItem = gsap.utils.toArray(".tp-hover-btn-item");
+	hoverBtns.forEach((btn, i) => {
+		$(btn).mousemove(function (e) {
+			callParallax(e);
+		});
+		function callParallax(e) {
+			parallaxIt(e, hoverBtnItem[i], 80);
+		}
+
+		function parallaxIt(e, target, movement) {
+			var $this = $(btn);
+			var relX = e.pageX - $this.offset().left;
+			var relY = e.pageY - $this.offset().top;
+
+			gsap.to(target, 0.5, {
+				x: ((relX - $this.width() / 2) / $this.width()) * movement,
+				y: ((relY - $this.height() / 2) / $this.height()) * movement,
+				ease: Power2.easeOut,
+			});
+		}
+		$(btn).mouseleave(function (e) {
+			gsap.to(hoverBtnItem[i], 0.5, {
+				x: 0,
+				y: 0,
+				ease: Power2.easeOut,
+			});
+		});
+	});
+
+	// button hover end
+
+    function setupButtonBounce(areaClass, bounceHeight) {
+        if ($(areaClass).length > 0) {
+            gsap.set(".btn-bounce-1", { y: -bounceHeight, opacity: 0 });
+            var mybtn = gsap.utils.toArray(".btn-bounce-1");
+            mybtn.forEach((btn) => {
+                var $this = $(btn);
+                gsap.to(btn, {
+                    scrollTrigger: {
+                        trigger: $this.closest(areaClass),
+                        start: "bottom bottom",
+                        markers: false
+                    },
+                    duration: 1,
+                    ease: "bounce.out",
+                    y: 0,
+                    opacity: 1,
+                });
+            });
+        }
+    }
+    
+    setupButtonBounce('.about-area-1', 100);
+    setupButtonBounce('.experience-area-1', 100);
+    
+
     /////////////////////////////////////////////////////
     // Magnate Animation
     var magnets = document.querySelectorAll('.gsap-magnetic')
@@ -888,6 +981,32 @@
             pos.y = rect.top + rect.height / 2 + (relY - rect.height / 2 - scrollTop) / movement;
             gsap.to(magicCursor, { duration: 0.3, x: pos.x, y: pos.y });
         }
+    }
+
+    /*===========================================
+	=         Scroll Down         =
+    =============================================*/
+    // Ensure GSAP is loaded
+    if (typeof gsap !== 'undefined' && typeof ScrollToPlugin !== 'undefined') {
+        // Select the anchor element
+        const scrollLink = document.querySelector('.hero-scroll');
+
+        // Add click event listener
+        scrollLink.addEventListener('click', (event) => {
+            event.preventDefault(); 
+
+            // Smoothly scroll to the .about-area-1 element
+            gsap.to(window, {
+                duration: 1.5, 
+                scrollTo: {
+                    y: '#about-area-1', 
+                    offsetY: 0
+                },
+                ease: 'power2.inOut'
+            });
+        });
+    } else {
+        console.error('GSAP or ScrollToPlugin is not loaded.');
     }
 
 

@@ -1,0 +1,40 @@
+/*----------------------------------------*/
+/* Skill css
+/*----------------------------------------*/
+$skill-prefix: 'skill';
+
+.skill-area-1{
+    .row {
+        --bs-gutter-x: 40px;
+    }
+    .#{$skill-prefix} {
+        &-item {
+            padding: 45px 0;
+            border: 1px solid $border-color;
+            border-radius: 100px;
+            margin-bottom: 30px;
+        }
+
+        &-icon span {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        &-count {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 52px;
+        }
+
+        &-title {
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 0;
+        }
+    }
+}
+

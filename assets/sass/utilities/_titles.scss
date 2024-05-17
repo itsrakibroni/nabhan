@@ -1,8 +1,39 @@
+.big-title{
+    font-size: 150px;
+    font-weight: 800;
+    line-height: 160px;
+    color: $title-color;
+    text-transform: uppercase;
+    text-align: center;
+    .font-2 {
+        font-family: $title-font2;
+        font-style: italic;
+        font-weight: 700;
+    }
+}
+
 .sec-title {
     margin-bottom: calc(var(--section-title-space) - 43px);
     margin-top: -0.18em;
-    font-weight: 600;
-    letter-spacing: -1.8px;
+    font-size: 62px;
+    line-height: 72px;
+    font-weight: 700;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: attr(data-title);
+        z-index: 99;
+        font-size: 16px;
+        font-weight: 400;
+        top: -20px;
+        right: -120px;
+        color: $gray-color;
+    }
+    .font-2 {
+        font-family: $title-font2;
+        font-style: italic;
+        color: $theme-color;
+    }
     @include xs {
         letter-spacing: normal;
     }
@@ -62,7 +93,7 @@
 }
   
 .title-area {
-    margin-bottom: calc(var(--section-title-space) - 17px);
+    margin-bottom: calc(var(--section-title-space) - 5px);
     position: relative;
     z-index: 2;
     &.mb-0 {
@@ -71,7 +102,7 @@
         }
     }
     .btn {
-        margin-top: 36px;
+        margin-top: 30px;
     }
     .checklist {
         margin-top: 30px;

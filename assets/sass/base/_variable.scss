@@ -79,7 +79,7 @@ $space-mobile-extra: calc(var(--section-space-mobile) - 30px);
 $bgcolorMap: ();
 $bgcolorMap: map-merge((
         "theme" : $theme-color,
-        "theme2" : $theme-color,
+        "theme2" : $black-color2,
         "white" : $white-color,
         "black" : $black-color,
         "gray" : $gray-color,
@@ -91,6 +91,7 @@ $bgcolorMap: map-merge((
 $overlaycolorMap: ();
 $overlaycolorMap: map-merge((
         "theme" : $theme-color,
+        "theme2" : $black-color2,
         "title" : $title-color,
         "white" : $white-color,
         "black" : $black-color,
@@ -102,7 +103,7 @@ $overlaycolorMap: map-merge((
 $textColorsMap: ();
 $textColorsMap: map-merge((
         "theme" : $theme-color,
-        "theme2" : $theme-color,
+        "theme2" : $black-color2,
         "title" : $title-color,
         "body" : $body-color,
         "white" : $white-color,

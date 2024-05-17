@@ -98,12 +98,12 @@ th {
 
 
 a {
-	color: $theme-color;
+	color: $title-color;
 	text-decoration: none;
 	outline: 0;
 	transition: all ease 0.4s;
 	&:hover {
-		color: $title-color;
+		color: $theme-color;
 	}
 
 	&:active,
