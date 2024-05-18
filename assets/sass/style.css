@@ -8667,8 +8667,28 @@ blockquote p {
 }
 
 /*------------------- 4.00. Service -------------------*/
-/* Service 1 ---------------------------------- */
 .service-item {
+  position: relative;
+}
+.service-item .hover-reveal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  margin: -150px 0 0 -150px;
+  overflow: hidden;
+  pointer-events: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  border-radius: 10px;
+}
+.service-item:hover .hover-reveal-bg {
+  opacity: 1;
+}
+
+.service-inner {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8679,71 +8699,76 @@ blockquote p {
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
-.service-item .service-left {
+.service-inner .service-left {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 120px;
 }
-.service-item .service-left .service-title {
+.service-inner .service-left .service-title {
   font-size: 30px;
   line-height: 40px;
   font-weight: 700;
   margin: 0;
 }
-.service-item .service-left .service-title a {
+.service-inner .service-left .service-title a {
   color: var(--white-color);
 }
-.service-item .service-left .service-title a:hover {
+.service-inner .service-left .service-title a:hover {
   color: var(--theme-color);
 }
-.service-item .service-left .service-list li {
+.service-inner .service-left .service-list li {
   margin-bottom: 10px;
 }
-.service-item .service-left .service-list li:last-child {
+.service-inner .service-left .service-list li:last-child {
   margin-bottom: 0;
 }
-.service-item .service-btn-wrapper {
+.service-inner .service-btn-wrapper {
   display: flex;
   align-items: center;
 }
-.service-item .service-btn-wrapper .service-btn {
-  display: inline-block;
-  background-color: var(--theme-color);
-  width: 44px;
-  height: 44px;
-  line-height: 44px;
-  border-radius: 50%;
-  text-align: center;
-  color: #0A1603;
+.service-inner .service-btn-wrapper .service-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--white-color);
   position: relative;
   overflow: hidden;
 }
-.service-item .service-btn-wrapper .service-btn span {
+.service-inner .service-btn-wrapper .service-btn span {
   width: 16px;
   height: 16px;
   position: relative;
 }
-.service-item .service-btn-wrapper .service-btn svg {
+.service-inner .service-btn-wrapper .service-btn svg {
   fill: var(--white-color);
   position: absolute;
   bottom: 0;
   left: 0;
   transition: all 300ms ease;
 }
-.service-item .service-btn-wrapper .service-btn svg:last-child {
+.service-inner .service-btn-wrapper .service-btn svg:last-child {
   left: -12px;
   bottom: -12px;
   transform: translate(0, 0);
   opacity: 0;
 }
-.service-item .service-btn-wrapper .service-btn:hover svg:first-child {
-  transform: translate(25px, -25px);
+.service-inner:hover .service-btn {
+  border-color: var(--theme-color);
 }
-.service-item .service-btn-wrapper .service-btn:hover svg:last-child {
+.service-inner:hover .service-btn svg {
+  fill: var(--theme-color);
+}
+.service-inner:hover .service-btn svg:first-child {
+  transform: translate(30px, -30px);
+}
+.service-inner:hover .service-btn svg:last-child {
   left: 0;
   bottom: 0;
   opacity: 1;

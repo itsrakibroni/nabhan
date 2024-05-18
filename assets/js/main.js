@@ -911,6 +911,52 @@
     
     setupButtonBounce('.about-area-1', 100);
     setupButtonBounce('.experience-area-1', 100);
+
+    //////////////////////////////////////////////////
+	// Common Js
+
+	$("[data-background").each(function () {
+		$(this).css("background-image", "url( " + $(this).attr("data-background") + "  )");
+	});
+
+	$("[data-width]").each(function () {
+		$(this).css("width", $(this).attr("data-width"));
+	});
+
+	$("[data-bg-color]").each(function () {
+		$(this).css("background-color", $(this).attr("data-bg-color"));
+	});
+
+	$("[data-text-color]").each(function () {
+		$(this).css("color", $(this).attr("data-text-color"));
+	});
+
+	$(".has-img").each(function () {
+		var imgSrc = $(this).attr("data-menu-img");
+		var img = `<img class="mega-menu-img" src="${imgSrc}" alt="img">`;
+		$(this).append(img);
+
+	});
+
+  
+    /*===========================================
+	=         Hover Reaveal Start         =
+    =============================================*/
+	const hoverItem = document.querySelectorAll(".hover-reveal-item");
+	function moveImage(e, hoverItem, index) {
+		const item = hoverItem.getBoundingClientRect();
+		const x = e.clientX - item.x;
+		const y = e.clientY - item.y;
+		if (hoverItem.children[index]) {
+			hoverItem.children[index].style.transform = `translate(${x}px, ${y}px)`;
+		}
+	}
+	hoverItem.forEach((item, i) => {
+		item.addEventListener("mousemove", (e) => {
+			setInterval(moveImage(e, item, 1), 50);
+		});
+	});
+	// hover reveal end
     
 
     /////////////////////////////////////////////////////
