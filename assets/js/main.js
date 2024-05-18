@@ -888,6 +888,7 @@
 
 	// button hover end
 
+    // Button Bounce
     function setupButtonBounce(areaClass, bounceHeight) {
         if ($(areaClass).length > 0) {
             gsap.set(".btn-bounce-1", { y: -bounceHeight, opacity: 0 });
@@ -911,6 +912,7 @@
     
     setupButtonBounce('.about-area-1', 100);
     setupButtonBounce('.experience-area-1', 100);
+    setupButtonBounce('.portfolio-area-1', 100);
 
     //////////////////////////////////////////////////
 	// Common Js

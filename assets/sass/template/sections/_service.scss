@@ -7,10 +7,13 @@
 
 .service-item {
     position: relative;
+    z-index: 1;
     .hover-reveal-bg {
         position: absolute;
-        top: 0;
+        z-index: -1;
         left: 0;
+        width: 375px;
+        height: 435px;
         opacity: 0;
         margin: -150px 0 0 -150px;
         overflow: hidden;
@@ -23,7 +26,6 @@
         -ms-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
         -o-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
         transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-        border-radius: 10px;
     }
 
     &:hover{
@@ -39,9 +41,29 @@
     justify-content: space-between;
     color: $white-color;
     padding: 20px 0;
-    margin-bottom: 25px;
-    border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
+
+    &:first-child{
+        border-top: 1px solid $border-color;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 0;
+        background-color: $theme-color;
+        height: 1px;
+        z-index: -1;
+        opacity: 0;
+        transition: all 500ms ease;
+    }
+
+    &:hover::after {
+        width: 100%;
+        opacity: 1;
+    }
   
     .service-left {
         @include flex-center;
@@ -51,7 +73,7 @@
             font-size: 30px;
             line-height: 40px;
             font-weight: 700;
-            margin: 0;
+            margin-bottom: 0;
 
             a {
                 color: $white-color;
