@@ -69,7 +69,10 @@ video {
 }
 
 ul {
-	list-style-type: disc;
+	list-style-type: none;
+	margin-bottom: 0;
+	padding: 0;
+	list-style: none;
 }
 
 ol {
@@ -323,9 +326,9 @@ h6 {
 	}
 }
 
-.row {
-    --bs-gutter-x: 30px;
-}
+// .row {
+//     --bs-gutter-x: 30px;
+// }
 
 .color1 {
 	color: $theme-color;

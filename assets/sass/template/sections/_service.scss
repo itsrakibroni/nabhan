@@ -1,36 +1,129 @@
 /* Service 1 ---------------------------------- */
-.service-area-1 {
-    margin-top: 100px;
-    .service-img-1-1 {
-        width: 44%;
-        img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-    }
-    @media (max-width: 1700px) {
-        .service-img-1-1 {
-            width: 42%;
-            img {
-                height: 100%;
-            }
-        }
-    }
-    @include xxl {
-        .service-img-1-1 {
-            width: 42%;
-            img {
-                height: 100%;
-            }
-        }
-    }
-    @include md {
-        margin-top: 0;
-        .service-img-1-1 {
-            width: 100%;
-            top: -80px !important;
-            position: relative;
-        }
-    }
+// .service-area-1 {
+//     margin-top: 100px;
+//     .service-img-1-1 {
+//         width: 44%;
+//         img {
+//             object-fit: cover;
+//             width: 100%;
+//             height: 100%;
+//         }
+//     }
+//     @media (max-width: 1700px) {
+//         .service-img-1-1 {
+//             width: 42%;
+//             img {
+//                 height: 100%;
+//             }
+//         }
+//     }
+//     @include xxl {
+//         .service-img-1-1 {
+//             width: 42%;
+//             img {
+//                 height: 100%;
+//             }
+//         }
+//     }
+//     @include md {
+//         margin-top: 0;
+//         .service-img-1-1 {
+//             width: 100%;
+//             top: -80px !important;
+//             position: relative;
+//         }
+//     }
+// }
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.service-item {
+    @include flex-center;
+    justify-content: space-between;
+    color: $white-color;
+    padding: 20px 0;
+    margin-bottom: 25px;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+  
+    .service-left {
+        @include flex-center;
+        gap: 120px;
+
+      .service-title {
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 700;
+        margin: 0;
+  
+        a {
+          color: $white-color;
+          &:hover {
+            color: $theme-color;
+          }
+        }
+      }
+  
+      .service-list li {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+      }
+    }
+  
+    .service-btn-wrapper {
+      display: flex;
+      align-items: center;
+  
+      .service-btn {
+        display: inline-block;
+        background-color: var(--theme-color);
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        border-radius: 50%;
+        text-align: center;
+        color: #0A1603;
+        @include flex-center;
+        position: relative;
+        overflow: hidden;
+  
+        span {
+          width: 16px;
+          height: 16px;
+          position: relative;
+        }
+  
+        svg {
+          fill: $white-color;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: all 300ms ease;
+  
+          &:last-child {
+            left: -12px;
+            bottom: -12px;
+            transform: translate(0, 0);
+            opacity: 0;
+          }
+        }
+
+        &:hover svg:first-child{
+            transform: translate(25px, -25px);
+        }
+  
+        &:hover svg:last-child {
+          left: 0;
+          bottom: 0;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  

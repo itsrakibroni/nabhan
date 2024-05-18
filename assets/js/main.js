@@ -404,6 +404,39 @@
         });
     });
 
+     // Brands Carousel
+     if ($('.brands-carousel').length) {
+        $('.brands-carousel').owlCarousel({
+            autoplay: false,
+            loop: true,
+            nav: false,
+            dots: false,
+            margin: 50,
+            dotsEach: 1,
+            smartSpeed: 1500,
+            startPosition: 1,
+            navText: ['<span class="far fa-arrow-left"></span>', '<span class="far fa-arrow-right"></span>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                420: {
+                    items: 2
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 5
+                },
+                1200: {
+                    items: 5
+                }
+            }
+        });
+    }
+
+
 
     /*===========================================
 	=         Custom Animation For Slider     =
@@ -1008,6 +1041,16 @@
     } else {
         console.error('GSAP or ScrollToPlugin is not loaded.');
     }
+
+    /*===========================================
+	=         FancyBox         =
+    =============================================*/
+    $('.lightbox-image').magnificPopup({
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
 
 
     /*===========================================
