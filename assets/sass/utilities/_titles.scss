@@ -37,6 +37,11 @@
     @include xs {
         letter-spacing: normal;
     }
+    @include md{
+        & br{
+            display: none;
+        }
+    }
 }
   
 .sub-title {

@@ -1,4 +1,3 @@
-
 @mixin flex-center {
     display: flex;
     align-items: center;
@@ -8,42 +7,10 @@
 .service-item {
     position: relative;
     z-index: 1;
-    .hover-reveal-bg {
-        position: absolute;
-        z-index: -1;
-        left: 0;
-        width: 375px;
-        height: 435px;
-        opacity: 0;
-        margin: -150px 0 0 -150px;
-        overflow: hidden;
-        pointer-events: none;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        -webkit-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-        -moz-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-        -ms-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-        -o-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-        transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-
-    &:hover{
-        .hover-reveal-bg {
-            opacity: 1;
-        }
-    }
-
-}
-
-.service-inner {
-    @include flex-center;
-    justify-content: space-between;
-    color: $white-color;
     padding: 20px 0;
     border-bottom: 1px solid $border-color;
 
-    &:first-child{
+    &:first-child {
         border-top: 1px solid $border-color;
     }
 
@@ -64,33 +31,7 @@
         width: 100%;
         opacity: 1;
     }
-  
-    .service-left {
-        @include flex-center;
-        gap: 120px;
-
-        .service-title {
-            font-size: 30px;
-            line-height: 40px;
-            font-weight: 700;
-            margin-bottom: 0;
-
-            a {
-                color: $white-color;
-                &:hover {
-                    color: $theme-color;
-                }
-            }
-        }
-
-        .service-list li {
-            margin-bottom: 10px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-
+    
     .service-btn-wrapper {
         display: flex;
         align-items: center;
@@ -129,22 +70,216 @@
             }
         }
     }
+    
 
-    // Hover styles
+    .hover-reveal-bg {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        width: 375px;
+        height: 435px;
+        opacity: 0;
+        margin: -150px 0 0 -150px;
+        overflow: hidden;
+        pointer-events: none;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -moz-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -ms-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -o-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
     &:hover {
+        .hover-reveal-bg {
+            opacity: 1;
+        }
+
         .service-btn {
             border-color: $theme-color;
         }
+
         .service-btn svg {
             fill: $theme-color;
+
             &:first-child {
                 transform: translate(30px, -30px);
             }
+
             &:last-child {
                 left: 0;
                 bottom: 0;
                 opacity: 1;
             }
+        }
+    }
+}
+
+.service-inner {
+    @include flex-center;
+    justify-content: space-between;
+    color: $white-color;
+
+    .service-left {
+        @include flex-center;
+        gap: 120px;
+
+        .service-title {
+            font-size: 30px;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 0;
+
+            a {
+                color: $white-color;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        .service-list li {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}
+
+
+// Responsive styles
+@include lg {
+    // Adjustments for large screens
+}
+
+@include md {
+    .service-item .hover-reveal-bg{
+        display: none;
+    }
+
+    .service-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .service-left {
+            flex-direction: row;
+            gap: 30px;
+
+            .service-title {
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            .service-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .service-btn-wrapper {
+            margin-top: 20px;
+
+            .service-btn {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+
+                span {
+                    width: 14px;
+                    height: 14px;
+                }
+
+                svg {
+                    &:last-child {
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include xs {
+    .service-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px 0;
+
+        .service-left {
+            flex-direction: row;
+            gap: 20px;
+
+            .service-title {
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            .service-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                li {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .service-btn-wrapper {
+            margin-top: 15px;
+
+            .service-btn {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+
+                span {
+                    width: 12px;
+                    height: 12px;
+                }
+
+                svg {
+                    &:last-child {
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@include sm {
+    .service-item .hover-reveal-bg {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .service-inner {
+        .service-left {
+            gap: 20px;
+        }
+    }
+}
+
+@include vxs {
+    .service-inner {
+        .service-left {
+            flex-direction: column;
+            gap: 20px;
         }
     }
 }
