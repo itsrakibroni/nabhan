@@ -38,7 +38,7 @@
 /*-- Padding Right --*/
 @for $i from 1 through $space-count {
   .pr-#{5 * $i} {
-    padding-right: 5px *$i;
+    padding-right: #{5px * $i};
   }
 }
 

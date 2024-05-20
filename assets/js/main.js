@@ -17,88 +17,93 @@
         $('.preloader').delay(0).fadeOut();
     };
 
+    
 
     /*===========================================
 	=         Mobile Menu Active         =
     =============================================*/
-    $.fn.mobilemenu = function (options) {
-        var opt = $.extend(
-            {
-                menuToggleBtn: ".menu-toggle",
-                bodyToggleClass: "body-visible",
-                subMenuClass: "submenu-class",
-                subMenuParent: "submenu-item-has-children",
-                subMenuParentToggle: "active-class",
-                meanExpandClass: "mean-expand-class",
-                appendElement: '<span class="mean-expand-class"></span>',
-                subMenuToggleClass: "menu-open",
-                toggleSpeed: 400,
-            },
-            options
-        );
+    if ($(".mobile-menu").length) {
+        var mobileMenuContent = $(".nav-header .main-menu .navigation").html();
 
-        return this.each(function () {
-            var menu = $(this);
+        $(".mobile-menu .navigation").append(mobileMenuContent);
+        $.fn.mobilemenu = function (options) {
+            var opt = $.extend(
+                {
+                    menuToggleBtn: ".menu-toggle",
+                    bodyToggleClass: "body-visible",
+                    subMenuClass: "submenu-class",
+                    subMenuParent: "submenu-item-has-children",
+                    subMenuParentToggle: "active-class",
+                    meanExpandClass: "mean-expand-class",
+                    appendElement: '<span class="mean-expand-class"></span>',
+                    subMenuToggleClass: "menu-open",
+                    toggleSpeed: 400,
+                },
+                options
+            );
 
-            function menuToggle() {
-                menu.toggleClass(opt.bodyToggleClass);
+            return this.each(function () {
+                var menu = $(this);
 
-                var subMenu = "." + opt.subMenuClass;
-                $(subMenu).each(function () {
-                    if ($(this).hasClass(opt.subMenuToggleClass)) {
-                        $(this).removeClass(opt.subMenuToggleClass);
-                        $(this).css("display", "none");
-                        $(this).parent().removeClass(opt.subMenuParentToggle);
-                    }
+                function menuToggle() {
+                    menu.toggleClass(opt.bodyToggleClass);
+
+                    var subMenu = "." + opt.subMenuClass;
+                    $(subMenu).each(function () {
+                        if ($(this).hasClass(opt.subMenuToggleClass)) {
+                            $(this).removeClass(opt.subMenuToggleClass);
+                            $(this).css("display", "none");
+                            $(this).parent().removeClass(opt.subMenuParentToggle);
+                        }
+                    });
+                }
+
+                menu.find("li").each(function () {
+                    var submenu = $(this).find("ul");
+                    submenu.addClass(opt.subMenuClass);
+                    submenu.css("display", "none");
+                    submenu.parent().addClass(opt.subMenuParent);
+                    submenu.prev("a").append(opt.appendElement);
+                    submenu.next("a").append(opt.appendElement);
                 });
-            }
 
-            menu.find("li").each(function () {
-                var submenu = $(this).find("ul");
-                submenu.addClass(opt.subMenuClass);
-                submenu.css("display", "none");
-                submenu.parent().addClass(opt.subMenuParent);
-                submenu.prev("a").append(opt.appendElement);
-                submenu.next("a").append(opt.appendElement);
-            });
+                function toggleDropDown($element) {
+                    var $parent = $($element).parent();
+                    var $siblings = $parent.siblings();
 
-            function toggleDropDown($element) {
-                var $parent = $($element).parent();
-                var $siblings = $parent.siblings();
+                    $siblings.removeClass(opt.subMenuParentToggle);
+                    $siblings.find("ul").slideUp(opt.toggleSpeed).removeClass(opt.subMenuToggleClass);
 
-                $siblings.removeClass(opt.subMenuParentToggle);
-                $siblings.find("ul").slideUp(opt.toggleSpeed).removeClass(opt.subMenuToggleClass);
+                    $parent.toggleClass(opt.subMenuParentToggle);
+                    $($element).next("ul").slideToggle(opt.toggleSpeed).toggleClass(opt.subMenuToggleClass);
+                }
 
-                $parent.toggleClass(opt.subMenuParentToggle);
-                $($element).next("ul").slideToggle(opt.toggleSpeed).toggleClass(opt.subMenuToggleClass);
-            }
-
-            var expandToggler = "." + opt.meanExpandClass;
-            $(expandToggler).each(function () {
-                $(this).on("click", function (e) {
-                    e.preventDefault();
-                    toggleDropDown($(this).parent());
+                var expandToggler = "." + opt.meanExpandClass;
+                $(expandToggler).each(function () {
+                    $(this).on("click", function (e) {
+                        e.preventDefault();
+                        toggleDropDown($(this).parent());
+                    });
                 });
-            });
 
-            $(opt.menuToggleBtn).each(function () {
-                $(this).on("click", function () {
+                $(opt.menuToggleBtn).each(function () {
+                    $(this).on("click", function () {
+                        menuToggle();
+                    });
+                });
+
+                menu.on("click", function (e) {
+                    e.stopPropagation();
                     menuToggle();
                 });
-            });
 
-            menu.on("click", function (e) {
-                e.stopPropagation();
-                menuToggle();
+                menu.find("div").on("click", function (e) {
+                    e.stopPropagation();
+                });
             });
-
-            menu.find("div").on("click", function (e) {
-                e.stopPropagation();
-            });
-        });
-    };
-    $(".mobile-menu-wrapper").mobilemenu();
-
+        };
+        $(".mobile-menu-wrapper").mobilemenu();
+    }
 
     /*===========================================
 	=         Desk Menu Active         =
@@ -231,6 +236,12 @@
             jQuery('html, body').animate({scrollTop: 0}, 1);
             return false;
         })
+    }
+
+    if($('.top-scroll')) {
+        document.querySelector('.top-scroll').addEventListener('click', () => {
+            gsap.to(window, { duration: 1, scrollTo: { y: 0, ease: 'power2.inOut' } });
+        });
     }
 
 
@@ -769,30 +780,38 @@
 	// button hover end
 
     // Button Bounce
-    function setupButtonBounce(areaClass, bounceHeight) {
-        if ($(areaClass).length > 0) {
-            gsap.set(".btn-bounce-1", { y: -bounceHeight, opacity: 0 });
-            var mybtn = gsap.utils.toArray(".btn-bounce-1");
-            mybtn.forEach((btn) => {
-                var $this = $(btn);
-                gsap.to(btn, {
-                    scrollTrigger: {
-                        trigger: $this.closest(areaClass),
-                        start: "bottom bottom",
-                        markers: false
-                    },
-                    duration: 1,
-                    ease: "bounce.out",
-                    y: 0,
-                    opacity: 1,
+    function setupButtonBounce(areaConfigurations) {
+        areaConfigurations.forEach(config => {
+            const { areaClass, bounceHeight } = config;
+            if ($(areaClass).length > 0) {
+                gsap.set(".btn-bounce-1", { y: -bounceHeight, opacity: 0 });
+                gsap.utils.toArray(".btn-bounce-1").forEach(btn => {
+                    const $this = $(btn);
+                    gsap.to(btn, {
+                        scrollTrigger: {
+                            trigger: $this.closest(areaClass),
+                            start: "bottom bottom",
+                            markers: false
+                        },
+                        duration: 1,
+                        ease: "bounce.out",
+                        y: 0,
+                        opacity: 1,
+                    });
                 });
-            });
-        }
+            }
+        });
     }
     
-    setupButtonBounce('.about-area-1', 100);
-    setupButtonBounce('.experience-area-1', 100);
-    setupButtonBounce('.portfolio-area-1', 100);
+    const areaConfigurations = [
+        { areaClass: '.about-area-1', bounceHeight: 100 },
+        { areaClass: '.experience-area-1', bounceHeight: 100 },
+        { areaClass: '.portfolio-area-1', bounceHeight: 100 },
+        { areaClass: '.contact-area-1', bounceHeight: 100 }
+    ];
+    
+    setupButtonBounce(areaConfigurations);
+    
 
     //////////////////////////////////////////////////
 	// Common Js

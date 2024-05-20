@@ -1,4 +1,18 @@
 /*experience area 1***********************/
+.experience-area-1 {
+    .title-area{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include sm {
+            flex-direction: column;
+            .sec-title {
+                margin-bottom: 30px !important;
+            }
+        }
+    }
+}
+
 .experience-wrap-area {
     list-style: none;
     padding: 0;
@@ -8,6 +22,28 @@
         justify-content: space-between;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding: 30px 0 30px;
+        position: relative;
+        z-index: 1;
+        @include xs {
+            flex-direction: column;
+            align-items: center;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            width: 0;
+            background-color: var(--theme-color);
+            height: 1px;
+            z-index: -1;
+            opacity: 0;
+            transition: all 500ms ease;
+        }
+        &:hover::before{
+            width: 100%;
+            opacity: 1;
+        }
         &:first-child {
             border-top: 1px solid rgb(255,255,255,.1);
         }
@@ -40,14 +76,12 @@
 }
 
 @include sm {
-    .experience-wrap-area .single-experience-list {
-        display: block;
-    }
-    .experience-wrap-area .single-experience-list .experience-tag {
-        margin-bottom: -0.5em;
-        display: block;
-    }
-    .experience-wrap-area .single-experience-list {
-        transition: 1.0s;       
+    .experience-wrap-area .single-experience-list:hover {
+        .experience-place {
+            transform: none;
+        }
+        .experience-year {
+            transform: none;
+        } 
     }
 }

@@ -1,19 +1,15 @@
-/*----------------------------------------*/
-/* Skill css
-/*----------------------------------------*/
-$skill-prefix: 'skill';
+// Skill area 1---------------*/
 
-.skill-area-1{
-    .row {
-        --bs-gutter-x: 40px;
-    }
-}
+$vxs: 375px; // Extra Small Device
 
-.#{$skill-prefix} {
+.skill {
     &-item {
         padding: 45px 0;
         border: 1px solid $border-color;
         border-radius: 100px;
+        @include sm {
+            border-radius: 30px;
+        }
     }
 
     &-icon span {
@@ -41,6 +37,24 @@ $skill-prefix: 'skill';
 @include lg {
     .skill-item {
         margin-bottom: 30px;
+    }
+}
+
+@include vxs {
+    .skill{
+        &-icon span {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+        }
+        &-count {
+            font-size: 32px;
+            line-height: 42px;
+        }
+        &-title {
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
 }
 

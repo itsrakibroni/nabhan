@@ -202,6 +202,11 @@
         gap: 10px;
         align-items: center;
         justify-content: center;
+        @include lg{
+            height: 180px;
+            width: 180px;
+            line-height: 180px;
+        }
         .btn-circle-dot {
             position: absolute;
             bottom: 0;
@@ -361,6 +366,9 @@
     gap: 10px;
     text-decoration: none;
     border-radius: 40px;
+    @include sm {
+        padding: 12px 35px;
+    }
     &.bg-white {
         background-color: $white-color;
     }
@@ -518,6 +526,17 @@
         transform: translateY(0);
     }
 }
+// Bottom to Top
+.top-scroll {
+    cursor: pointer;
+    display: inline-block;
+    padding: 19px 13px;
+    border-radius: 7px;
+    background-color: $theme-color;
+    text-align: center;
+    transition: all 300ms linear;
+}
+
 @include sm {
     .play-btn {
         --icon-size: 70px;
