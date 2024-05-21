@@ -630,6 +630,42 @@
         });
     }
 
+    /*===========================================
+	=         Some Class Remove         =
+    =============================================*/
+    // Function to remove classes based on screen width
+    function checkWidthAndRemoveClasses() {
+        if (window.innerWidth <= 485) {
+            // Select all elements with the classes 'text-anim-left' and 'text-anim-right'
+            var elementsLeft = document.querySelectorAll('.text-anim-left');
+            var elementsRight = document.querySelectorAll('.text-anim-right');
+            
+            // Remove the classes
+            elementsLeft.forEach(function(element) {
+                element.classList.remove('text-anim-left');
+            });
+            elementsRight.forEach(function(element) {
+                element.classList.remove('text-anim-right');
+            });
+        }
+    }
+
+    // Check width and remove classes on page load
+    window.addEventListener('load', checkWidthAndRemoveClasses);
+
+    // Check width and remove classes on window resize
+    window.addEventListener('resize', checkWidthAndRemoveClasses);
+
+    // Select the elements with the specified class names
+    document.querySelectorAll('.service-item-wrapper .ml-35, .service-item-wrapper .mr-75, .service-item-wrapper .ml-30, .service-item-wrapper .mr-5, .service-item-wrapper .mr-40, .big-title .ml-50').forEach(function(element) {
+        element.classList.remove('ml-35', 'mr-75', 'ml-30', 'mr-5', 'mr-40', 'ml-50');
+    });
+    
+
+
+
+    
+
 
     /*===========================================
 	=         Button Effects        =
@@ -776,6 +812,7 @@
 			});
 		});
 	});
+
 
 	// button hover end
 

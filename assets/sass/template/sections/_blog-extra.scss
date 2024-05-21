@@ -9,6 +9,9 @@
     z-index: 1;
     padding: 80px 0;
     border-bottom: 1px solid $border-color;
+    @include xs {
+        text-align: center;
+    }
 
     &:first-child {
         border-top: 1px solid $border-color;
@@ -35,6 +38,10 @@
     .blog-btn-wrapper {
         display: flex;
         align-items: center;
+
+        @include xs {
+            justify-content: center
+        }
 
         .blog-btn {
             @include flex-center;
@@ -90,6 +97,9 @@
         -ms-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
         -o-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
         transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        @include sm {
+            display: none;
+        }
     }
 
     &:hover {
@@ -118,8 +128,8 @@
 }
 
 .blog-inner {
-    @include flex-center;
-    justify-content: space-between;
+    // @include flex-center;
+    // justify-content: space-between;
     color: $white-color;
 
     &::after {
@@ -163,6 +173,12 @@
         a {
             color: $white-color;
 
+            @include xs {
+                br{
+                    display: none;
+                }
+            }
+
             &:hover {
                 color: $theme-color;
                 text-decoration: underline;
@@ -188,17 +204,6 @@
             line-height: 46px;
         }
 
-        .blog-meta {
-            &_title {
-                font-size: 20px;
-                line-height: 30px;
-            }
-
-            &_date {
-                font-size: 16px;
-                line-height: 26px;
-            }
-        }
     }
 }
 
@@ -212,18 +217,6 @@
         .blog-title {
             font-size: 32px;
             line-height: 42px;
-        }
-
-        .blog-meta {
-            &_title {
-                font-size: 18px;
-                line-height: 28px;
-            }
-
-            &_date {
-                font-size: 14px;
-                line-height: 24px;
-            }
         }
     }
 }
@@ -242,18 +235,7 @@
                 display: none;
             }
         }
-
-        .blog-meta {
-            &_title {
-                font-size: 16px;
-                line-height: 26px;
-            }
-
-            &_date {
-                font-size: 12px;
-                line-height: 22px;
-            }
-        }
+        
     }
 }
 
@@ -267,18 +249,6 @@
         .blog-title {
             font-size: 24px;
             line-height: 34px;
-        }
-
-        .blog-meta {
-            &_title {
-                font-size: 14px;
-                line-height: 24px;
-            }
-
-            &_date {
-                font-size: 10px;
-                line-height: 20px;
-            }
         }
     }
 }

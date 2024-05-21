@@ -2699,6 +2699,10 @@ body.bg-title .scroll-top::after {
 
 /* Medium Large devices */
 @media (max-width: 1399px) {
+  .big-title {
+    font-size: 100px;
+    line-height: 110px;
+  }
   .sec-title {
     font-size: 45px;
     line-height: 1.2;
@@ -2712,6 +2716,10 @@ body.bg-title .scroll-top::after {
 }
 /* Large devices */
 @media (max-width: 1199px) {
+  .big-title {
+    font-size: 80px;
+    line-height: 90px;
+  }
   .title-area,
   .sec-title {
     --section-title-space: 60px;
@@ -2737,6 +2745,10 @@ body.bg-title .scroll-top::after {
 }
 /* Medium devices */
 @media (max-width: 991px) {
+  .big-title {
+    font-size: 60px;
+    line-height: 70px;
+  }
   .title-area,
   .sec-title {
     --section-title-space: 50px;
@@ -2758,6 +2770,9 @@ body.bg-title .scroll-top::after {
 }
 /* Small devices */
 @media (max-width: 767px) {
+  .big-title {
+    font-size: 50px;
+  }
   .sec-title {
     font-size: 32px;
   }
@@ -6515,13 +6530,13 @@ ul.wp-block-latest-posts li:last-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 22px;
+  padding: 22px 0;
   border-bottom: 1px solid var(--border-color);
   gap: 30px;
 }
 .contact-area-1 .social-item .title {
   font-size: 30px;
-  font-weight: 40px;
+  font-weight: 400;
   margin-bottom: 0;
 }
 .contact-area-1 .social-item a {
@@ -6561,6 +6576,12 @@ ul.wp-block-latest-posts li:last-child {
   transform: scale(1);
 }
 
+@media (max-width: 475px) {
+  .contact-title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
 /*------------------- 4.00. About  -------------------*/
 /*about area 1***********************/
 .marquee-wrap {
@@ -6895,6 +6916,12 @@ ul.wp-block-latest-posts li:last-child {
   z-index: 1;
   padding: 80px 0;
   border-bottom: 1px solid var(--border-color);
+  /* Extra small devices */
+}
+@media (max-width: 575px) {
+  .blog-item {
+    text-align: center;
+  }
 }
 .blog-item:first-child {
   border-top: 1px solid var(--border-color);
@@ -6918,6 +6945,12 @@ ul.wp-block-latest-posts li:last-child {
 .blog-item .blog-btn-wrapper {
   display: flex;
   align-items: center;
+  /* Extra small devices */
+}
+@media (max-width: 575px) {
+  .blog-item .blog-btn-wrapper {
+    justify-content: center;
+  }
 }
 .blog-item .blog-btn-wrapper .blog-btn {
   display: flex;
@@ -6966,6 +6999,12 @@ ul.wp-block-latest-posts li:last-child {
   background-size: cover;
   background-repeat: no-repeat;
   transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  /* Small devices */
+}
+@media (max-width: 767px) {
+  .blog-item .hover-reveal-bg {
+    display: none;
+  }
 }
 .blog-item:hover .hover-reveal-bg {
   opacity: 1;
@@ -6986,10 +7025,6 @@ ul.wp-block-latest-posts li:last-child {
 }
 
 .blog-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
   color: var(--white-color);
 }
 .blog-inner::after {
@@ -7027,6 +7062,12 @@ ul.wp-block-latest-posts li:last-child {
 }
 .blog-inner .blog-title a {
   color: var(--white-color);
+  /* Extra small devices */
+}
+@media (max-width: 575px) {
+  .blog-inner .blog-title a br {
+    display: none;
+  }
 }
 .blog-inner .blog-title a:hover {
   color: var(--theme-color);
@@ -7044,14 +7085,6 @@ ul.wp-block-latest-posts li:last-child {
     font-size: 36px;
     line-height: 46px;
   }
-  .blog-inner .blog-meta_title {
-    font-size: 20px;
-    line-height: 30px;
-  }
-  .blog-inner .blog-meta_date {
-    font-size: 16px;
-    line-height: 26px;
-  }
 }
 /* Medium devices */
 @media (max-width: 991px) {
@@ -7061,14 +7094,6 @@ ul.wp-block-latest-posts li:last-child {
   .blog-inner .blog-title {
     font-size: 32px;
     line-height: 42px;
-  }
-  .blog-inner .blog-meta_title {
-    font-size: 18px;
-    line-height: 28px;
-  }
-  .blog-inner .blog-meta_date {
-    font-size: 14px;
-    line-height: 24px;
   }
 }
 /* Small devices */
@@ -7083,14 +7108,6 @@ ul.wp-block-latest-posts li:last-child {
   .blog-inner .blog-title br {
     display: none;
   }
-  .blog-inner .blog-meta_title {
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .blog-inner .blog-meta_date {
-    font-size: 12px;
-    line-height: 22px;
-  }
 }
 /* Extra small devices */
 @media (max-width: 375px) {
@@ -7100,14 +7117,6 @@ ul.wp-block-latest-posts li:last-child {
   .blog-inner .blog-title {
     font-size: 24px;
     line-height: 34px;
-  }
-  .blog-inner .blog-meta_title {
-    font-size: 14px;
-    line-height: 24px;
-  }
-  .blog-inner .blog-meta_date {
-    font-size: 10px;
-    line-height: 20px;
   }
 }
 /*------------------- 4.00. Blog  -------------------*/
@@ -9058,6 +9067,14 @@ blockquote p {
   color: var(--white-color);
   transition: all 0.3s ease;
   position: relative;
+  /* Small devices */
+}
+@media (max-width: 767px) {
+  .portfolio-filter li {
+    background: var(--black-color2);
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
 }
 .portfolio-filter li::before {
   position: absolute;
@@ -9065,6 +9082,12 @@ blockquote p {
   font-size: 18px;
   color: var(--white-color);
   right: -10px;
+  /* Small devices */
+}
+@media (max-width: 767px) {
+  .portfolio-filter li::before {
+    display: none;
+  }
 }
 .portfolio-filter li:last-child:before {
   display: none;
@@ -9081,7 +9104,6 @@ blockquote p {
 .portfolio-wrap {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
   background-color: var(--black-color);
   padding: 25px;
@@ -9097,7 +9119,6 @@ blockquote p {
 .portfolio-wrap .portfolio-details .portfolio-title {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
   font-size: 30px;
   line-height: 40px;
@@ -9122,7 +9143,6 @@ blockquote p {
 .portfolio-wrap .portfolio-details .portfolio-title_upper {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
   font-size: 18px;
   line-height: 28px;
@@ -9182,14 +9202,15 @@ blockquote p {
     align-items: flex-start;
   }
   .portfolio-wrap .portfolio-details {
-    padding-right: 20px;
+    padding-right: 0;
   }
   .portfolio-wrap .portfolio-thumb {
-    margin-top: 20px;
+    margin-top: 30px;
   }
   .portfolio-title {
     font-size: 24px;
     line-height: 34px;
+    margin-bottom: 35px;
   }
   .portfolio-title_upper {
     font-size: 14px;
@@ -9200,7 +9221,6 @@ blockquote p {
 @media (max-width: 575px) {
   .portfolio-wrap {
     padding: 15px;
-    margin-bottom: 15px;
   }
   .portfolio-wrap .portfolio-details {
     padding-right: 15px;
@@ -9212,6 +9232,42 @@ blockquote p {
   .portfolio-wrap .portfolio-title_upper {
     font-size: 12px;
     line-height: 22px;
+  }
+}
+@media (max-width: 450px) {
+  .portfolio-wrap .portfolio-details {
+    padding-right: 0;
+  }
+  .portfolio-wrap .portfolio-details .portfolio-title {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+  .portfolio-wrap .portfolio-details .portfolio-title a {
+    font-size: 20px;
+  }
+  .portfolio-wrap .portfolio-details .portfolio-title .portfolio-pagination {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .portfolio-wrap .portfolio-details .portfolio-desc {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .portfolio-wrap .portfolio-details .portfolio-title_upper {
+    font-size: 16px;
+    line-height: 25px;
+    flex-direction: column;
+  }
+  .portfolio-wrap .portfolio-thumb {
+    margin-top: 15px;
+  }
+  .portfolio-wrap .portfolio-thumb .portfolio-thumb-view a {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
   }
 }
 /*------------------- 4.00. Brand -------------------*/
@@ -10986,6 +11042,12 @@ blockquote p {
   }
 }
 
+/* Extra small devices */
+@media (max-width: 575px) {
+  .mb-115 {
+    margin-bottom: 60px;
+  }
+}
 .space,
 .space-top {
   padding-top: var(--section-space);

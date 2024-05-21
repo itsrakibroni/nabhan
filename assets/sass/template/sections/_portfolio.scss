@@ -24,6 +24,11 @@
         color: $white-color;
         transition: all 0.3s ease;
         position: relative;
+        @include sm{
+            background: $black-color2;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
 
         &::before {
             position: absolute;
@@ -31,6 +36,9 @@
             font-size: 18px;
             color: $white-color;
             right: -10px;
+            @include sm{
+                display: none;
+            }
         }
 
         &:last-child:before {
@@ -50,14 +58,10 @@
 }
 
 
-@mixin flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .portfolio-wrap {
-    @include flex-center;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     background-color: $black-color;
     padding: 25px;
@@ -71,7 +75,8 @@
         padding-right: 45px;
 
         .portfolio-title {
-            @include flex-center;
+            display: flex;
+            align-items: center;
             justify-content: space-between;
             font-size: 30px;
             line-height: 40px;
@@ -99,7 +104,8 @@
         }
 
         .portfolio-title_upper {
-            @include flex-center;
+            display: flex;
+            align-items: center;
             justify-content: space-between;
             font-size: 18px;
             line-height: 28px;
@@ -167,17 +173,18 @@
         align-items: flex-start;
 
         .portfolio-details {
-            padding-right: 20px;
+            padding-right: 0;
         }
 
         .portfolio-thumb {
-            margin-top: 20px;
+            margin-top: 30px;
         }
     }
 
     .portfolio-title {
         font-size: 24px;
         line-height: 34px;
+        margin-bottom: 35px;
     }
 
     .portfolio-title_upper {
@@ -190,7 +197,6 @@
 @include xs {
     .portfolio-wrap {
         padding: 15px;
-        margin-bottom: 15px;
 
         .portfolio-details {
             padding-right: 15px;
@@ -204,6 +210,52 @@
         .portfolio-title_upper {
             font-size: 12px;
             line-height: 22px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .portfolio-wrap {
+        .portfolio-details {
+            padding-right: 0;
+
+            .portfolio-title {
+                font-size: 20px;
+                line-height: 28px;
+                margin-bottom: 20px;
+
+                a {
+                    font-size: 20px;
+                }
+
+                .portfolio-pagination {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+
+            .portfolio-desc {
+                width: 100%;
+                margin-bottom: 20px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            .portfolio-title_upper {
+                font-size: 16px;
+                line-height: 25px;
+                flex-direction: column;
+            }
+        }
+
+        .portfolio-thumb {
+            margin-top: 15px;
+
+            .portfolio-thumb-view a {
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+            }
         }
     }
 }

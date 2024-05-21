@@ -149,6 +149,10 @@
     color: rgba(0, 0, 0, 0.03);
 }
 @include ml {
+    .big-title{
+        font-size: 100px;
+        line-height: 110px;
+    }
     .sec-title {
         font-size: 45px;
         line-height: 1.2;
@@ -161,6 +165,10 @@
     }
 }
 @include lg {
+    .big-title{
+        font-size: 80px;
+        line-height: 90px;
+    }
     .title-area,
     .sec-title {
         --section-title-space: 60px;
@@ -184,6 +192,10 @@
 }
 
 @include md {
+    .big-title{
+        font-size: 60px;
+        line-height: 70px;
+    }
     .title-area,
     .sec-title {
         --section-title-space: 50px;
@@ -203,6 +215,9 @@
     }
 }
 @include sm {
+    .big-title{
+        font-size: 50px;
+    }
     .sec-title {
         font-size: 32px;
     }
