@@ -657,9 +657,11 @@
     window.addEventListener('resize', checkWidthAndRemoveClasses);
 
     // Select the elements with the specified class names
-    document.querySelectorAll('.service-item-wrapper .ml-35, .service-item-wrapper .mr-75, .service-item-wrapper .ml-30, .service-item-wrapper .mr-5, .service-item-wrapper .mr-40, .big-title .ml-50').forEach(function(element) {
-        element.classList.remove('ml-35', 'mr-75', 'ml-30', 'mr-5', 'mr-40', 'ml-50');
-    });
+    if (window.innerWidth <= 485) {
+        document.querySelectorAll('.service-item-wrapper .ml-35, .service-item-wrapper .mr-75, .service-item-wrapper .ml-30, .service-item-wrapper .mr-5, .service-item-wrapper .mr-40, .big-title .ml-50').forEach(function(element) {
+            element.classList.remove('ml-35', 'mr-75', 'ml-30', 'mr-5', 'mr-40', 'ml-50');
+        });
+    }
     
 
 

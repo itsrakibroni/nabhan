@@ -6608,6 +6608,20 @@ ul.wp-block-latest-posts li:last-child {
   display: inline-block;
   margin-right: 25px;
 }
+.marquee-wrap .marquee__group .m-item a .icon img {
+  animation: rotate 20s infinite linear;
+}
+.marquee-wrap .marquee__group .m-item a .icon img:hover {
+  animation-play-state: paused;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
 @media (max-width: 767px) {
   .marquee-wrap .marquee__group .m-item a {
     font-size: 30px;

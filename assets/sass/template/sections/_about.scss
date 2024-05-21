@@ -21,6 +21,18 @@
                 .icon {
                     display: inline-block;
                     margin-right: 25px;
+                    img {
+                        animation: rotate 20s infinite linear;
+                        &:hover{
+                            animation-play-state: paused;
+                        }
+                    }
+                    
+                    @keyframes rotate {
+                        from { transform: rotate(0deg); }
+                        to { transform: rotate(-360deg); }
+                    }
+                    
                 }
 
                 @include sm {
