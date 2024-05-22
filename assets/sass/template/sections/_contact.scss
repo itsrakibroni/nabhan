@@ -6,21 +6,6 @@
             font-style: italic;
         }
     }
-
-    .contact-btn_wrapper{
-        position: relative;
-        z-index: 1;
-        .contact-inner-border {
-            display: inline-block;
-            width: 100%;
-            border-top: 1px solid $gray-color;
-            position: absolute;
-            z-index: -1;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    }
-
     .social-item {
         display: flex;
         align-items: center;
@@ -74,6 +59,21 @@
     }
     
 }
+
+.contact-btn_wrapper{
+    position: relative;
+    z-index: 1;
+    .contact-inner-border {
+        display: inline-block;
+        width: 100%;
+        border-top: 1px solid $gray-color;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
 
 
 @media (max-width:475px) {

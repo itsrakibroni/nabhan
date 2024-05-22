@@ -1,5 +1,5 @@
-/*about area 1***********************/
 
+/*Marque area***********************/
 .marquee-wrap {
     background: var(--black-color2);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -58,6 +58,8 @@
     }
 }
 
+
+/*about area 1***********************/
 .about-area-1 {
     .about_content {
         margin-left: 200px;
@@ -73,6 +75,58 @@
         font-weight: 600;
         & img{
             padding-left: 15px;
+        }
+    }
+}
+
+@include ml {
+    .about-area-1 .about_content {
+        margin-left: 150px;
+    }
+}
+@include xl {
+    .about-area-1 .about_content {
+        margin-left: 50px;
+    }
+}
+@include lg {
+    .about-area-1 .about_content {
+        margin-left: 30px;
+    }
+}
+@include md {
+    .about-content-wrap {
+        .about_content {
+            margin: 0;
+        }
+        .img-btn{
+            margin-bottom: 30px;
+        }
+    }
+}
+
+/*About Area 2***********************/
+.about-area-2 {
+    .about-info-box {
+        @include md{
+            margin-bottom: 30px;
+        }
+        .inner{
+            position: relative;
+            padding: 35px;
+            font-size: 18px;
+            line-height: 18px;
+            border-radius: 10px;
+            border: 1px solid $border-color;
+            .title{
+                color: $gray-color;
+            }
+            .text {
+                color: $white-color;
+                font-weight: 600;
+                margin-bottom: 0;
+                margin-top: 10px;
+            }
         }
     }
 }

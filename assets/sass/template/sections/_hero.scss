@@ -235,7 +235,6 @@
     .hero-left {
         padding-top: 250px;
         padding-bottom: 230px;
-        margin-right: -16px;
         @include md {
             padding-top: 200px;
             padding-bottom: 0;
@@ -257,14 +256,14 @@
         .hero-title_wrapper {
             @include flex-center;
             margin-bottom: 10px;
+            &.upper{
+                margin-bottom: 50px;
+            }
             @include lg {
                 margin-bottom: 30px;
             }
             @include sm {
                 margin-bottom: 0;
-            }
-            &:last-child{
-                margin-bottom: 50px;
             }
             .hero-title {
                 font-size: 100px;
@@ -318,9 +317,10 @@
     .hero-thumb-wrapper {
         .hero-thumb img{
             max-width: inherit;
-            margin-left: -40px;
+            margin-left: -70px;
+            // margin-bottom: -20px;
             @include md {
-                margin-left: 0;
+                margin: 0;
                 max-width: 100%;
             }
         }
@@ -328,6 +328,27 @@
 }
 
 .hero-2 {
+    .hero-experience-wrapper{
+        position: absolute;
+        top: 216px;
+        right: 0;
+        width: 33%;
+        .inner{
+            padding: 50px 0 50px 225px;
+            background-color: $black-color2;
+            .year{
+                font-size: 62px;
+                line-height: 72px;
+                color: $theme-color;
+                margin-bottom: 5px;
+            }
+            .text{
+                color: $white-color;
+                font-weight: 500;
+            }
+        }
+    }
+
     .hero-social-wrapper {
         right: 90px;
         @media (max-width:1550px){
