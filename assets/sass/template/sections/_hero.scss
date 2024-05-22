@@ -1,71 +1,15 @@
 /* Hero Global ---------------------------------- */
 .hero-wrapper {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     overflow: hidden;
-}
-
-/* Hero 1 ---------------------------------- */
-.hero-style1 {
-    position: relative;
-    z-index: 6;
-    padding: 225px 0 80px;
-    .hero-sub_title {
-        font-size: 30px;
-        margin-bottom: -7px;
-        img {
-            margin-right: 20px;
-            margin-left: 12px;
-        }
-    }
-    .hero-title {
-        font-size: 130px;
-        font-weight: 800;
-        line-height: 1.3;
-        letter-spacing: 3px;
-    }
-    .hero-title.title-font2 {
-        font-family: $title-font2;
-        font-style: italic;
-    }
-    .contact_mail {
-        font-family: $title-font2;
-        font-size: 30px;
-        font-style: italic;
-        font-weight: 700;
-    }
-    .place-title{
-        font-size: 30px;
+    &[data-background] {
+        background-size: cover;
     }
     
-}
-
-.hero-1 {
-    .hero-left-wrapper {
-        position: absolute;
-        left: -207px;
-        bottom: 390px;
-        transform: rotate(90deg);
-        & div {
-            display: inline-block;
-        }
-        .hero-scroll a {
-            display: flex;
-            align-items: center;
-        }
-        .scroll-me,
-        .contact-number a {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--white-color);
-        }
-        .scroll-me{
-            margin-left: 95px;
-            padding-right: 35px;
-        }
-    }
     .hero-social-wrapper {
         position: absolute;
+        z-index: 1;
         right: 90px;
         bottom: 110px;
         .follow-me {
@@ -81,10 +25,6 @@
         }
     }
     .hero-social {
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
         display: flex;
         flex-direction: column;
         .parallax-wrap {
@@ -109,6 +49,64 @@
         }
     }
 }
+
+/* Hero 1 ---------------------------------- */
+.hero-style1 {
+    position: relative;
+    z-index: 6;
+    padding: 225px 0 80px;
+    .hero-sub_title {
+        font-size: 30px;
+        margin-bottom: -7px;
+        img {
+            margin-right: 20px;
+            margin-left: 12px;
+        }
+    }
+    .hero-title {
+        font-size: 130px;
+        font-weight: 800;
+        line-height: 1.3;
+        letter-spacing: 3px;
+    }
+    .contact_mail {
+        font-family: $title-font2;
+        font-size: 30px;
+        font-style: italic;
+        font-weight: 700;
+    }
+    .place-title{
+        font-size: 30px;
+    }
+    
+}
+
+.hero-1{
+    .hero-left-wrapper {
+        position: absolute;
+        left: -207px;
+        bottom: 390px;
+        transform: rotate(90deg);
+        & div {
+            display: inline-block;
+        }
+        .hero-scroll a {
+            display: flex;
+            align-items: center;
+        }
+        .scroll-me,
+        .contact-number a {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--white-color);
+        }
+        .scroll-me{
+            margin-left: 95px;
+            padding-right: 35px;
+        }
+    }
+}
+
 @include ml {
     .hero-style1{
         .hero-title {
@@ -206,4 +204,172 @@
             font-size: 16px;
         }
     }
+} 
+
+/* Hero 2 ---------------------------------- */
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include lg {
+        flex-direction: column;
+        align-items: start;
+    } 
+    
+    @include md {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    @include sm {
+        flex-direction: column;
+        flex-direction: column-reverse;
+        align-items: center;
+    }   
+
+}
+
+.hero-style2 {
+    position: relative;
+    z-index: 0;
+    .hero-left {
+        padding-top: 250px;
+        padding-bottom: 230px;
+        margin-right: -16px;
+        @include md {
+            padding-top: 200px;
+            padding-bottom: 0;
+        }
+        @include sm {
+            text-align: center;
+        }
+        @include xs {
+            padding-top: 150px;
+        }
+        .hero-sub_title {
+            font-size: 30px;
+            margin-bottom: 23px;
+            img {
+                margin-right: 20px;
+                margin-left: 12px;
+            }
+        }
+        .hero-title_wrapper {
+            @include flex-center;
+            margin-bottom: 10px;
+            @include lg {
+                margin-bottom: 30px;
+            }
+            @include sm {
+                margin-bottom: 0;
+            }
+            &:last-child{
+                margin-bottom: 50px;
+            }
+            .hero-title {
+                font-size: 100px;
+                font-weight: 800;
+                line-height: 1.1;
+                letter-spacing: 3px;
+                margin-bottom: 0;
+            
+                @include sm {
+                    font-size: 90px;
+                }
+            
+                @include xs {
+                    font-size: 65px;
+                }
+            
+                @include vxs {
+                    font-size: 50px;
+                }
+            }     
+            .hero-title_shape {
+                @include sm{
+                    margin-bottom: 20px;
+                }
+                img{
+                    max-width: inherit;
+                }
+            }
+        }
+        .hero-place {
+            p {
+                color: $white-color;
+                font-weight: 600;
+                padding-left: 18px;
+                margin-bottom: 0;
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: $theme-color;
+                }
+            }
+        }
+    }
+    .hero-thumb-wrapper {
+        .hero-thumb img{
+            max-width: inherit;
+            margin-left: -40px;
+            @include md {
+                margin-left: 0;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.hero-2 {
+    .hero-social-wrapper {
+        right: 90px;
+        @media (max-width:1550px){
+            right: 50px;
+        }
+    }
+
+    .hero-left-wrapper {
+        position: absolute;
+        z-index: 1;
+        left: -104px;
+        top: 50%;
+        transform: translateY(-50%)rotate(90deg);
+        @media (max-width:1550px){
+            left: -175px;
+        }
+        .contact a {
+            display: inline-block;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 600;
+            &:first-child {
+                margin-right: 60px;
+            }
+        }
+    }
+}
+
+@include ml {
+}
+
+@include xl {
+}
+
+@include lg {
+}
+
+@include md {
+}
+
+@include sm {
+}
+
+@include vxs {
 } 
