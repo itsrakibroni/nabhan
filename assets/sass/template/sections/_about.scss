@@ -5,7 +5,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-left: 0;
     border-right: 0;
-    padding: 30px 0 40px;
+    padding: 40px 0;
 
     .marquee__group {
         .m-item {
@@ -15,6 +15,7 @@
             a {
                 color: $white-color;
                 font-size: 48px;
+                line-height: 58px;
                 font-weight: 700;
                 font-family: $title-font;
 
@@ -54,6 +55,27 @@
                 1px -1px 0 $white-color,
                 -1px 1px 0 $white-color,
                 1px 1px 0 $white-color;
+        }
+    }
+    
+    &.style-2 {
+        padding: 45px 0;
+        .marquee__group {
+            .m-item {
+                a {
+                    color: $black-color2;
+                    font-size: 52px;
+                    line-height: 62px;
+                }
+            }
+        }
+        .m-item.style-2 a {
+            color: $theme-color;
+            text-shadow: 
+                -1px -1px 0 $black-color2,
+                1px -1px 0 $black-color2,
+                -1px 1px 0 $black-color2,
+                1px 1px 0 $black-color2;
         }
     }
 }

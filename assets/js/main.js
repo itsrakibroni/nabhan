@@ -902,7 +902,8 @@
     
     const areaConfigurations = [
         { areaClass: '.about-area-1', bounceHeight: 100 },
-        { areaClass: '.about-area-2', bounceHeight: 100 },
+        { areaClass: '.contact-btn_wrapper', bounceHeight: 100 },
+        { areaClass: '.btn-bounce-1', bounceHeight: 100 },
         { areaClass: '.experience-area-1', bounceHeight: 100 },
         { areaClass: '.portfolio-area-1', bounceHeight: 100 },
         { areaClass: '.contact-area-1', bounceHeight: 100 }

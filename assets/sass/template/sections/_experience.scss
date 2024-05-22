@@ -73,6 +73,80 @@
             } 
         }
     }
+    &.style-2 {
+        .single-experience-list {
+            .experience-place {
+                display: block;
+                margin-bottom: 10px;
+            }
+            @include xs{
+                text-align: center;
+                .left {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+    }
+}
+
+.about-area-2 {
+    .about-experience-wrapper{
+        .year{
+            font-size: 130px;
+            line-height: 140px;
+            font-weight: 800;
+            color: $theme-color;
+            margin-bottom: 40px;
+        }
+        .text {
+            font-size: 30px;
+            line-height: 40px;
+            font-weight: 700;
+            color: $white-color;
+            position: relative;
+            padding-left: 90px;
+            width: 80%;
+            margin-bottom: 0;
+            @include ml {
+                width: 100%;
+            }
+            @include lg{
+                padding-left: 0;
+            }
+            @include md{
+                margin-bottom: 30px;
+            }
+            &::before{
+                position: absolute;
+                content: '';
+                top: 20px;
+                left: 0;
+                width: 70px;
+                height: 3px;
+                background-color: $white-color;
+                @include lg{
+                    display: none;
+                }
+            }
+        }
+        @include md {
+            text-align: center;
+        }
+
+    }
+
+    .experience-wrapper .title {
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 600;
+        letter-spacing: 3.2px;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        @include md {
+            text-align: center;
+        }
+    }
 }
 
 @include sm {
@@ -86,4 +160,3 @@
     }
 }
 
-//end
