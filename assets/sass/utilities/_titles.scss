@@ -1,14 +1,27 @@
 .big-title{
+    display: inline-block;
     font-size: 150px;
     font-weight: 800;
     line-height: 160px;
     color: $title-color;
     text-transform: uppercase;
     text-align: center;
+    position: relative;
     .font-2 {
         font-family: $title-font2;
         font-style: italic;
         font-weight: 700;
+    }
+    &::before {
+        position: absolute;
+        content: attr(data-count);
+        z-index: 99;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        top: 22px;
+        right: -55px;
+        color: var(--white-color);
     }
 }
 

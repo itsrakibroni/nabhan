@@ -9,7 +9,6 @@
     1.3. Variable
     1.4. Typography
     1.5. Extend
-    1.7. Wordpress Default
 02. Reset
     2.1. Container
     2.2. Grid
@@ -2549,17 +2548,30 @@ body.bg-title .scroll-top::after {
 
 /*------------------- 3.3. Titles -------------------*/
 .big-title {
+  display: inline-block;
   font-size: 150px;
   font-weight: 800;
   line-height: 160px;
   color: var(--title-color);
   text-transform: uppercase;
   text-align: center;
+  position: relative;
 }
 .big-title .font-2 {
   font-family: var(--title-font2);
   font-style: italic;
   font-weight: 700;
+}
+.big-title::before {
+  position: absolute;
+  content: attr(data-count);
+  z-index: 99;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+  top: 22px;
+  right: -55px;
+  color: var(--white-color);
 }
 
 .sec-title {
@@ -9784,10 +9796,38 @@ blockquote p {
   }
 }
 /* Portfolio 2 ---------------------------------- */
+.portfolio-area-2 .portfolio-title {
+  margin-bottom: 120px;
+  /* Large devices */
+  /* Medium devices */
+}
+@media (max-width: 1199px) {
+  .portfolio-area-2 .portfolio-title {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .portfolio-area-2 .portfolio-title {
+    margin-bottom: 40px;
+  }
+}
+
 .portfolio-wraper {
   position: relative;
   display: block;
   margin-bottom: 120px;
+  /* Large devices */
+  /* Medium devices */
+}
+@media (max-width: 1199px) {
+  .portfolio-wraper {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .portfolio-wraper {
+    margin-bottom: 40px;
+  }
 }
 .portfolio-wraper .portfolio-thumb {
   display: inline-block;
@@ -9802,6 +9842,18 @@ blockquote p {
   align-items: center;
   justify-content: space-between;
   padding: 22px 0 0 0;
+  /* Large devices */
+  /* Medium devices */
+}
+@media (max-width: 1199px) {
+  .portfolio-wraper .portfolio-details {
+    padding-right: 13%;
+  }
+}
+@media (max-width: 991px) {
+  .portfolio-wraper .portfolio-details {
+    padding-right: 0;
+  }
 }
 .portfolio-wraper .portfolio-details .portfolio-meta {
   color: var(--white-color);
@@ -9814,6 +9866,13 @@ blockquote p {
   line-height: 40px;
   font-weight: 700;
   margin-bottom: 0;
+  /* Extra small devices */
+}
+@media (max-width: 375px) {
+  .portfolio-wraper .portfolio-details .portfolio-title {
+    font-size: 27px;
+    line-height: 37px;
+  }
 }
 .portfolio-wraper .portfolio-details .portfolio-btn {
   display: inline-block;
@@ -9826,6 +9885,14 @@ blockquote p {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  /* Extra small devices */
+}
+@media (max-width: 375px) {
+  .portfolio-wraper .portfolio-details .portfolio-btn {
+    width: 50px;
+    height: 50px;
+    line-height: 48px;
+  }
 }
 .portfolio-wraper .portfolio-details .portfolio-btn::before {
   content: "";
@@ -9853,6 +9920,24 @@ blockquote p {
   transform: scale(1.03) translateX(8px);
 }
 
+@media (max-width: 500px) {
+  .portfolio-wraper .portfolio-details {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .portfolio-wraper .portfolio-details .portfolio-title {
+    margin-bottom: 15px;
+  }
+}
+/* Extra small devices */
+@media (max-width: 375px) {
+  .portfolio-wraper .portfolio-details {
+    align-items: center;
+  }
+  .portfolio-wraper .portfolio-details .left {
+    text-align: center;
+  }
+}
 /*------------------- 4.00. Brand -------------------*/
 /*----------------------------------------*/
 /* Brand css

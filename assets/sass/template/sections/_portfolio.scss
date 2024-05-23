@@ -261,10 +261,27 @@
 }
 
 /* Portfolio 2 ---------------------------------- */
+.portfolio-area-2{
+    .portfolio-title{
+        margin-bottom: 120px;
+        @include lg {
+            margin-bottom: 60px;
+        }
+        @include md {
+            margin-bottom: 40px;
+        }
+    }
+}
 .portfolio-wraper {
     position: relative;
     display: block;
     margin-bottom: 120px;
+    @include lg {
+        margin-bottom: 60px;
+    }
+    @include md {
+        margin-bottom: 40px;
+    }
     .portfolio-thumb {
         display: inline-block;
         overflow: hidden;
@@ -278,6 +295,12 @@
         align-items: center;
         justify-content: space-between;
         padding: 22px 0 0 0;
+        @include lg {
+            padding-right: 13%;
+        }
+        @include md{
+            padding-right: 0;
+        }
         .portfolio-meta {
             color: $white-color;
             font-size: 18px;
@@ -289,6 +312,10 @@
             line-height: 40px;
             font-weight: 700;
             margin-bottom: 0;
+            @include vxs {
+                font-size: 27px;
+                line-height: 37px;
+            }
         }
         .portfolio-btn{
             display: inline-block;
@@ -301,6 +328,11 @@
             overflow: hidden;
             position: relative;
             z-index: 1;
+            @include vxs {
+                width: 50px;
+                height: 50px;
+                line-height: 48px;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -331,5 +363,26 @@
                 transform: scale(1.03) translateX(8px);
             }
         }
+    }
+}
+
+@media (max-width:500px) {
+    .portfolio-wraper .portfolio-details {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .portfolio-wraper .portfolio-details .portfolio-title {
+        margin-bottom: 15px;
+    }
+}
+
+@include vxs {
+    .portfolio-wraper .portfolio-details {
+        align-items: center;
+    }
+
+    .portfolio-wraper .portfolio-details .left {
+        text-align: center;
     }
 }
