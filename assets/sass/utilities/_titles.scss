@@ -1,3 +1,13 @@
+.big-title-wrap{
+    margin-bottom: 120px;
+    @include lg {
+        margin-bottom: 60px;
+    }
+    @include md {
+        margin-bottom: 40px;
+    }
+}
+
 .big-title{
     display: inline-block;
     font-size: 150px;
@@ -11,6 +21,10 @@
         font-family: $title-font2;
         font-style: italic;
         font-weight: 700;
+        &.style-2{
+            color: $black-color2;
+            text-shadow: -1px -1px 0 $white-color, 1px -1px 0 $white-color, -1px 1px 0 $white-color, 1px 1px 0 $white-color;
+        }
     }
     &::before {
         position: absolute;

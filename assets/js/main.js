@@ -289,11 +289,6 @@
     }
     
 
-    
-
-    
-
-    
 
      // Brands Carousel
      if ($('.brands-carousel').length) {
@@ -533,32 +528,86 @@
     /*===========================================
 	=        Masonary Active         =
     =============================================*/
-    $(".masonary-active").imagesLoaded(function () {
-        // Initialize Isotope
-        var iso = new Isotope('.masonary-active', {
-            itemSelector: '.filter-item',
-            layoutMode: 'fitRows'
-        });
-        
-        // Filter items on button click
-        var filtersElem = document.querySelector('.portfolio-filter');
-        filtersElem.addEventListener('click', function(event) {
-            // Only work with button clicks
-            if (!matchesSelector(event.target, 'li')) {
-                return;
-            }
-            var filterValue = event.target.getAttribute('data-filter');
-            iso.arrange({ filter: filterValue });
+    const elem = document.querySelector('.masonary-active');
+    if (elem) {
+        imagesLoaded(elem, () => {
+            const iso = new Isotope(elem, {
+                itemSelector: '.filter-item',
+                layoutMode: 'fitRows'
+            });
 
-            // Change active class on buttons
-            var currentActive = filtersElem.querySelector('.current_menu_item');
-            if (currentActive) {
-                currentActive.classList.remove('current_menu_item');
+            document.querySelector('.portfolio-filter').addEventListener('click', (e) => {
+                if (e.target.matches('li')) {
+                    iso.arrange({ filter: e.target.getAttribute('data-filter') });
+                    document.querySelector('.current_menu_item')?.classList.remove('current_menu_item');
+                    e.target.classList.add('current_menu_item');
+                }
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Animation for the entire section
+        gsap.from(".service-area-2,.service-area-1", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+                trigger: ".service-area-2,.service-area-1",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none none"
             }
-            event.target.classList.add('current_menu_item');
+        });
+    
+        // Animation for each service item
+        gsap.utils.toArray('.service-item,.single-experience-list').forEach((item, i) => {
+            gsap.from(item, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                delay: i * 0.2,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 90%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none"
+                }
+            });
         });
     });
+    
 
+
+    // Check if .service-area-2 exists
+    const serviceArea2 = document.querySelector(".service-area-2");
+    if (serviceArea2) {
+        // Define GSAP timeline
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".service-area-2",
+                start: "top top",
+                end: "+=500",
+                scrub: 1,
+                // markers: true // Remove this line in production
+            }
+        });
+
+        // Add animations to the timeline
+        tl.to(".service-thumb-wrapper", {
+            y: "100%", // Adjust the distance as needed
+            ease: "none"
+        });
+
+        // Check if the last .service-item is reached
+        ScrollTrigger.create({
+            trigger: ".service-item:last-child",
+            start: "top top",
+            end: "bottom bottom"
+        });
+    }
+
+    
 
     /*===========================================
 	=         Shape Mockup         =
@@ -662,6 +711,7 @@
             element.classList.remove('ml-35', 'mr-75', 'ml-30', 'mr-5', 'mr-40', 'ml-50');
         });
     }
+
 
     if ($('.text_anim p').length > 0) {
 		let splitTextLines = gsap.utils.toArray(".text_anim p");
@@ -957,6 +1007,38 @@
 		});
 	});
 	// hover reveal end
+
+
+    /*===========================================
+	=         Service Tab hover style         =
+    =============================================*/
+    const serviceItems = document.querySelectorAll('.service-item.style-2');
+    const mainThumb = document.querySelector('.service-thumb-wrapper .hover-thumb img');
+    
+    serviceItems.forEach(serviceItem => {
+        const hoverThumb = serviceItem.querySelector('.hover-thumb img');
+        const imageUrl = hoverThumb.getAttribute('src');
+        
+        serviceItem.addEventListener('mouseenter', () => {
+        gsap.to(mainThumb, {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.5,
+            onComplete: () => {
+            mainThumb.setAttribute('src', imageUrl);
+            gsap.to(mainThumb, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5
+            });
+            }
+        });
+        });
+    });
+      
+      
+      
+      
     
 
     /////////////////////////////////////////////////////

@@ -258,6 +258,9 @@
             margin-bottom: 10px;
             &.upper{
                 margin-bottom: 50px;
+                @include xs {
+                    margin-bottom: 0;
+                }
             }
             @include lg {
                 margin-bottom: 30px;
