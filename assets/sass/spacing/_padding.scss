@@ -1,56 +1,64 @@
-/*-- Padding Left And Right --*/
-@for $i from 1 through $space-count {
-  .px-#{5 * $i} {
-    padding-right: 5px *$i;
-    padding-left: 5px *$i;
+@mixin generate-paddings($prefix) {
+  @for $i from 1 through $space-count {
+    .#{$prefix}-px-#{5 * $i} {
+      padding-right: 5px * $i;
+      padding-left: 5px * $i;
+    }
+    .#{$prefix}-py-#{5 * $i} {
+      padding-top: 5px * $i;
+      padding-bottom: 5px * $i;
+    }
+    .#{$prefix}-pt-#{5 * $i} {
+      padding-top: 5px * $i;
+    }
+    .#{$prefix}-pb-#{5 * $i} {
+      padding-bottom: 5px * $i;
+    }
+    .#{$prefix}-pl-#{5 * $i} {
+      padding-left: 5px * $i;
+    }
+    .#{$prefix}-pr-#{5 * $i} {
+      padding-right: 5px * $i;
+    }
   }
 }
 
-/*-- Padding Top And Bottom --*/
-@for $i from 1 through $space-count {
-  .py-#{5 * $i} {
-    padding-top: 5px *$i;
-    padding-bottom: 5px *$i;
+/* Global padding classes */
+@mixin global-paddings {
+  @for $i from 1 through $space-count {
+    .px-#{5 * $i} {
+      padding-right: 5px * $i;
+      padding-left: 5px * $i;
+    }
+    .py-#{5 * $i} {
+      padding-top: 5px * $i;
+      padding-bottom: 5px * $i;
+    }
+    .pt-#{5 * $i} {
+      padding-top: 5px * $i;
+    }
+    .pb-#{5 * $i} {
+      padding-bottom: 5px * $i;
+    }
+    .pl-#{5 * $i} {
+      padding-left: 5px * $i;
+    }
+    .pr-#{5 * $i} {
+      padding-right: 5px * $i;
+    }
   }
 }
 
-/*-- Padding Top --*/
-@for $i from 1 through $space-count {
-  .pt-#{5 * $i} {
-    padding-top: 5px *$i;
-  }
-}
+/* Include global padding classes */
+@include global-paddings;
 
-/*-- Padding Bottom --*/
-@for $i from 1 through $space-count {
-  .pb-#{5 * $i} {
-    padding-bottom: 5px *$i;
-  }
-}
-
-/*-- Padding Left --*/
-@for $i from 1 through $space-count {
-  .pl-#{5 * $i} {
-    padding-left: 5px *$i;
-  }
-}
-
-/*-- Padding Right --*/
-@for $i from 1 through $space-count {
-  .pr-#{5 * $i} {
-    padding-right: #{5px * $i};
-  }
-}
-
-.pb-60 {
-  padding-bottom: 60px;
-}
-.pb-105 {
-  padding-bottom: 105px;
-}
-.pt-105 {
-  padding-top: 105px;
-}
-.pt-100 {
-  padding-top: 100px;
-}
+/* Include breakpoint-specific padding classes */
+@include hd { @include generate-paddings('hd'); }
+@include xxl { @include generate-paddings('xxl'); }
+@include ml { @include generate-paddings('ml'); }
+@include xl { @include generate-paddings('xl'); }
+@include lg { @include generate-paddings('lg'); }
+@include md { @include generate-paddings('md'); }
+@include sm { @include generate-paddings('sm'); }
+@include xs { @include generate-paddings('xs'); }
+@include vxs { @include generate-paddings('vxs'); }

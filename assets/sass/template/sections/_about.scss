@@ -39,12 +39,6 @@
                 @include sm {
                     font-size: 30px;
                 }
-                @include xs {
-                    font-size: 24px;
-                }
-                @include vxs {
-                    font-size: 20px;
-                }
             }
         }
 
@@ -175,6 +169,46 @@
         }
         .img-btn{
             margin-bottom: 30px;
+        }
+    }
+}
+
+
+/*About Hero Inner Page 1 ===============*/
+.about-hero-1 {
+    position: relative;
+    padding-top: 236px;
+    @include md {
+        padding-top: 200px;
+        padding-bottom: 0;
+    }
+    @include sm {
+        text-align: center;
+    }
+    @include xs {
+        padding-top: 150px;
+    }
+    .text {
+        font-size: 48px;
+        line-height: 58px;
+        color: $white-color;
+        text-transform: uppercase;
+        .font2{
+            color: $theme-color;
+            font-weight: 700;
+        }
+        @include sm {
+            font-size: 35px;
+            line-height: 45px;
+        }
+        @include vxs {
+            font-size: 25px;
+            line-height: 35px;
+        }
+    }
+    .thumb{
+        img{
+            border-radius: 10px;
         }
     }
 }

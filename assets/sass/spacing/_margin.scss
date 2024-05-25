@@ -1,46 +1,41 @@
-/*-- margin Left And Right --*/
-@for $i from 1 through $space-count {
-  .mx-#{5 * $i} {
-    margin-right: 5px *$i;
-    margin-left: 5px *$i;
+// Global margin classes
+@mixin global-margins {
+  @for $i from 1 through $space-count {
+    /*-- margin Left And Right --*/
+    .mx-#{5 * $i} {
+      margin-right: 5px * $i;
+      margin-left: 5px * $i;
+    }
+
+    /*-- margin Top And Bottom --*/
+    .my-#{5 * $i} {
+      margin-top: 5px * $i;
+      margin-bottom: 5px * $i;
+    }
+
+    /*-- margin Top --*/
+    .mt-#{5 * $i} {
+      margin-top: 5px * $i;
+    }
+
+    /*-- margin Bottom --*/
+    .mb-#{5 * $i} {
+      margin-bottom: 5px * $i;
+    }
+
+    /*-- margin Left --*/
+    .ml-#{5 * $i} {
+      margin-left: 5px * $i;
+    }
+
+    /*-- margin Right --*/
+    .mr-#{5 * $i} {
+      margin-right: 5px * $i;
+    }
   }
 }
 
-/*-- margin Top And Bottom --*/
-@for $i from 1 through $space-count {
-  .my-#{5 * $i} {
-    margin-top: 5px *$i;
-    margin-bottom: 5px *$i;
-  }
-}
-
-/*-- margin Top --*/
-@for $i from 1 through $space-count {
-  .mt-#{5 * $i} {
-    margin-top: 5px *$i;
-  }
-}
-
-/*-- margin Bottom --*/
-@for $i from 1 through $space-count {
-  .mb-#{5 * $i} {
-    margin-bottom: 5px *$i;
-  }
-}
-
-/*-- margin Left --*/
-@for $i from 1 through $space-count {
-  .ml-#{5 * $i} {
-    margin-left: 5px *$i;
-  }
-}
-
-/*-- margin Right --*/
-@for $i from 1 through $space-count {
-  .mr-#{5 * $i} {
-    margin-right: 5px *$i;
-  }
-}
+@include global-margins;
 
 .mb-60 {
   margin-bottom: 60px;
@@ -61,21 +56,17 @@
   }
 }
 .mt-n1 {
-  margin-top: -.25rem;
+  margin-top: -0.25rem;
 }
-
-.mt-n2{
-  margin-top: -.65rem;
+.mt-n2 {
+  margin-top: -0.65rem;
 }
-
 .mt-n3 {
   margin-top: -0.8rem;
 }
-
 .mt-n4 {
   margin-top: -1.5rem;
 }
-
 .mt-n5 {
   margin-top: -3rem;
 }
@@ -89,34 +80,64 @@
   margin-top: 60px;
 }
 .mb-n1 {
-  margin-bottom: -.25rem;
+  margin-bottom: -0.25rem;
 }
-
-.mb-n2{
-  margin-bottom: -.6rem;
+.mb-n2 {
+  margin-bottom: -0.6rem;
 }
-
 .mb-n3 {
   margin-bottom: -0.8rem;
 }
-
 .mb-n4 {
   margin-bottom: -1.5rem;
 }
-
 .mb-n5 {
   margin-bottom: -3rem;
 }
-
 .mb-80 {
   margin-bottom: 80px;
   @include md {
     margin-bottom: 40px;
   }
 }
-
 @include xs {
   .mb-115 {
     margin-bottom: 60px;
   }
 }
+
+@mixin generate-margins($prefix) {
+  @for $i from 1 through $space-count {
+    .#{$prefix}-mx-#{5 * $i} {
+      margin-right: 5px * $i;
+      margin-left: 5px * $i;
+    }
+    .#{$prefix}-my-#{5 * $i} {
+      margin-top: 5px * $i;
+      margin-bottom: 5px * $i;
+    }
+    .#{$prefix}-mt-#{5 * $i} {
+      margin-top: 5px * $i;
+    }
+    .#{$prefix}-mb-#{5 * $i} {
+      margin-bottom: 5px * $i;
+    }
+    .#{$prefix}-ml-#{5 * $i} {
+      margin-left: 5px * $i;
+    }
+    .#{$prefix}-mr-#{5 * $i} {
+      margin-right: 5px * $i;
+    }
+  }
+}
+
+// Include breakpoint-specific margin classes
+@include hd { @include generate-margins('hd'); }
+@include xxl { @include generate-margins('xxl'); }
+@include ml { @include generate-margins('ml'); }
+@include xl { @include generate-margins('xl'); }
+@include lg { @include generate-margins('lg'); }
+@include md { @include generate-margins('md'); }
+@include sm { @include generate-margins('sm'); }
+@include xs { @include generate-margins('xs'); }
+@include vxs { @include generate-margins('vxs'); }

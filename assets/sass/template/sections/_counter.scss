@@ -1,63 +1,44 @@
-/* Counter area ---------------------------------- */  
-.counter-divider {
-    position: relative;
-    &:after {
-        content: '';
-        position: absolute;
-        left: -70px;
-        top: 0;
-        height: 100%;
-        width: 1px;
-        border: 1px solid $title-color;
-    }
-    &:first-child {
-        &:after {
-            display: none;
-        }
-    }
+/* Counter area 1 ======================== */ 
+.counter-wrap {
+    padding: 0 0 60px;
+    border-bottom: 1px solid $border-color;
 }
-.counter-card {
-    max-width: 320px;
+.counter-box {
+    max-width: 200px;
     &_number {
-        font-size: 60px;
-        font-weight: 600;
-        margin-bottom: 18px;
+        font-size: 90px;
+        line-height: 100px;
+        font-style: italic;
+        font-weight: 700;
+        color: $title-color;
+        font-family: $title-font2;
+        margin-bottom: 25px;
     }
     &_title {
-        font-weight: 600;
-    }
-    &_text {
         font-size: 18px;
-        margin-bottom: -0.2em;
+        line-height: 28px;
+        color: $gray-color;
+        margin-bottom: 0;
     }
 }
+
 @include ml {
-    .counter-divider:after {
-        left: -30px;
-    }
-    .counter-card_number {
-        font-size: 45px;
+    .counter-box_number {
+        font-size: 70px;
     }
 }
 @include lg {
-    .counter-divider:after {
-        display: none;
-    }
-    .counter-card_number {
+    .counter-box_number {
         margin-top: -0.28em;
-    }
-    .counter-card_title {
-        font-size: 22px;
-    }
-    .counter-card_text {
-        font-size: 16px;
+        margin-bottom: 15px;
     }
 }
 @include sm {
-    .counter-card_number {
-        font-size: 40px;
+    .counter-box_number {
+        font-size: 60px;
     }
-    .counter-card {
+
+    .counter-box {
         max-width: none;
         text-align: center;
     }
