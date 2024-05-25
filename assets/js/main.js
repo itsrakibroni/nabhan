@@ -577,21 +577,24 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+        const sections = [".service-area-2", ".service-area-1", ".awards-area-1"];
+        const items = ['.service-item', '.single-experience-list', '.single-awards-list'];
+    
         // Animation for the entire section
-        gsap.from(".service-area-2,.service-area-1", {
+        gsap.from(sections.join(','), {
             opacity: 0,
             y: 50,
             duration: 1,
             scrollTrigger: {
-                trigger: ".service-area-2,.service-area-1",
+                trigger: sections.join(','),
                 start: "top 80%",
                 end: "bottom 20%",
                 toggleActions: "play none none none"
             }
         });
     
-        // Animation for each service item
-        gsap.utils.toArray('.service-item,.single-experience-list').forEach((item, i) => {
+        // Animation for each item
+        gsap.utils.toArray(items.join(',')).forEach((item, i) => {
             gsap.from(item, {
                 opacity: 0,
                 y: 50,

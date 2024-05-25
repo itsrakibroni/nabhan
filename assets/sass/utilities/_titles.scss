@@ -1,5 +1,6 @@
 .big-title-wrap {
     margin-bottom: 120px;
+    text-align: center;
 
     @include lg {
         margin-bottom: 60px;
@@ -19,6 +20,7 @@
     text-transform: uppercase;
     text-align: center;
     position: relative;
+    margin-bottom: 0;
 
     .font-2 {
         font-family: $title-font2;
