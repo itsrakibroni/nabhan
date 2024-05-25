@@ -6,58 +6,60 @@
             font-style: italic;
         }
     }
-    .social-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 22px 0;
-        border-bottom: 1px solid $border-color;
-        gap: 30px;
-        .title{
-            font-size: 30px;
-            font-weight: 400;
-            margin-bottom: 0;
-        }
-        & a{
-            display: inline-block;
-            width: 36px;
-            height: 36px;
-            line-height: 36px;
-            text-align: center;
-            border-radius: 50%;
-            background-color: $black-color2;
-            color: $white-color;
-            font-size: 14px;
-            font-weight: 400;
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
-            .link-effect{
-                line-height: 36px;
-            }
-            &::before {
-                position: absolute;
-                content: "";
-                z-index: -1;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: $theme-color;
-                transform: scale(0);
-                transition: all 300ms ease;
-            }
-        }
+    
+}
 
-        &:hover a {
-            color: $black-color;
+
+.social-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+    border-bottom: 1px solid $border-color;
+    gap: 30px;
+    .title{
+        font-size: 30px;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+    & a{
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: $black-color2;
+        color: $white-color;
+        font-size: 14px;
+        font-weight: 400;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        .link-effect{
+            line-height: 36px;
         }
-        
-        &:hover a::before{
-            transform: scale(1);
+        &::before {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $theme-color;
+            transform: scale(0);
+            transition: all 300ms ease;
         }
     }
+
+    &:hover a {
+        color: $black-color;
+    }
     
+    &:hover a::before{
+        transform: scale(1);
+    }
 }
 
 .contact-btn_wrapper{
@@ -75,10 +77,69 @@
 }
 
 
-
 @media (max-width:475px) {
     .contact-title {
         font-size: 25px;
         line-height: 30px;
+    }
+}
+
+
+/*contact area 2***********************/
+.contact-area-2 {
+
+    @include xs {
+        .big-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .contact-mail {
+        .bg-black2 {
+            display: inline-flex;
+            font-weight: 600;
+            padding: 11px 45px 15px;
+            background-color: $black-color2;
+            border: 1px solid $black-color;
+            border-radius: 65px;
+            max-width: 523px;
+            text-align: center;
+            gap: 10px;
+            @include vxs {
+                padding: 8px 30px 12px;
+            }
+            .link-effect {
+                font-size: 30px;
+                height: 40px;
+                line-height: 40px;
+                @include xs {
+                    font-size: 18px;
+                }
+            }
+            img {
+                width: 16px;
+                filter: brightness(0)invert(1);
+            }
+        }
+    }
+}
+
+.contact-btn {
+    .btn-black {
+        display: inline-block;
+        padding: 35px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 700;
+        border-radius: 96px;
+        color: $title-color;
+        border: 1px solid $white-color;
+        @include xs {
+            padding: 20px 0;
+        }
     }
 }

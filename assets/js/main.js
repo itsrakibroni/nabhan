@@ -238,11 +238,13 @@
         })
     }
 
-    if($('.top-scroll')) {
-        document.querySelector('.top-scroll').addEventListener('click', () => {
+    const topScrollButton = document.querySelector('.top-scroll');
+    if (topScrollButton) {
+        topScrollButton.addEventListener('click', () => {
             gsap.to(window, { duration: 1, scrollTo: { y: 0, ease: 'power2.inOut' } });
         });
     }
+
 
 
     /*===========================================
@@ -273,6 +275,34 @@
             navigation: {
                 nextEl: '.testi-carousel-1 .swiper-button-next',
                 prevEl: '.testi-carousel-1 .swiper-button-prev',
+            },
+            breakpoints: {
+                992: {
+                    slidesPerView: 2,
+                },
+                1200: {
+                    slidesPerView: 2,
+                },
+                1920: {
+                    slidesPerView: 2,
+                }
+            }
+        });
+    }
+
+    
+    if ($(".testi-carousel-2").length > 0) {
+        new Swiper('.testi-carousel-2', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 24,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: false,
+            },
+            navigation: {
+                nextEl: '.testi-button-next',
+                prevEl: '.testi-button-prev',
             },
             breakpoints: {
                 992: {

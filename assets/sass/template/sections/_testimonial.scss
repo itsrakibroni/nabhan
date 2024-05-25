@@ -114,17 +114,6 @@
 
 /* Testimonial 2 ---------------------------------- */
 .testi-upper_area{
-  display: flex;
-  justify-content: space-between;
-  .testi-title{
-    color: $white-color;
-    font-weight: 600;
-  }
-  .title-info_text {
-    width: 65%;
-    text-indent: 38%;
-    // text-indent: 320px;
-  }
   .testi-nav{
     .testi-button-next,
     .testi-button-prev{
@@ -168,16 +157,51 @@
   }
 }
 
+@include xs {
+  .testi-nav {
+
+      .testi-button-next,
+      .testi-button-prev {
+          width: 48px;
+          height: 48px;
+          line-height: 48px;
+
+          i {
+              font-size: 16px;
+          }
+      }
+  }
+}
+
+@include vxs{
+  .testi-nav {
+
+      .testi-button-next,
+      .testi-button-prev {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+
+          i {
+              font-size: 14px;
+          }
+      }
+  }
+}
 
 
 .testi-single-box {
   border-radius: 10px;
   padding: 35px;
   border: 1px solid $border-color;
+  @include vxs {
+    padding: 25px;
+  }
 
   .testi-upper {
     .review-list {
       @extend .review-list;
+      border: 1px solid $border-color;
     }
 
     &_info {
@@ -196,6 +220,11 @@
     @include flex-center;
     justify-content: space-between;
 
+    @include vxs {
+        flex-direction: column;
+        gap: 25px;
+    }
+
     &_info {
       display: flex;
       align-items: center;
@@ -207,6 +236,10 @@
           object-fit: cover;
           border-radius: 50%;
           margin-right: 20px;
+          @include vxs {
+            width: 70px;
+            height: 70px;
+          }
         }
       }
 
