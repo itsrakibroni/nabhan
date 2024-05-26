@@ -72,19 +72,16 @@
     overflow: hidden;
     position: relative;
     z-index: auto;
-    background: $border-color;
-    margin-top: 106px;
-    text-align: center;
-    &:after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: #0A0C00;
-        opacity: 0.2;
+    .big-title img {
+        max-width: 366px;
+        border-radius: 0;
+        @include md {
+            max-width: 100px;
+        }
     }
-    @include sm {
-        text-align: center;
-    }
+    // @include sm {
+    //     text-align: center;
+    // }
     &.style2 {
         background: $border-color;
         padding: 24px 36px;

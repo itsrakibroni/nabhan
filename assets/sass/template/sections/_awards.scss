@@ -4,6 +4,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+
     .single-awards-list {
         display: flex;
         justify-content: space-between;
@@ -11,10 +12,12 @@
         padding: 30px 0 30px;
         position: relative;
         z-index: 1;
+
         @include xs {
             flex-direction: column;
             align-items: center;
         }
+
         &::before {
             position: absolute;
             content: "";
@@ -27,13 +30,16 @@
             opacity: 0;
             transition: all 500ms ease;
         }
-        &:hover::before{
+
+        &:hover::before {
             width: 100%;
             opacity: 1;
         }
+
         &:first-child {
-            border-top: 1px solid rgb(255,255,255,.1);
+            border-top: 1px solid rgb(255, 255, 255, .1);
         }
+
         span {
             font-size: 20px;
             line-height: 30px;
@@ -43,26 +49,33 @@
             max-width: 160px;
             width: 100%;
         }
+
         .awards-year {
             text-align: right;
         }
+
         &:hover {
+
+            .awards-tag,
             .awards-title {
                 transform: translate3d(1.5rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
                 transform-style: preserve-3d;
             }
+
+            .awards-subject,
             .awards-year {
                 transform: translate3d(-1.5rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
                 transform-style: preserve-3d;
-            } 
+            }
         }
     }
 }
 
 @include sm {
-    .awards-wrap-area{
+    .awards-wrap-area {
         .single-awards-list {
             flex-direction: column;
+
             .awards-year {
                 text-align: left;
             }
@@ -71,23 +84,27 @@
 
 
     .awards-wrap-area .single-awards-list:hover {
+
+        .awards-tag,
         .awards-title {
             transform: none;
         }
+
+        .awards-subject,
         .awards-year {
             transform: none;
-        } 
+        }
     }
 }
 
 @include vxs {
-    .awards-wrap-area{
+    .awards-wrap-area {
         .single-awards-list {
             text-align: center;
+
             .awards-year {
                 text-align: center;
             }
         }
     }
 }
-
