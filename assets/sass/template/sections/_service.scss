@@ -313,3 +313,27 @@
         }
     }
 }
+
+/* Service 3 Inner Page ---------------------------------- */
+.service-area-3 {
+    .title-upper_area {
+        border-top: 0;
+        padding-top: 0;
+
+        .right {
+            width: 80%;
+
+            .title {
+                color: $theme-color;
+            }
+        }
+
+        .title-info_text {
+            font-size: 30px;
+            line-height: 40px;
+            width: 100%;
+            text-indent: 0;
+            margin-bottom: 0;
+        }
+    }
+}

@@ -10580,6 +10580,25 @@ blockquote p {
   mask-repeat: no-repeat;
 }
 
+/* Service 3 Inner Page ---------------------------------- */
+.service-area-3 .title-upper_area {
+  border-top: 0;
+  padding-top: 0;
+}
+.service-area-3 .title-upper_area .right {
+  width: 80%;
+}
+.service-area-3 .title-upper_area .right .title {
+  color: var(--theme-color);
+}
+.service-area-3 .title-upper_area .title-info_text {
+  font-size: 30px;
+  line-height: 40px;
+  width: 100%;
+  text-indent: 0;
+  margin-bottom: 0;
+}
+
 /*------------------- 4.00. Why Choose Us -------------------*/
 /* Why choose area 1 ---------------------------------- */
 .why-area-1 {
