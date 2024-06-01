@@ -529,6 +529,78 @@
     }
 }
 
+.link-btn3 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 140px;
+    color: $title-color;
+    transition: all 0.3s ease;
+    position: relative;
+
+    .btn-circle {
+        display: flex;
+        align-items: center;
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        border-radius: 50%;
+        border: 1px solid $border-color;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    
+        span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    
+        svg {
+            fill: $white-color;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            transition: all 300ms ease;
+    
+            &:last-child {
+                left: 0;
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    }
+    
+    &:hover {
+        color: $theme-color;
+        .btn-circle {
+            border-color: $theme-color;
+        
+            svg {
+                fill: $theme-color;
+        
+                &:first-child {
+                    transform: translate(30px, -30px);
+                }
+        
+                &:last-child {
+                    bottom: 50%;
+                    transform: translateY(-50%);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+
 .line-btn {
     font-size: 14px;
     font-weight: 600;
