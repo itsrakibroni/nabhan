@@ -348,12 +348,15 @@
     background-color: $black-color;
     border-radius: 10px;
 
+    @include xs {
+        padding: 40px;
+    }
+
     .comment-reply-title {
         font-size: 30px;
         line-height: 40px;
         font-weight: 700;
         margin-bottom: 25px;
     }
-
 
 }
