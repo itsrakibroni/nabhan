@@ -38,31 +38,19 @@
     4.9. Error    
     4.00. Popup Search
     4.00. Popup Side Menu
-    4.00. Wocommerce
-    4.00. Subscribe
-    4.00. Cart
-    4.00. Checkout
-    4.00. Wishlist
     4.00. Contact
     4.00. About
-    4.00. Team
     4.00. Testimonial
     4.00. Counter
     4.00. Client
     4.00. Simple Sections
     4.00. Video
-    4.00. Category
     4.00. Faq
     4.00. feature
-    4.00. CTA
     4.00. Service
     4.00. Service Details
     4.00. Pricing
-    4.00. Why choose Us
     4.00. Project
-    4.00. Event
-    4.00. Gallery
-    4.00. Schedule
 
 05. Spacing
 
@@ -189,9 +177,6 @@
 /*------------------- 4.00. About  -------------------*/
 @import 'template/sections/about';
 
-/*------------------- 4.00. Team  -------------------*/
-@import 'template/sections/team';
-
 /*------------------- 4.00. Testimonial  -------------------*/
 @import 'template/sections/testimonial';
 
@@ -228,9 +213,6 @@
 /*------------------- 4.00. Service -------------------*/
 @import 'template/sections/service-details';
 
-/*------------------- 4.00. Why Choose Us -------------------*/
-@import 'template/sections/wcu';
-
 /*------------------- 4.00. Pricing -------------------*/
 @import 'template/sections/pricing';
 
@@ -255,5 +237,4 @@
 /*=================================
     05. Spacing
 ==================================*/
-@import 'spacing/spacing'; 
-
+@import 'spacing/spacing';
