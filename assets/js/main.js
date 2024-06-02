@@ -17,7 +17,7 @@
         $('.preloader').delay(0).fadeOut();
     };
 
-    
+
 
     /*===========================================
 	=         Mobile Menu Active         =
@@ -27,8 +27,7 @@
 
         $(".mobile-menu .navigation").append(mobileMenuContent);
         $.fn.mobilemenu = function (options) {
-            var opt = $.extend(
-                {
+            var opt = $.extend({
                     menuToggleBtn: ".menu-toggle",
                     bodyToggleClass: "body-visible",
                     subMenuClass: "submenu-class",
@@ -109,8 +108,7 @@
 	=         Desk Menu Active         =
     =============================================*/
     $.fn.deskmenu = function (options) {
-        var opt = $.extend(
-            {
+        var opt = $.extend({
                 menuToggleBtn: ".menu-toggle2",
                 bodyToggleClass: "body-visible",
                 subMenuClass: "submenu-class2",
@@ -205,7 +203,7 @@
     /*===========================================
 	=         Scroll To Top         =
     =============================================*/
-    if($('.scroll-top')) {
+    if ($('.scroll-top')) {
         var scrollTopbtn = document.querySelector('.scroll-top');
         var progressPath = document.querySelector('.scroll-top path');
         var pathLength = progressPath.getTotalLength();
@@ -224,16 +222,18 @@
         $(window).scroll(updateProgress);
         var offset = 50;
         var duration = 750;
-        jQuery(window).on('scroll', function() {
+        jQuery(window).on('scroll', function () {
             if (jQuery(this).scrollTop() > offset) {
                 jQuery(scrollTopbtn).addClass('show');
             } else {
                 jQuery(scrollTopbtn).removeClass('show');
             }
         });
-        jQuery(scrollTopbtn).on('click', function(event) {
+        jQuery(scrollTopbtn).on('click', function (event) {
             event.preventDefault();
-            jQuery('html, body').animate({scrollTop: 0}, 1);
+            jQuery('html, body').animate({
+                scrollTop: 0
+            }, 1);
             return false;
         })
     }
@@ -241,7 +241,13 @@
     const topScrollButton = document.querySelector('.top-scroll');
     if (topScrollButton) {
         topScrollButton.addEventListener('click', () => {
-            gsap.to(window, { duration: 1, scrollTo: { y: 0, ease: 'power2.inOut' } });
+            gsap.to(window, {
+                duration: 1,
+                scrollTo: {
+                    y: 0,
+                    ease: 'power2.inOut'
+                }
+            });
         });
     }
 
@@ -290,7 +296,7 @@
         });
     }
 
-    
+
     if ($(".testi-carousel-2").length > 0) {
         new Swiper('.testi-carousel-2', {
             loop: true,
@@ -317,11 +323,11 @@
             }
         });
     }
-    
 
 
-     // Brands Carousel
-     if ($('.brands-carousel').length) {
+
+    // Brands Carousel
+    if ($('.brands-carousel').length) {
         $('.brands-carousel').owlCarousel({
             autoplay: false,
             loop: true,
@@ -395,38 +401,38 @@
         valid = validateContact();
         if (valid) {
             jQuery
-            .ajax({
-                url: $(form).attr("action"),
-                data: formData,
-                type: "POST",
-            })
-            .done(function (response) {
-                // Make sure that the formMessages div has the 'success' class.
-                formMessages.removeClass("error");
-                formMessages.addClass("success");
-                // Set the message text.
-                formMessages.text(response);
-                // Clear the form.
-                $(
-                    form +
+                .ajax({
+                    url: $(form).attr("action"),
+                    data: formData,
+                    type: "POST",
+                })
+                .done(function (response) {
+                    // Make sure that the formMessages div has the 'success' class.
+                    formMessages.removeClass("error");
+                    formMessages.addClass("success");
+                    // Set the message text.
+                    formMessages.text(response);
+                    // Clear the form.
+                    $(
+                        form +
                         ' input:not([type="submit"]),' +
                         form +
                         " textarea"
-                ).val("");
-            })
-            .fail(function (data) {
-                // Make sure that the formMessages div has the 'error' class.
-                formMessages.removeClass("success");
-                formMessages.addClass("error");
-                // Set the message text.
-                if (data.responseText !== "") {
-                    formMessages.html(data.responseText);
-                } else {
-                    formMessages.html(
-                        "Oops! An error occured and your message could not be sent."
-                    );
-                }
-            });
+                    ).val("");
+                })
+                .fail(function (data) {
+                    // Make sure that the formMessages div has the 'error' class.
+                    formMessages.removeClass("success");
+                    formMessages.addClass("error");
+                    // Set the message text.
+                    if (data.responseText !== "") {
+                        formMessages.html(data.responseText);
+                    } else {
+                        formMessages.html(
+                            "Oops! An error occured and your message could not be sent."
+                        );
+                    }
+                });
         }
     }
 
@@ -452,8 +458,8 @@
         if (
             !$($email).val() ||
             !$($email)
-                .val()
-                .match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)
+            .val()
+            .match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)
         ) {
             $($email).addClass(invalidCls);
             valid = false;
@@ -567,7 +573,9 @@
 
             document.querySelector('.portfolio-filter').addEventListener('click', (e) => {
                 if (e.target.matches('li')) {
-                    iso.arrange({ filter: e.target.getAttribute('data-filter') });
+                    iso.arrange({
+                        filter: e.target.getAttribute('data-filter')
+                    });
                     document.querySelector('.current_menu_item')?.classList.remove('current_menu_item');
                     e.target.classList.add('current_menu_item');
                 }
@@ -578,7 +586,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const sections = [".service-area-2", ".service-area-1", ".awards-area-1"];
         const items = ['.service-item', '.single-experience-list', '.single-awards-list'];
-    
+
         // Animation for the entire section
         gsap.from(sections.join(','), {
             opacity: 0,
@@ -591,7 +599,7 @@
                 toggleActions: "play none none none"
             }
         });
-    
+
         // Animation for each item
         gsap.utils.toArray(items.join(',')).forEach((item, i) => {
             gsap.from(item, {
@@ -608,7 +616,7 @@
             });
         });
     });
-    
+
 
 
     // Check if .service-area-2 exists
@@ -639,7 +647,24 @@
         });
     }
 
-    
+    // gsap.to('.blog__details-wrap', {
+    //     scrollTrigger: {
+    //         trigger: '.blog__sidebar',
+    //         start: 'top top',
+    //         end: 'bottom top',
+    //         pin: true,
+    //         pinSpacing: false
+    //     }
+    // });
+
+
+
+
+
+
+
+
+
 
     /*===========================================
 	=         Shape Mockup         =
@@ -677,12 +702,14 @@
     /*===========================================
 	=         Progress Bar Animation         =
     =============================================*/
-    $('.progress-bar').waypoint(function() {
+    $('.progress-bar').waypoint(function () {
         $('.progress-bar').css({
-        animation: "animate-positive 1.8s",
-        opacity: "1"
+            animation: "animate-positive 1.8s",
+            opacity: "1"
         });
-    }, { offset: '75%' });
+    }, {
+        offset: '75%'
+    });
 
 
 
@@ -707,7 +734,7 @@
             direction: 'left',
             duplicated: true,
             pauseOnHover: true,
-            startVisible:true,
+            startVisible: true,
         });
     }
 
@@ -720,12 +747,12 @@
             // Select all elements with the classes 'text-anim-left' and 'text-anim-right'
             var elementsLeft = document.querySelectorAll('.text-anim-left');
             var elementsRight = document.querySelectorAll('.text-anim-right');
-            
+
             // Remove the classes
-            elementsLeft.forEach(function(element) {
+            elementsLeft.forEach(function (element) {
                 element.classList.remove('text-anim-left');
             });
-            elementsRight.forEach(function(element) {
+            elementsRight.forEach(function (element) {
                 element.classList.remove('text-anim-right');
             });
         }
@@ -739,231 +766,270 @@
 
     // Select the elements with the specified class names
     if (window.innerWidth <= 485) {
-        document.querySelectorAll('.service-item-wrapper .ml-35, .service-item-wrapper .mr-75, .service-item-wrapper .ml-30, .service-item-wrapper .mr-5, .service-item-wrapper .mr-40').forEach(function(element) {
+        document.querySelectorAll('.service-item-wrapper .ml-35, .service-item-wrapper .mr-75, .service-item-wrapper .ml-30, .service-item-wrapper .mr-5, .service-item-wrapper .mr-40').forEach(function (element) {
             element.classList.remove('ml-35', 'mr-75', 'ml-30', 'mr-5', 'mr-40');
         });
     }
 
 
     if ($('.text_anim p').length > 0) {
-		let splitTextLines = gsap.utils.toArray(".text_anim p");
+        let splitTextLines = gsap.utils.toArray(".text_anim p");
 
-		splitTextLines.forEach(splitTextLine => {
-			const tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: splitTextLine,
-					start: 'top 90%',
-					duration: 2,
-					end: 'bottom 60%',
-					scrub: false,
-					markers: false,
-					toggleActions: 'play none none none'
-				}
-			});
+        splitTextLines.forEach(splitTextLine => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: splitTextLine,
+                    start: 'top 90%',
+                    duration: 2,
+                    end: 'bottom 60%',
+                    scrub: false,
+                    markers: false,
+                    toggleActions: 'play none none none'
+                }
+            });
 
-			const itemSplitted = new SplitText(splitTextLine, { type: "lines" });
-			gsap.set(splitTextLine, { perspective: 400 });
-			itemSplitted.split({ type: "lines" })
-			tl.from(itemSplitted.lines, {
-				duration: 1,
-				delay: 0.7,
-				opacity: 0,
-				rotationX: -80,
-				force3D: true,
-				transformOrigin: "top center -50",
-				stagger: 0.1
-			});
-		});
-	}
+            const itemSplitted = new SplitText(splitTextLine, {
+                type: "lines"
+            });
+            gsap.set(splitTextLine, {
+                perspective: 400
+            });
+            itemSplitted.split({
+                type: "lines"
+            })
+            tl.from(itemSplitted.lines, {
+                duration: 1,
+                delay: 0.7,
+                opacity: 0,
+                rotationX: -80,
+                force3D: true,
+                transformOrigin: "top center -50",
+                stagger: 0.1
+            });
+        });
+    }
 
     if ($('.title_anim').length > 0) {
-		let splitTitleLines = gsap.utils.toArray(".title_anim");
-		splitTitleLines.forEach(splitTextLine => {
-			const tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: splitTextLine,
-					start: 'top 90%',
-					end: 'bottom 60%',
-					scrub: false,
-					markers: false,
-					toggleActions: 'play none none none'
-				}
-			});
+        let splitTitleLines = gsap.utils.toArray(".title_anim");
+        splitTitleLines.forEach(splitTextLine => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: splitTextLine,
+                    start: 'top 90%',
+                    end: 'bottom 60%',
+                    scrub: false,
+                    markers: false,
+                    toggleActions: 'play none none none'
+                }
+            });
 
-			const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
-			gsap.set(splitTextLine, { perspective: 400 });
-			itemSplitted.split({ type: "lines" })
-			tl.from(itemSplitted.lines, {
-				duration: 1,
-				delay: 0.3,
-				opacity: 0,
-				rotationX: -80,
-				force3D: true,
-				transformOrigin: "top center -50",
-				stagger: 0.1
-			});
-		});
-	}
-    
+            const itemSplitted = new SplitText(splitTextLine, {
+                type: "words, lines"
+            });
+            gsap.set(splitTextLine, {
+                perspective: 400
+            });
+            itemSplitted.split({
+                type: "lines"
+            })
+            tl.from(itemSplitted.lines, {
+                duration: 1,
+                delay: 0.3,
+                opacity: 0,
+                rotationX: -80,
+                force3D: true,
+                transformOrigin: "top center -50",
+                stagger: 0.1
+            });
+        });
+    }
 
-    
+
+
 
 
     /*===========================================
 	=         Button Effects        =
     =============================================*/
-    var mouse = { x: 0, y: 0 };
-    var pos = { x: 0, y: 0 };
+    var mouse = {
+        x: 0,
+        y: 0
+    };
+    var pos = {
+        x: 0,
+        y: 0
+    };
     var ratio = 0.65;
     var active = false;
 
     var allParalax = document.querySelectorAll('.parallax-wrap');
 
     allParalax.forEach(function (e) {
-      e.addEventListener("mousemove", mouseMoveBtn);
+        e.addEventListener("mousemove", mouseMoveBtn);
     });
 
     function mouseMoveBtn(e) {
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      mouse.x = e.pageX;
-      mouse.y = e.pageY - scrollTop;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        mouse.x = e.pageX;
+        mouse.y = e.pageY - scrollTop;
     }
 
     gsap.ticker.add(updatePosition);
 
-    document.querySelectorAll(".parallax-wrap").forEach(function(element) {
-      element.addEventListener("mouseenter", function() {
-        gsap.to(this, { duration: 0.3, scale: 2 });
-        gsap.to(this.children, { duration: 0.3, scale: 0.5 });
-        active = true;
-      });
+    document.querySelectorAll(".parallax-wrap").forEach(function (element) {
+        element.addEventListener("mouseenter", function () {
+            gsap.to(this, {
+                duration: 0.3,
+                scale: 2
+            });
+            gsap.to(this.children, {
+                duration: 0.3,
+                scale: 0.5
+            });
+            active = true;
+        });
 
-      element.addEventListener("mouseleave", function() {
-        gsap.to(this, { duration: 0.3, scale: 1 });
-        gsap.to(this.children, { duration: 0.3, scale: 1, x: 0, y: 0 });
-        active = false;
-      });
+        element.addEventListener("mouseleave", function () {
+            gsap.to(this, {
+                duration: 0.3,
+                scale: 1
+            });
+            gsap.to(this.children, {
+                duration: 0.3,
+                scale: 1,
+                x: 0,
+                y: 0
+            });
+            active = false;
+        });
 
-      element.addEventListener("mousemove", function(e) {
-        parallaxCursorBtn(e, this, 2);
-        callParallaxBtn(e, this);
-      });
+        element.addEventListener("mousemove", function (e) {
+            parallaxCursorBtn(e, this, 2);
+            callParallaxBtn(e, this);
+        });
     });
 
     function updatePosition() {
-      pos.x += (mouse.x - pos.x) * ratio;
-      pos.y += (mouse.y - pos.y) * ratio;
+        pos.x += (mouse.x - pos.x) * ratio;
+        pos.y += (mouse.y - pos.y) * ratio;
     }
 
     function callParallaxBtn(e, parent) {
-      parallaxItBtn(e, parent, parent.querySelector(".parallax-element"), 20);
+        parallaxItBtn(e, parent, parent.querySelector(".parallax-element"), 20);
     }
 
     function parallaxItBtn(e, parent, target, movement) {
-      var boundingRect = parent.getBoundingClientRect();
-      var relX = e.pageX - boundingRect.left;
-      var relY = e.pageY - boundingRect.top;
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var boundingRect = parent.getBoundingClientRect();
+        var relX = e.pageX - boundingRect.left;
+        var relY = e.pageY - boundingRect.top;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      gsap.to(target, {
-        duration: 0.3,
-        x: (relX - boundingRect.width / 2) / boundingRect.width * movement,
-        y: (relY - boundingRect.height / 2 - scrollTop) / boundingRect.height * movement,
-        ease: "power2.out"
-      });
+        gsap.to(target, {
+            duration: 0.3,
+            x: (relX - boundingRect.width / 2) / boundingRect.width * movement,
+            y: (relY - boundingRect.height / 2 - scrollTop) / boundingRect.height * movement,
+            ease: "power2.out"
+        });
     }
 
     function parallaxCursorBtn(e, parent, movement) {
-      var rect = parent.getBoundingClientRect();
-      var relX = e.pageX - rect.left;
-      var relY = e.pageY - rect.top;
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      pos.x = rect.left + rect.width / 2 + (relX - rect.width / 2) / movement;
-      pos.y = rect.top + rect.height / 2 + (relY - rect.height / 2 - scrollTop) / movement;
+        var rect = parent.getBoundingClientRect();
+        var relX = e.pageX - rect.left;
+        var relY = e.pageY - rect.top;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        pos.x = rect.left + rect.width / 2 + (relX - rect.width / 2) / movement;
+        pos.y = rect.top + rect.height / 2 + (relY - rect.height / 2 - scrollTop) / movement;
     }
 
     ///////////////////////////////////////////////////////
     // GSAP Register
 
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, TweenMax, ScrollToPlugin);
-	
-	gsap.config({
-		nullTargetWarn: false,
-	});
 
-	let smoother = ScrollSmoother.create({
-		smooth: 2,
-		effects: true,
-		smoothTouch: 0.1,
-		normalizeScroll: false,
-		ignoreMobileResize: true,
-	});
+    gsap.config({
+        nullTargetWarn: false,
+    });
+
+    let smoother = ScrollSmoother.create({
+        smooth: 2,
+        effects: true,
+        smoothTouch: 0.1,
+        normalizeScroll: false,
+        ignoreMobileResize: true,
+    });
 
 
     /*===========================================
 	=         Button Hover Animation         =
     =============================================*/
-	$('.tp-hover-btn').on('mouseenter', function (e) {
-		var x = e.pageX - $(this).offset().left;
-		var y = e.pageY - $(this).offset().top;
+    $('.tp-hover-btn').on('mouseenter', function (e) {
+        var x = e.pageX - $(this).offset().left;
+        var y = e.pageY - $(this).offset().top;
 
-		$(this).find('.btn-circle-dot').css({
-			top: y,
-			left: x
-		});
-	});
+        $(this).find('.btn-circle-dot').css({
+            top: y,
+            left: x
+        });
+    });
 
-	$('.tp-hover-btn').on('mouseout', function (e) {
-		var x = e.pageX - $(this).offset().left;
-		var y = e.pageY - $(this).offset().top;
+    $('.tp-hover-btn').on('mouseout', function (e) {
+        var x = e.pageX - $(this).offset().left;
+        var y = e.pageY - $(this).offset().top;
 
-		$(this).find('.btn-circle-dot').css({
-			top: y,
-			left: x
-		});
-	});
-
-
-	var hoverBtns = gsap.utils.toArray(".tp-hover-btn-wrapper");
-
-	const hoverBtnItem = gsap.utils.toArray(".tp-hover-btn-item");
-	hoverBtns.forEach((btn, i) => {
-		$(btn).mousemove(function (e) {
-			callParallax(e);
-		});
-		function callParallax(e) {
-			parallaxIt(e, hoverBtnItem[i], 80);
-		}
-
-		function parallaxIt(e, target, movement) {
-			var $this = $(btn);
-			var relX = e.pageX - $this.offset().left;
-			var relY = e.pageY - $this.offset().top;
-
-			gsap.to(target, 0.5, {
-				x: ((relX - $this.width() / 2) / $this.width()) * movement,
-				y: ((relY - $this.height() / 2) / $this.height()) * movement,
-				ease: Power2.easeOut,
-			});
-		}
-		$(btn).mouseleave(function (e) {
-			gsap.to(hoverBtnItem[i], 0.5, {
-				x: 0,
-				y: 0,
-				ease: Power2.easeOut,
-			});
-		});
-	});
+        $(this).find('.btn-circle-dot').css({
+            top: y,
+            left: x
+        });
+    });
 
 
-	// button hover end
+    var hoverBtns = gsap.utils.toArray(".tp-hover-btn-wrapper");
+
+    const hoverBtnItem = gsap.utils.toArray(".tp-hover-btn-item");
+    hoverBtns.forEach((btn, i) => {
+        $(btn).mousemove(function (e) {
+            callParallax(e);
+        });
+
+        function callParallax(e) {
+            parallaxIt(e, hoverBtnItem[i], 80);
+        }
+
+        function parallaxIt(e, target, movement) {
+            var $this = $(btn);
+            var relX = e.pageX - $this.offset().left;
+            var relY = e.pageY - $this.offset().top;
+
+            gsap.to(target, 0.5, {
+                x: ((relX - $this.width() / 2) / $this.width()) * movement,
+                y: ((relY - $this.height() / 2) / $this.height()) * movement,
+                ease: Power2.easeOut,
+            });
+        }
+        $(btn).mouseleave(function (e) {
+            gsap.to(hoverBtnItem[i], 0.5, {
+                x: 0,
+                y: 0,
+                ease: Power2.easeOut,
+            });
+        });
+    });
+
+
+    // button hover end
 
     // Button Bounce
     function setupButtonBounce(areaConfigurations) {
         areaConfigurations.forEach(config => {
-            const { areaClass, bounceHeight } = config;
+            const {
+                areaClass,
+                bounceHeight
+            } = config;
             if ($(areaClass).length > 0) {
-                gsap.set(".btn-bounce-1", { y: -bounceHeight, opacity: 0 });
+                gsap.set(".btn-bounce-1", {
+                    y: -bounceHeight,
+                    opacity: 0
+                });
                 gsap.utils.toArray(".btn-bounce-1").forEach(btn => {
                     const $this = $(btn);
                     gsap.to(btn, {
@@ -981,64 +1047,82 @@
             }
         });
     }
-    
-    const areaConfigurations = [
-        { areaClass: '.about-area-1', bounceHeight: 100 },
-        { areaClass: '.contact-btn_wrapper', bounceHeight: 100 },
-        { areaClass: '.btn-bounce-1', bounceHeight: 100 },
-        { areaClass: '.experience-area-1', bounceHeight: 100 },
-        { areaClass: '.portfolio-area-1', bounceHeight: 100 },
-        { areaClass: '.contact-area-1', bounceHeight: 100 }
+
+    const areaConfigurations = [{
+            areaClass: '.about-area-1',
+            bounceHeight: 100
+        },
+        {
+            areaClass: '.contact-btn_wrapper',
+            bounceHeight: 100
+        },
+        {
+            areaClass: '.btn-bounce-1',
+            bounceHeight: 100
+        },
+        {
+            areaClass: '.experience-area-1',
+            bounceHeight: 100
+        },
+        {
+            areaClass: '.portfolio-area-1',
+            bounceHeight: 100
+        },
+        {
+            areaClass: '.contact-area-1',
+            bounceHeight: 100
+        }
     ];
-    
+
     setupButtonBounce(areaConfigurations);
-    
+
 
     //////////////////////////////////////////////////
-	// Common Js
+    // Common Js
 
-	$("[data-background").each(function () {
-		$(this).css("background-image", "url( " + $(this).attr("data-background") + "  )");
-	});
+    $("[data-background").each(function () {
+        $(this).css("background-image", "url( " + $(this).attr("data-background") + "  )");
+    });
 
-	$("[data-width]").each(function () {
-		$(this).css("width", $(this).attr("data-width"));
-	});
+    $("[data-width]").each(function () {
+        $(this).css("width", $(this).attr("data-width"));
+    });
 
-	$("[data-bg-color]").each(function () {
-		$(this).css("background-color", $(this).attr("data-bg-color"));
-	});
+    $("[data-bg-color]").each(function () {
+        $(this).css("background-color", $(this).attr("data-bg-color"));
+    });
 
-	$("[data-text-color]").each(function () {
-		$(this).css("color", $(this).attr("data-text-color"));
-	});
+    $("[data-text-color]").each(function () {
+        $(this).css("color", $(this).attr("data-text-color"));
+    });
 
-	$(".has-img").each(function () {
-		var imgSrc = $(this).attr("data-menu-img");
-		var img = `<img class="mega-menu-img" src="${imgSrc}" alt="img">`;
-		$(this).append(img);
+    $(".has-img").each(function () {
+        var imgSrc = $(this).attr("data-menu-img");
+        var img = `<img class="mega-menu-img" src="${imgSrc}" alt="img">`;
+        $(this).append(img);
 
-	});
+    });
 
-  
+
     /*===========================================
 	=         Hover Reaveal Start         =
     =============================================*/
-	const hoverItem = document.querySelectorAll(".hover-reveal-item");
-	function moveImage(e, hoverItem, index) {
-		const item = hoverItem.getBoundingClientRect();
-		const x = e.clientX - item.x;
-		const y = e.clientY - item.y;
-		if (hoverItem.children[index]) {
-			hoverItem.children[index].style.transform = `translate(${x}px, ${y}px)`;
-		}
-	}
-	hoverItem.forEach((item, i) => {
-		item.addEventListener("mousemove", (e) => {
-			setInterval(moveImage(e, item, 1), 50);
-		});
-	});
-	// hover reveal end
+    const hoverItem = document.querySelectorAll(".hover-reveal-item");
+
+    function moveImage(e, hoverItem, index) {
+        const item = hoverItem.getBoundingClientRect();
+        const x = e.clientX - item.x;
+        const y = e.clientY - item.y;
+        if (hoverItem.children[index]) {
+            hoverItem.children[index].style.transform = `translate(${x}px, ${y}px)`;
+        }
+    }
+    hoverItem.forEach((item, i) => {
+        item.addEventListener("mousemove", (e) => {
+            setInterval(moveImage(e, item, 1), 50);
+        });
+    });
+    // hover reveal end
 
 
     /*===========================================
@@ -1046,50 +1130,54 @@
     =============================================*/
     const serviceItems = document.querySelectorAll('.service-item.style-2');
     const mainThumb = document.querySelector('.service-thumb-wrapper .hover-thumb img');
-    
+
     serviceItems.forEach(serviceItem => {
         const hoverThumb = serviceItem.querySelector('.hover-thumb img');
         const imageUrl = hoverThumb.getAttribute('src');
-        
+
         serviceItem.addEventListener('mouseenter', () => {
-        gsap.to(mainThumb, {
-            opacity: 0,
-            scale: 0.8,
-            duration: 0.5,
-            onComplete: () => {
-            mainThumb.setAttribute('src', imageUrl);
             gsap.to(mainThumb, {
-                opacity: 1,
-                scale: 1,
-                duration: 0.5
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.5,
+                onComplete: () => {
+                    mainThumb.setAttribute('src', imageUrl);
+                    gsap.to(mainThumb, {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 0.5
+                    });
+                }
             });
-            }
-        });
         });
     });
-      
-      
-    
+
+
+
 
     /////////////////////////////////////////////////////
     // Magnate Animation
     var magnets = document.querySelectorAll('.gsap-magnetic')
     var strength = 50
 
-    magnets.forEach( (magnet) => {
-        magnet.addEventListener('mousemove', moveMagnet );
-        magnet.addEventListener('mouseout', function(event) {
-            TweenMax.to( event.currentTarget, 1, {x: 0, y: 0, ease: Power4.easeOut})
-        } );
+    magnets.forEach((magnet) => {
+        magnet.addEventListener('mousemove', moveMagnet);
+        magnet.addEventListener('mouseout', function (event) {
+            TweenMax.to(event.currentTarget, 1, {
+                x: 0,
+                y: 0,
+                ease: Power4.easeOut
+            })
+        });
     });
 
     function moveMagnet(event) {
         var magnetButton = event.currentTarget
         var bounding = magnetButton.getBoundingClientRect()
 
-        TweenMax.to( magnetButton, 1, {
-            x: ((( event.clientX - bounding.left)/magnetButton.offsetWidth) - 0.5) * strength,
-            y: ((( event.clientY - bounding.top)/magnetButton.offsetHeight) - 0.5) * strength,
+        TweenMax.to(magnetButton, 1, {
+            x: (((event.clientX - bounding.left) / magnetButton.offsetWidth) - 0.5) * strength,
+            y: (((event.clientY - bounding.top) / magnetButton.offsetHeight) - 0.5) * strength,
             ease: Power4.easeOut
         })
     }
@@ -1110,7 +1198,12 @@
 
         var magicCursor = document.getElementById("awesome-cursor-circle");
 
-        gsap.set(magicCursor, { xPercent: -50, yPercent: -50, scale: 0.5, borderWidth: '4px' });
+        gsap.set(magicCursor, {
+            xPercent: -50,
+            yPercent: -50,
+            scale: 0.5,
+            borderWidth: '4px'
+        });
 
         document.addEventListener("mousemove", mousemoveHandler);
 
@@ -1129,14 +1222,31 @@
         }
 
         $(".parallax-wrap").mouseenter(function (e) {
-            gsap.to(this, { duration: 0.3, scale: 2 });
-            gsap.to(magicCursor, { duration: 0.3, scale: 0.9, borderWidth: '2px', opacity: 1 });
-            gsap.to($(this).children(), { duration: 0.3, scale: 0.5 });
+            gsap.to(this, {
+                duration: 0.3,
+                scale: 2
+            });
+            gsap.to(magicCursor, {
+                duration: 0.3,
+                scale: 0.9,
+                borderWidth: '2px',
+                opacity: 1
+            });
+            gsap.to($(this).children(), {
+                duration: 0.3,
+                scale: 0.5
+            });
             active = true;
         });
 
         $(".parallax-wrap").mouseleave(function (e) {
-            gsap.to(magicCursor, { duration: 0.3, scale: 0.5, borderWidth: '4px', opacity: 1, borderColor: 'rgba(255,255,255,.5)' });
+            gsap.to(magicCursor, {
+                duration: 0.3,
+                scale: 0.5,
+                borderWidth: '4px',
+                opacity: 1,
+                borderColor: 'rgba(255,255,255,.5)'
+            });
             active = false;
         });
 
@@ -1170,7 +1280,11 @@
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             pos.x = rect.left + rect.width / 2 + (relX - rect.width / 2) / movement;
             pos.y = rect.top + rect.height / 2 + (relY - rect.height / 2 - scrollTop) / movement;
-            gsap.to(magicCursor, { duration: 0.3, x: pos.x, y: pos.y });
+            gsap.to(magicCursor, {
+                duration: 0.3,
+                x: pos.x,
+                y: pos.y
+            });
         }
     }
 
@@ -1186,13 +1300,13 @@
         if (scrollLink) {
             // Add click event listener
             scrollLink.addEventListener('click', (event) => {
-                event.preventDefault(); 
+                event.preventDefault();
 
                 // Smoothly scroll to the .about-area-1 element
                 gsap.to(window, {
-                    duration: 1.5, 
+                    duration: 1.5,
                     scrollTo: {
-                        y: '#about-area-1', 
+                        y: '#about-area-1',
                         offsetY: 0
                     },
                     ease: 'power2.inOut'
@@ -1200,7 +1314,7 @@
             });
         }
     }
-    
+
 
     /*===========================================
 	=         FancyBox         =
@@ -1261,7 +1375,3 @@
 
 
 })(jQuery);
-
-
-
-

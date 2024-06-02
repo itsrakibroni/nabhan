@@ -93,22 +93,23 @@
         }
     }
     &.style3 {
-        gap: 20px;
+        gap: 15px;
         .link-effect {
-            height: 25px;
+            height: 46px;
+            line-height: 46px;
         }
         a {
-            background: transparent;
-            width: auto;
-            height: auto;
-            line-height: normal;
-            border-radius: 0;
+            display: inline-block;
+            background: $black-color;
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            border-radius: 50%;
             color: $title-color;
             border: 0;
-            font-size: 20px;
+            font-size: 16px;
             &:hover {
-                background: transparent;
-                color: $title-color;
+                color: $theme-color;
             }
         }
     }
