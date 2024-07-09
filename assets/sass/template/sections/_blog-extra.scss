@@ -270,73 +270,74 @@
             text-indent: 0;
         }
     }
-}
 
-.blog-meta {
-    display: block;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    position: relative;
-    padding-left: 65px;
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 8px;
-        width: 50px;
-        height: 1px;
-        background-color: $white-color;
-    }
-
-    span,
-    a {
-
-        display: inline-block;
+    .blog-meta {
+        display: block;
+        margin-top: 25px;
+        margin-bottom: 20px;
         position: relative;
-        font-size: 18px;
-        line-height: 28px;
-        font-weight: 600;
-        color: $title-color;
-        margin-right: 0;
-
-        ~a,
-        ~span {
-            margin-left: 46px;
-
-            &:after {
-                content: '';
-                height: 6px;
-                width: 6px;
-                background-color: $white-color;
-                border-radius: 50%;
-                position: absolute;
-                top: 50%;
-                left: -28px;
-                margin-top: -3px;
+        padding-left: 65px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 50px;
+            height: 1px;
+            background-color: $white-color;
+        }
+    
+        span,
+        a {
+    
+            display: inline-block;
+            position: relative;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 600;
+            color: $title-color;
+            margin-right: 0;
+    
+            ~a,
+            ~span {
+                margin-left: 46px;
+    
+                &:after {
+                    content: '';
+                    height: 6px;
+                    width: 6px;
+                    background-color: $white-color;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: -28px;
+                    margin-top: -3px;
+                }
+            }
+    
+            i {
+                margin-right: 8px;
+                color: $theme-color;
+            }
+    
+            &:last-child {
+                margin-right: 0 !important;
+                padding-right: 0;
             }
         }
-
-        i {
-            margin-right: 8px;
-            color: $theme-color;
+    
+        span {
+            a {
+                margin-right: 0 !important;
+            }
         }
-
-        &:last-child {
-            margin-right: 0 !important;
-            padding-right: 0;
+    
+        a:hover {
+            color: $title-color;
         }
-    }
-
-    span {
-        a {
-            margin-right: 0 !important;
-        }
-    }
-
-    a:hover {
-        color: $title-color;
     }
 }
+
 
 .blog-card {
     background-color: $black-color;

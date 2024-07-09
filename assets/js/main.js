@@ -14,7 +14,21 @@
         =    Preloader      =
     =============================================*/
     function preloader() {
-        $('.preloader').delay(0).fadeOut();
+        let percentage = 0;
+        let LoadingCounter = setInterval(function () {
+            if (percentage <= 100) {
+                $("#loading-screen .loading-counter").text(percentage + "%");
+                $("#loading-screen .bar").css("width", (100 - percentage) / 2 + "%");
+                $("#loading-screen .progress-line").css("transform", "scale(" + percentage / 100 + ")");
+                percentage++;
+            } else {
+                $("#loading-screen").fadeOut(500);
+                setTimeout(() => {
+                    $("#loading-screen").remove();
+                }, 500);
+                clearInterval(LoadingCounter);
+            }
+        }, 10);
     };
 
 

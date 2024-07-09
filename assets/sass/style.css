@@ -38,31 +38,19 @@
     4.9. Error    
     4.00. Popup Search
     4.00. Popup Side Menu
-    4.00. Wocommerce
-    4.00. Subscribe
-    4.00. Cart
-    4.00. Checkout
-    4.00. Wishlist
     4.00. Contact
     4.00. About
-    4.00. Team
     4.00. Testimonial
     4.00. Counter
     4.00. Client
     4.00. Simple Sections
     4.00. Video
-    4.00. Category
     4.00. Faq
     4.00. feature
-    4.00. CTA
     4.00. Service
     4.00. Service Details
     4.00. Pricing
-    4.00. Why choose Us
     4.00. Project
-    4.00. Event
-    4.00. Gallery
-    4.00. Schedule
 
 05. Spacing
 
@@ -2890,50 +2878,89 @@ textarea.is-invalid {
     03. Utilities
 ==================================*/
 /*------------------- 3.1. Preloader -------------------*/
-.preloader {
+.loading-screen {
+  align-items: center;
+  cursor: default;
+  display: flex;
+  justify-content: center;
   position: fixed;
   left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
-  z-index: 999;
-  background-color: var(--title-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--black-color);
+  z-index: 1000;
 }
-.preloader-inner {
-  display: block;
-  width: 45px;
-  height: 45px;
+.loading-screen .animation-preloader {
+  z-index: 1000;
 }
-.preloader-inner span {
-  box-sizing: border-box;
-  display: block;
+.loading-screen .animation-preloader .txt-loading {
+  font: bold 3em var(--title-font), sans-serif;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.loading-screen .animation-preloader .txt-loading .letters-loading {
+  color: var(--white-color);
+  position: relative;
+}
+.loading-screen .animation-preloader .txt-loading .letters-loading::before {
+  animation: letters-loading 4s infinite;
+  color: var(--theme-color);
+  content: attr(data-text-preloader);
+  left: 0;
+  opacity: 0;
+  font-family: var(--title-font), sans-serif;
   position: absolute;
-  width: 37px;
-  height: 37px;
-  margin: 4px;
-  border: 4px solid transparent;
-  border-radius: 50%;
-  animation: preloader 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: var(--theme-color) transparent transparent transparent;
+  top: -3px;
+  transform: rotateY(-90deg);
 }
-.preloader-inner span:nth-child(1) {
-  animation-delay: -0.1s;
+.loading-screen .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
+  animation-delay: 0.2s;
 }
-.preloader-inner span:nth-child(2) {
-  animation-delay: -0.2s;
+.loading-screen .animation-preloader .txt-loading .letters-loading:nth-child(3):before {
+  animation-delay: 0.4s;
 }
-.preloader-inner span:nth-child(3) {
-  animation-delay: -0.3s;
+.loading-screen .animation-preloader .txt-loading .letters-loading:nth-child(4):before {
+  animation-delay: 0.6s;
 }
-@keyframes preloader {
-  0% {
-    transform: rotate(0deg);
+.loading-screen .animation-preloader .txt-loading .letters-loading:nth-child(5):before {
+  animation-delay: 0.8s;
+}
+.loading-screen .animation-preloader .txt-loading .letters-loading:nth-child(6):before {
+  animation-delay: 1s;
+}
+.loading-screen .animation-preloader .txt-loading .letters-loading:nth-child(7):before {
+  animation-delay: 1.2s;
+}
+.loading-screen .animation-preloader .txt-loading .letters-loading:nth-child(8):before {
+  animation-delay: 1.4s;
+}
+@keyframes spinner {
+  to {
+    transform: rotateZ(360deg);
   }
-  100% {
-    transform: rotate(360deg);
+}
+@keyframes letters-loading {
+  0%, 75%, 100% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  25%, 50% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+/* Small devices */
+@media (max-width: 767px) {
+  .loading-screen .animation-preloader .txt-loading {
+    font: bold 3.5em var(--title-font), sans-serif;
+  }
+}
+@media screen and (max-width: 500px) {
+  .loading-screen .animation-preloader .txt-loading {
+    font: bold 2em var(--title-font), sans-serif;
   }
 }
 /*------------------- 3.2. Buttons -------------------*/
@@ -3150,7 +3177,11 @@ textarea.is-invalid {
 }
 
 .circle-btn.btn.tp-hover-btn {
-  background-color: var(--white-color);
+  background-color: var(--black-color2);
+  color: var(--white-color);
+}
+.circle-btn.btn.tp-hover-btn img {
+  filter: brightness(0) invert(1);
 }
 
 .icon-btn {
@@ -7692,12 +7723,6 @@ ul.wp-block-latest-posts li:last-child {
   margin-right: 60px;
 }
 
-/* Medium Large devices */
-/* Medium Large devices */
-/* Large devices */
-/* Medium devices */
-/* Small devices */
-/* Extra small devices */
 /*------------------- 4.9. Error  -------------------*/
 .error-wrapper {
   height: 100vh;
@@ -7968,12 +7993,27 @@ ul.wp-block-latest-posts li:last-child {
 }
 
 .social-item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 22px 0;
   border-bottom: 1px solid var(--border-color);
   gap: 30px;
+}
+.social-item::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background-color: var(--theme-color);
+  transition: all 300ms ease;
+}
+.social-item:hover::before {
+  left: 0;
+  width: 100%;
 }
 .social-item .title {
   font-size: 30px;
@@ -8002,19 +8042,20 @@ ul.wp-block-latest-posts li:last-child {
   position: absolute;
   content: "";
   z-index: -1;
-  left: 0;
-  top: 0;
-  width: 100%;
+  right: 0;
+  bottom: 0;
+  width: 0;
   height: 100%;
+  border-radius: 50%;
   background-color: var(--theme-color);
-  transform: scale(0);
   transition: all 300ms ease;
 }
 .social-item:hover a {
   color: var(--black-color);
 }
 .social-item:hover a::before {
-  transform: scale(1);
+  width: 100%;
+  left: 0;
 }
 
 .contact-btn_wrapper {
@@ -8331,89 +8372,6 @@ ul.wp-block-latest-posts li:last-child {
 }
 .about-hero-1 .thumb img {
   border-radius: 10px;
-}
-
-/*------------------- 4.00. Team  -------------------*/
-/* Team 1 ---------------------------------- */
-.team-card {
-  overflow: hidden;
-  position: relative;
-}
-.team-card_img {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  width: 100%;
-}
-.team-card_img:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(10, 12, 0, 0) 50.47%, #0A0C00 100%);
-  z-index: 1;
-}
-.team-card_img img {
-  transition: 0.4s;
-  width: 100%;
-  filter: grayscale(1);
-}
-.team-card .team-card_content {
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  padding: 0 28px 36px;
-  transition: 0.4s;
-  opacity: 0;
-  z-index: 1;
-}
-.team-card_title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 7px;
-}
-.team-card_title a {
-  color: var(--white-color);
-}
-.team-card_title a:hover {
-  color: var(--theme-color);
-}
-.team-card_desig {
-  font-size: 18px;
-  font-weight: 400;
-  display: block;
-  color: var(--white-color);
-  margin-bottom: 0;
-}
-.team-card:hover .team-card_content {
-  opacity: 1;
-  bottom: 0;
-}
-.team-card:hover .team-card_img img {
-  transform: scale(1.05);
-  filter: grayscale(0);
-}
-
-/* Medium Large devices */
-@media (max-width: 1399px) {
-  .team-card_title {
-    font-size: 22px;
-  }
-}
-/* Team Details ---------------------------------- */
-.team-details-about-info .team-desig {
-  font-size: 24px;
-  font-weight: 400;
-  font-family: var(--body-font);
-  margin-bottom: 45px;
-}
-.team-details-about-info .about-contact-wrap .about-contact-title {
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.team-details-about-info .about-contact-wrap .about-contact-title a {
-  color: var(--title-color);
 }
 
 /*------------------- 4.00. Testimonial  -------------------*/
@@ -8920,25 +8878,24 @@ ul.wp-block-latest-posts li:last-child {
     text-indent: 0;
   }
 }
-
-.blog-meta {
+.blog-area-2 .blog-meta {
   display: block;
   margin-top: 25px;
   margin-bottom: 20px;
   position: relative;
   padding-left: 65px;
 }
-.blog-meta::before {
+.blog-area-2 .blog-meta::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 8px;
+  top: 50%;
   width: 50px;
   height: 1px;
   background-color: var(--white-color);
 }
-.blog-meta span,
-.blog-meta a {
+.blog-area-2 .blog-meta span,
+.blog-area-2 .blog-meta a {
   display: inline-block;
   position: relative;
   font-size: 18px;
@@ -8947,16 +8904,16 @@ ul.wp-block-latest-posts li:last-child {
   color: var(--title-color);
   margin-right: 0;
 }
-.blog-meta span ~ a,
-.blog-meta span ~ span,
-.blog-meta a ~ a,
-.blog-meta a ~ span {
+.blog-area-2 .blog-meta span ~ a,
+.blog-area-2 .blog-meta span ~ span,
+.blog-area-2 .blog-meta a ~ a,
+.blog-area-2 .blog-meta a ~ span {
   margin-left: 46px;
 }
-.blog-meta span ~ a:after,
-.blog-meta span ~ span:after,
-.blog-meta a ~ a:after,
-.blog-meta a ~ span:after {
+.blog-area-2 .blog-meta span ~ a:after,
+.blog-area-2 .blog-meta span ~ span:after,
+.blog-area-2 .blog-meta a ~ a:after,
+.blog-area-2 .blog-meta a ~ span:after {
   content: "";
   height: 6px;
   width: 6px;
@@ -8967,20 +8924,20 @@ ul.wp-block-latest-posts li:last-child {
   left: -28px;
   margin-top: -3px;
 }
-.blog-meta span i,
-.blog-meta a i {
+.blog-area-2 .blog-meta span i,
+.blog-area-2 .blog-meta a i {
   margin-right: 8px;
   color: var(--theme-color);
 }
-.blog-meta span:last-child,
-.blog-meta a:last-child {
+.blog-area-2 .blog-meta span:last-child,
+.blog-area-2 .blog-meta a:last-child {
   margin-right: 0 !important;
   padding-right: 0;
 }
-.blog-meta span a {
+.blog-area-2 .blog-meta span a {
   margin-right: 0 !important;
 }
-.blog-meta a:hover {
+.blog-area-2 .blog-meta a:hover {
   color: var(--title-color);
 }
 
@@ -9426,121 +9383,6 @@ ul.wp-block-latest-posts li:last-child {
   line-height: 40px;
   font-weight: 700;
   margin-bottom: 25px;
-}
-
-/*------------------- 4.00. Client  -------------------*/
-.client-list-wrap {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 2px solid var(--title-color);
-}
-.client-list-wrap li {
-  border-top: 2px solid var(--title-color);
-  border-right: 2px solid var(--title-color);
-}
-.client-list-wrap li a {
-  height: 148px;
-  line-height: 148px;
-  width: 212px;
-  display: inline-block;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-}
-.client-list-wrap li a .link-effect {
-  height: 35px;
-}
-.client-list-wrap li a:hover .link-effect .effect-1 {
-  top: -100%;
-}
-.client-list-wrap li:last-child {
-  border-right: 0;
-}
-.client-list-wrap li:not(:nth-last-child(-n+4)) {
-  border-top: 0;
-}
-.client-list-wrap li:nth-child(4) {
-  border-right: 0;
-}
-
-/* Medium Large devices */
-@media (max-width: 1399px) {
-  .client-list-wrap li a {
-    width: 182px;
-  }
-}
-/* Medium devices */
-@media (max-width: 991px) {
-  .client-list-wrap li a {
-    width: 160px;
-  }
-}
-/* Small devices */
-@media (max-width: 767px) {
-  .client-list-wrap li a {
-    width: 100px;
-  }
-  .client-list-wrap li a {
-    height: 128px;
-    line-height: 128px;
-  }
-}
-/* Extra small devices */
-@media (max-width: 575px) {
-  .client-list-wrap li a {
-    height: 98px;
-    line-height: 98px;
-    width: 80px;
-  }
-}
-/* Extra small devices */
-@media (max-width: 375px) {
-  .client-list-wrap li a {
-    height: 78px;
-    line-height: 78px;
-    width: 60px;
-  }
-}
-/*client-area 2********/
-.client-area-2 .client-list-wrap {
-  grid-template-columns: repeat(6, 1fr);
-}
-.client-area-2 .client-list-wrap li {
-  border-top: 0;
-  border-right: 2px solid var(--title-color);
-}
-.client-area-2 .client-list-wrap li:last-child {
-  border-right: 0;
-}
-
-/* Large devices */
-@media (max-width: 1199px) {
-  .client-area-2 .client-list-wrap {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .client-area-2 .client-list-wrap li {
-    border-top: 2px solid var(--title-color);
-  }
-  .client-area-2 .client-list-wrap li:nth-child(3) {
-    border-right: 0;
-  }
-  .client-area-2 .client-list-wrap li:not(:nth-last-child(-n+3)) {
-    border-top: 0;
-  }
-}
-.client-area-3 .client-list-wrap {
-  border-color: var(--border-color);
-}
-.client-area-3 .client-list-wrap li {
-  border-color: var(--border-color);
-}
-.client-area-3 .client-list-wrap li a img {
-  filter: brightness(99) grayscale(99);
 }
 
 /*------------------- 4.00. Simple Sections  -------------------*/
@@ -10337,48 +10179,8 @@ ul.wp-block-latest-posts li:last-child {
   border-bottom: 1px solid var(--border-color);
 }
 
-/*------------------- 4.00. Why Choose Us -------------------*/
-/* Why choose area 1 ---------------------------------- */
-.why-area-1 {
-  margin-top: 100px;
-  /* Extra large devices */
-  /* Medium Large devices */
-  /* Medium devices */
-}
-.why-area-1 p {
-  font-size: 18px;
-}
-.why-area-1 .why-img-1-1 {
-  width: 44%;
-}
-.why-area-1 .why-img-1-1 img {
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-}
-@media (max-width: 1500px) {
-  .why-area-1 .why-img-1-1 {
-    width: 42%;
-  }
-}
-@media (max-width: 1399px) {
-  .why-area-1 p {
-    font-size: 16px;
-  }
-}
-@media (max-width: 991px) {
-  .why-area-1 {
-    margin-top: 0;
-  }
-  .why-area-1 .why-img-1-1 {
-    width: 100%;
-    top: -80px !important;
-    position: relative;
-  }
-}
-
 /*------------------- 4.00. Pricing -------------------*/
+/* Pricing 1 ---------------------------------- */
 .pricing-item {
   border: 1px solid var(--border-color);
   border-radius: 10px;
