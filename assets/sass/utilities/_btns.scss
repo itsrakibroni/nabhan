@@ -660,22 +660,22 @@
 
     &:after {
         content: "\f062";
-        font-family: $icon-font;
+        font-family: var(--icon-font);
         font-weight: 700;
         position: absolute;
         text-align: center;
         line-height: 50px;
         font-size: 20px;
-        color: $title-color;
+        color: var(--title-color);
         left: 0;
         top: 0;
-        height: 50px;
-        width: 50px;
+        height: 100%;
+        width: 100%;
         cursor: pointer;
         display: block;
         z-index: 1;
         border-radius: 50%;
-        box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .04);
+        box-shadow: inset 0 0 0 2px rgb(23 23 23 / 50%);
     }
 
     svg {
@@ -702,6 +702,32 @@
     }
 }
 
+@include xs {
+    .scroll-top {
+        right: 15px;
+        bottom: 15px;
+        height: 40px;
+        width: 40px;
+
+        &:after {
+            font-size: 16px;
+            line-height: 40px;
+        }
+    }
+
+    .btn {
+        padding: 15.5px 20px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .btn.circle-btn {
+        height: 120px;
+        width: 120px;
+        line-height: 120px;
+    }
+}
+
 // Bottom to Top
 .top-scroll {
     cursor: pointer;
@@ -724,34 +750,6 @@
         font-weight: 600;
         line-height: 1;
         padding: 17px 25px;
-    }
-}
-
-@include xs {
-    .scroll-top {
-        right: 15px;
-        bottom: 15px;
-        height: 40px;
-        width: 40px;
-
-        &:after {
-            line-height: 40px;
-            font-size: 16px;
-            height: 40px;
-            width: 40px;
-        }
-    }
-
-    .btn {
-        padding: 15.5px 20px;
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    .btn.circle-btn {
-        height: 120px;
-        width: 120px;
-        line-height: 120px;
     }
 }
 
