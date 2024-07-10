@@ -1063,7 +1063,7 @@
     }
 
     const areaConfigurations = [{
-            areaClass: '.about-area-1',
+            areaClass: '.about-area',
             bounceHeight: 100
         },
         {
