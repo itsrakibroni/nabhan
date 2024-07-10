@@ -14,6 +14,9 @@ $brand-prefix: 'brand';
     width: 100%;
     height: 1px;
     background: $border-color;
+    @media (max-width:436px) {
+      top: 37px;
+    }
   }
 
   .title-area {

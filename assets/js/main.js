@@ -1387,5 +1387,20 @@
         });
     }
 
+    /*===========================================
+	=         Pricing Item         =
+    =============================================*/
+    $(".pricing-item.upper").each(function() {
+        $(this).find('.link-btn').addClass('bg-black');
+    });
+
+    $(".pricing-item").hover(function () {
+        $(this).addClass('upper').find('.link-btn').addClass('bg-black');
+        $('.pricing-item').not(this).removeClass('upper').find('.link-btn').removeClass('bg-black');
+    });
+
+    
+
+    
 
 })(jQuery);

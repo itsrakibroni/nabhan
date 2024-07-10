@@ -166,8 +166,6 @@
 
 }
 
-  
-
 
 // Responsive styles
 @include lg {
@@ -294,8 +292,13 @@
         .service-left {
             flex-direction: column;
             gap: 20px;
+            .service-title {
+                margin-left: 25px !important;
+                margin-right: 25px !important;
+            }
         }
     }
+
 }
 
 /* Service 2 ---------------------------------- */

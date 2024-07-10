@@ -9007,9 +9007,6 @@ ul.wp-block-latest-posts li:last-child {
 }
 /* Extra small devices */
 @media (max-width: 375px) {
-  .blog-meta {
-    text-align: left;
-  }
   .blog-meta a {
     margin-left: 46px;
   }
@@ -9989,6 +9986,10 @@ ul.wp-block-latest-posts li:last-child {
     flex-direction: column;
     gap: 20px;
   }
+  .service-inner .service-left .service-title {
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+  }
 }
 /* Service 2 ---------------------------------- */
 .service-area-2 .service-thumb-wrapper .hover-thumb img {
@@ -10157,7 +10158,7 @@ ul.wp-block-latest-posts li:last-child {
   border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 50px 35px;
-  transition: all 300ms ease;
+  transition: all 500ms ease;
 }
 .pricing-item:hover {
   transform: translateY(-10px);
@@ -11200,6 +11201,11 @@ ul.wp-block-latest-posts li:last-child {
   width: 100%;
   height: 1px;
   background: var(--border-color);
+}
+@media (max-width: 436px) {
+  .brand-area-1::before {
+    top: 37px;
+  }
 }
 .brand-area-1 .title-area .title {
   display: inline-block;
