@@ -7985,7 +7985,7 @@ ul.wp-block-latest-posts li:last-child {
 /*------------------- 4.00. Subscribe  -------------------*/
 /*------------------- 4.00. Contact  -------------------*/
 /*contact area 1***********************/
-.contact-area-1 .contact-title.title-font2 {
+.contact-area .contact-title.title-font2 {
   font-family: var(--title-font2);
   font-style: italic;
 }
@@ -8077,17 +8077,17 @@ ul.wp-block-latest-posts li:last-child {
   }
 }
 /*contact area 2***********************/
-.contact-area-2 {
+.contact-area.style-two {
   /* Extra small devices */
 }
 @media (max-width: 575px) {
-  .contact-area-2 .big-title {
+  .contact-area.style-two .big-title {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
-.contact-area-2 .contact-mail .bg-black2 {
+.contact-area.style-two .contact-mail .bg-black2 {
   display: inline-flex;
   font-weight: 600;
   padding: 11px 45px 15px;
@@ -8100,22 +8100,22 @@ ul.wp-block-latest-posts li:last-child {
   /* Extra small devices */
 }
 @media (max-width: 375px) {
-  .contact-area-2 .contact-mail .bg-black2 {
+  .contact-area.style-two .contact-mail .bg-black2 {
     padding: 8px 30px 12px;
   }
 }
-.contact-area-2 .contact-mail .bg-black2 .link-effect {
+.contact-area.style-two .contact-mail .bg-black2 .link-effect {
   font-size: 30px;
   height: 40px;
   line-height: 40px;
   /* Extra small devices */
 }
 @media (max-width: 575px) {
-  .contact-area-2 .contact-mail .bg-black2 .link-effect {
+  .contact-area.style-two .contact-mail .bg-black2 .link-effect {
     font-size: 18px;
   }
 }
-.contact-area-2 .contact-mail .bg-black2 img {
+.contact-area.style-two .contact-mail .bg-black2 img {
   width: 16px;
   filter: brightness(0) invert(1);
 }
@@ -8140,10 +8140,10 @@ ul.wp-block-latest-posts li:last-child {
 }
 
 /*Comment area 2***********************/
-.comment-area-2 .form-group {
+.comment-area.style-two .form-group {
   margin-bottom: 20px;
 }
-.comment-area-2 .comment-title {
+.comment-area.style-two .comment-title {
   text-align: center;
   color: var(--theme-color);
   font-size: 52px;
@@ -8267,15 +8267,15 @@ ul.wp-block-latest-posts li:last-child {
   }
 }
 /*About Area 2***********************/
-.about-area-2 .about-info-box {
+.about-area.style-two .about-info-box {
   /* Medium devices */
 }
 @media (max-width: 991px) {
-  .about-area-2 .about-info-box {
+  .about-area.style-two .about-info-box {
     margin-bottom: 30px;
   }
 }
-.about-area-2 .about-info-box .inner {
+.about-area.style-two .about-info-box .inner {
   position: relative;
   padding: 35px;
   font-size: 18px;
@@ -8283,10 +8283,10 @@ ul.wp-block-latest-posts li:last-child {
   border-radius: 10px;
   border: 1px solid var(--border-color);
 }
-.about-area-2 .about-info-box .inner .title {
+.about-area.style-two .about-info-box .inner .title {
   color: var(--gray-color);
 }
-.about-area-2 .about-info-box .inner .text {
+.about-area.style-two .about-info-box .inner .text {
   color: var(--white-color);
   font-weight: 600;
   margin-bottom: 0;
@@ -8294,7 +8294,7 @@ ul.wp-block-latest-posts li:last-child {
 }
 
 /*About Hero Inner Page 1 ===============*/
-.about-hero-1 {
+.about-hero {
   position: relative;
   padding-top: 236px;
   /* Medium devices */
@@ -8302,22 +8302,22 @@ ul.wp-block-latest-posts li:last-child {
   /* Extra small devices */
 }
 @media (max-width: 991px) {
-  .about-hero-1 {
+  .about-hero {
     padding-top: 200px;
     padding-bottom: 0;
   }
 }
 @media (max-width: 767px) {
-  .about-hero-1 {
+  .about-hero {
     text-align: center;
   }
 }
 @media (max-width: 575px) {
-  .about-hero-1 {
+  .about-hero {
     padding-top: 150px;
   }
 }
-.about-hero-1 .text {
+.about-hero .text {
   font-size: 48px;
   line-height: 58px;
   color: var(--white-color);
@@ -8325,23 +8325,23 @@ ul.wp-block-latest-posts li:last-child {
   /* Small devices */
   /* Extra small devices */
 }
-.about-hero-1 .text .font2 {
+.about-hero .text .font2 {
   color: var(--theme-color);
   font-weight: 700;
 }
 @media (max-width: 767px) {
-  .about-hero-1 .text {
+  .about-hero .text {
     font-size: 35px;
     line-height: 45px;
   }
 }
 @media (max-width: 375px) {
-  .about-hero-1 .text {
+  .about-hero .text {
     font-size: 25px;
     line-height: 35px;
   }
 }
-.about-hero-1 .thumb img {
+.about-hero .thumb img {
   border-radius: 10px;
 }
 
@@ -8362,7 +8362,7 @@ ul.wp-block-latest-posts li:last-child {
 }
 
 /* Testimonial 1 ---------------------------------- */
-.testimonial-area-1 {
+.testimonial-area {
   position: relative;
 }
 
@@ -8839,25 +8839,25 @@ ul.wp-block-latest-posts li:last-child {
   }
 }
 /* Blog 2 ---------------------------------- */
-.blog-area-2 .title-upper_area .title-info_text {
+.blog-area.style-two .title-upper_area .title-info_text {
   width: 80%;
   text-indent: 17%;
   /* Small devices */
 }
 @media (max-width: 767px) {
-  .blog-area-2 .title-upper_area .title-info_text {
+  .blog-area.style-two .title-upper_area .title-info_text {
     width: 100%;
     text-indent: 0;
   }
 }
-.blog-area-2 .blog-meta {
+.blog-area.style-two .blog-meta {
   display: block;
   margin-top: 25px;
   margin-bottom: 20px;
   position: relative;
   padding-left: 65px;
 }
-.blog-area-2 .blog-meta::before {
+.blog-area.style-two .blog-meta::before {
   content: "";
   position: absolute;
   left: 0;
@@ -8866,8 +8866,8 @@ ul.wp-block-latest-posts li:last-child {
   height: 1px;
   background-color: var(--white-color);
 }
-.blog-area-2 .blog-meta span,
-.blog-area-2 .blog-meta a {
+.blog-area.style-two .blog-meta span,
+.blog-area.style-two .blog-meta a {
   display: inline-block;
   position: relative;
   font-size: 18px;
@@ -8876,16 +8876,16 @@ ul.wp-block-latest-posts li:last-child {
   color: var(--title-color);
   margin-right: 0;
 }
-.blog-area-2 .blog-meta span ~ a,
-.blog-area-2 .blog-meta span ~ span,
-.blog-area-2 .blog-meta a ~ a,
-.blog-area-2 .blog-meta a ~ span {
+.blog-area.style-two .blog-meta span ~ a,
+.blog-area.style-two .blog-meta span ~ span,
+.blog-area.style-two .blog-meta a ~ a,
+.blog-area.style-two .blog-meta a ~ span {
   margin-left: 46px;
 }
-.blog-area-2 .blog-meta span ~ a:after,
-.blog-area-2 .blog-meta span ~ span:after,
-.blog-area-2 .blog-meta a ~ a:after,
-.blog-area-2 .blog-meta a ~ span:after {
+.blog-area.style-two .blog-meta span ~ a:after,
+.blog-area.style-two .blog-meta span ~ span:after,
+.blog-area.style-two .blog-meta a ~ a:after,
+.blog-area.style-two .blog-meta a ~ span:after {
   content: "";
   height: 6px;
   width: 6px;
@@ -8896,20 +8896,20 @@ ul.wp-block-latest-posts li:last-child {
   left: -28px;
   margin-top: -3px;
 }
-.blog-area-2 .blog-meta span i,
-.blog-area-2 .blog-meta a i {
+.blog-area.style-two .blog-meta span i,
+.blog-area.style-two .blog-meta a i {
   margin-right: 8px;
   color: var(--theme-color);
 }
-.blog-area-2 .blog-meta span:last-child,
-.blog-area-2 .blog-meta a:last-child {
+.blog-area.style-two .blog-meta span:last-child,
+.blog-area.style-two .blog-meta a:last-child {
   margin-right: 0 !important;
   padding-right: 0;
 }
-.blog-area-2 .blog-meta span a {
+.blog-area.style-two .blog-meta span a {
   margin-right: 0 !important;
 }
-.blog-area-2 .blog-meta a:hover {
+.blog-area.style-two .blog-meta a:hover {
   color: var(--title-color);
 }
 
@@ -9992,7 +9992,7 @@ ul.wp-block-latest-posts li:last-child {
   }
 }
 /* Service 2 ---------------------------------- */
-.service-area-2 .service-thumb-wrapper .hover-thumb img {
+.service-area.style-two .service-thumb-wrapper .hover-thumb img {
   border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -10005,17 +10005,17 @@ ul.wp-block-latest-posts li:last-child {
 }
 
 /* Service 3 Inner Page ---------------------------------- */
-.service-area-3 .title-upper_area {
+.service-area.style-three .title-upper_area {
   border-top: 0;
   padding-top: 0;
 }
-.service-area-3 .title-upper_area .right {
+.service-area.style-three .title-upper_area .right {
   width: 80%;
 }
-.service-area-3 .title-upper_area .right .title {
+.service-area.style-three .title-upper_area .right .title {
   color: var(--theme-color);
 }
-.service-area-3 .title-upper_area .title-info_text {
+.service-area.style-three .title-upper_area .title-info_text {
   font-size: 30px;
   line-height: 40px;
   width: 100%;
@@ -10437,17 +10437,17 @@ ul.wp-block-latest-posts li:last-child {
 }
 /*------------------- 4.00. Experience -------------------*/
 /*experience area 1***********************/
-.experience-area-1 .title-area {
+.experience-area .title-area {
   display: flex;
   align-items: center;
   justify-content: space-between;
   /* Small devices */
 }
 @media (max-width: 767px) {
-  .experience-area-1 .title-area {
+  .experience-area .title-area {
     flex-direction: column;
   }
-  .experience-area-1 .title-area .sec-title {
+  .experience-area .title-area .sec-title {
     margin-bottom: 30px !important;
   }
 }
@@ -10530,17 +10530,17 @@ ul.wp-block-latest-posts li:last-child {
   }
 }
 
-.about-area-2 .about-experience-wrapper {
+.about-area.style-two .about-experience-wrapper {
   /* Medium devices */
 }
-.about-area-2 .about-experience-wrapper .year {
+.about-area.style-two .about-experience-wrapper .year {
   font-size: 130px;
   line-height: 140px;
   font-weight: 800;
   color: var(--theme-color);
   margin-bottom: 40px;
 }
-.about-area-2 .about-experience-wrapper .text {
+.about-area.style-two .about-experience-wrapper .text {
   font-size: 30px;
   line-height: 40px;
   font-weight: 700;
@@ -10554,21 +10554,21 @@ ul.wp-block-latest-posts li:last-child {
   /* Medium devices */
 }
 @media (max-width: 1399px) {
-  .about-area-2 .about-experience-wrapper .text {
+  .about-area.style-two .about-experience-wrapper .text {
     width: 100%;
   }
 }
 @media (max-width: 1199px) {
-  .about-area-2 .about-experience-wrapper .text {
+  .about-area.style-two .about-experience-wrapper .text {
     padding-left: 0;
   }
 }
 @media (max-width: 991px) {
-  .about-area-2 .about-experience-wrapper .text {
+  .about-area.style-two .about-experience-wrapper .text {
     margin-bottom: 30px;
   }
 }
-.about-area-2 .about-experience-wrapper .text::before {
+.about-area.style-two .about-experience-wrapper .text::before {
   position: absolute;
   content: "";
   top: 20px;
@@ -10579,16 +10579,16 @@ ul.wp-block-latest-posts li:last-child {
   /* Large devices */
 }
 @media (max-width: 1199px) {
-  .about-area-2 .about-experience-wrapper .text::before {
+  .about-area.style-two .about-experience-wrapper .text::before {
     display: none;
   }
 }
 @media (max-width: 991px) {
-  .about-area-2 .about-experience-wrapper {
+  .about-area.style-two .about-experience-wrapper {
     text-align: center;
   }
 }
-.about-area-2 .experience-wrapper .title {
+.about-area.style-two .experience-wrapper .title {
   font-size: 16px;
   line-height: 26px;
   font-weight: 600;
@@ -10598,7 +10598,7 @@ ul.wp-block-latest-posts li:last-child {
   /* Medium devices */
 }
 @media (max-width: 991px) {
-  .about-area-2 .experience-wrapper .title {
+  .about-area.style-two .experience-wrapper .title {
     text-align: center;
   }
 }
@@ -10614,7 +10614,7 @@ ul.wp-block-latest-posts li:last-child {
 }
 /*------------------- 4.00. Portfolio -------------------*/
 /* Portfolio 1 ---------------------------------- */
-.portfolio-area-1 {
+.portfolio-area {
   background-size: 100% calc(100% - 240px);
   background-position: bottom;
 }
@@ -10981,41 +10981,41 @@ ul.wp-block-latest-posts li:last-child {
   }
 }
 /* Portfolio Inner Page---------------------------------- */
-.portfolio-area-3 .title-upper_area {
+.portfolio-area.style-three .title-upper_area {
   border-top: 0;
   padding-top: 0;
 }
-.portfolio-area-3 .title-upper_area .right {
+.portfolio-area.style-three .title-upper_area .right {
   width: 80%;
 }
-.portfolio-area-3 .title-upper_area .right .title {
+.portfolio-area.style-three .title-upper_area .right .title {
   color: var(--theme-color);
 }
-.portfolio-area-3 .title-upper_area .title-info_text {
+.portfolio-area.style-three .title-upper_area .title-info_text {
   font-size: 30px;
   line-height: 40px;
   width: 100%;
   text-indent: 0;
   margin-bottom: 0;
 }
-.portfolio-area-3 .filter-menu {
+.portfolio-area.style-three .filter-menu {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
   padding: 0 0 25px;
   margin-bottom: 60px;
 }
-.portfolio-area-3 .filter-menu .filter-type {
+.portfolio-area.style-three .filter-menu .filter-type {
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--white-color);
 }
-.portfolio-area-3 .filter-menu .filter-type span {
+.portfolio-area.style-three .filter-menu .filter-type span {
   margin-left: 40px;
 }
-.portfolio-area-3 .filter-menu .style-type {
+.portfolio-area.style-three .filter-menu .style-type {
   font-size: 18px;
   line-height: 28px;
   font-weight: 500;
@@ -11190,10 +11190,10 @@ ul.wp-block-latest-posts li:last-child {
 /*----------------------------------------*/
 /* Brand css
 /*----------------------------------------*/
-.brand-area-1 {
+.brand-area {
   position: relative;
 }
-.brand-area-1::before {
+.brand-area::before {
   position: absolute;
   content: "";
   top: 25px;
@@ -11203,11 +11203,11 @@ ul.wp-block-latest-posts li:last-child {
   background: var(--border-color);
 }
 @media (max-width: 436px) {
-  .brand-area-1::before {
+  .brand-area::before {
     top: 37px;
   }
 }
-.brand-area-1 .title-area .title {
+.brand-area .title-area .title {
   display: inline-block;
   padding: 10px 28px;
   border: 1px solid var(--border-color);

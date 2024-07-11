@@ -1,5 +1,5 @@
 /*contact area 1***********************/
-.contact-area-1 {
+.contact-area {
     .contact-title{
         &.title-font2{
             font-family: $title-font2;
@@ -102,7 +102,7 @@
 
 
 /*contact area 2***********************/
-.contact-area-2 {
+.contact-area.style-two {
 
     @include xs {
         .big-title {
@@ -162,7 +162,7 @@
 
 
 /*Comment area 2***********************/
-.comment-area-2 {
+.comment-area.style-two {
     .form-group{
         margin-bottom: 20px;
     }

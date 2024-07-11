@@ -122,7 +122,7 @@
 }
 
 /*About Area 2***********************/
-.about-area-2 {
+.about-area.style-two {
     .about-info-box {
         @include md{
             margin-bottom: 30px;
@@ -148,7 +148,7 @@
 }
 
 /*About Hero Inner Page 1 ===============*/
-.about-hero-1 {
+.about-hero {
     position: relative;
     padding-top: 236px;
     @include md {

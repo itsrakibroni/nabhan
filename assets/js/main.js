@@ -598,7 +598,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        const sections = [".service-area-2", ".service-area-1", ".awards-area-1"];
+        const sections = [".service-area.style-two", ".service-area", ".awards-area"];
         const items = ['.service-item', '.single-experience-list', '.single-awards-list'];
 
         // Animation for the entire section
@@ -1075,15 +1075,15 @@
             bounceHeight: 100
         },
         {
-            areaClass: '.experience-area-1',
+            areaClass: '.experience-area',
             bounceHeight: 100
         },
         {
-            areaClass: '.portfolio-area-1',
+            areaClass: '.portfolio-area',
             bounceHeight: 100
         },
         {
-            areaClass: '.contact-area-1',
+            areaClass: '.contact-area',
             bounceHeight: 100
         }
     ];
