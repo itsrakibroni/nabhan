@@ -72,11 +72,17 @@
     overflow: hidden;
     position: relative;
     z-index: auto;
+    @media (max-width:450px){
+        text-align: center;
+    }
     .big-title img {
         max-width: 366px;
         border-radius: 0;
         @include md {
-            max-width: 100px;
+            max-width: 120px;
+        }
+        @media (max-width:450px){
+            display: none;
         }
     }
     // @include sm {
@@ -103,13 +109,13 @@
 }
 @include md {
     .breadcumb-wrapper {
-        margin-top: 90px;
+        padding: 75px 0;
+    }
+    .breadcumb-wrapper {
+        margin-top: 98px;
     }
 }
 @include sm {
-    .breadcumb-wrapper {
-        padding: 120px 0;
-    }
     .breadcumb-title {
         letter-spacing: normal;
     }

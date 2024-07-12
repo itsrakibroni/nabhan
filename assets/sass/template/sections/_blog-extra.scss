@@ -277,6 +277,9 @@
         margin-bottom: 20px;
         position: relative;
         padding-left: 65px;
+        @include sm{
+            padding-left: 0;
+        }
         &::before {
             content: '';
             position: absolute;
