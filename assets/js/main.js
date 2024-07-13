@@ -634,12 +634,12 @@
 
 
     // Check if .service-area-2 exists
-    const serviceArea2 = document.querySelector(".service-area-2");
+    const serviceArea2 = document.querySelector(".service-area.style-two");
     if (serviceArea2) {
         // Define GSAP timeline
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".service-area-2",
+                trigger: ".service-area.style-two",
                 start: "top top",
                 end: "+=500",
                 scrub: 1,

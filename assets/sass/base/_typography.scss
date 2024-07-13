@@ -13,25 +13,25 @@ body {
 	background: $black-color;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
+
 	/***scroll-bar***/
-    &::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
-    }
+	&::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
 	&::-webkit-scrollbar-thumb {
 		background-color: $title-color;
-		background-image: -webkit-linear-gradient(
-			45deg,
-			rgba(255, 255, 255, 0.3) 25%,
-			transparent 20%,
-			transparent 50%,
-			rgba(255, 255, 255, 0.3) 50%,
-			rgba(255, 255, 255, 0.3) 75%,
-			transparent 75%,
-			transparent
-		);
+		background-image: -webkit-linear-gradient(45deg,
+				rgba(255, 255, 255, 0.3) 25%,
+				transparent 20%,
+				transparent 50%,
+				rgba(255, 255, 255, 0.3) 50%,
+				rgba(255, 255, 255, 0.3) 75%,
+				transparent 75%,
+				transparent);
 		border-radius: 0px;
-    }
+	}
 }
 
 iframe {
@@ -105,6 +105,7 @@ a {
 	text-decoration: none;
 	outline: 0;
 	transition: all ease 0.4s;
+
 	&:hover {
 		color: $theme-color;
 	}
@@ -194,7 +195,7 @@ h6 {
 
 .h1,
 h1 {
-	font-size:62px;
+	font-size: 62px;
 	line-height: 72px;
 }
 
@@ -229,6 +230,7 @@ h6 {
 }
 
 @include ml {
+
 	.h1,
 	h1 {
 		font-size: 48px;
@@ -312,6 +314,7 @@ h6 {
 		font-size: 34px;
 		line-height: 1.35;
 	}
+
 	.h2,
 	h2 {
 		font-size: 30px;
@@ -333,4 +336,55 @@ h6 {
 .font2 {
 	font-family: $title-font2;
 	font-style: italic;
+}
+
+@mixin generate-align($prefix) {
+	.#{$prefix}-text-center {
+		text-align: center !important;
+	}
+
+	.#{$prefix}-text-left {
+		text-align: left !important;
+	}
+
+	.#{$prefix}-text-right {
+		text-align: right !important;
+	}
+}
+
+/* Include breakpoint-specific padding classes */
+@include hd {
+	@include generate-align('hd');
+}
+
+@include xxl {
+	@include generate-align('xxl');
+}
+
+@include ml {
+	@include generate-align('ml');
+}
+
+@include xl {
+	@include generate-align('xl');
+}
+
+@include lg {
+	@include generate-align('lg');
+}
+
+@include md {
+	@include generate-align('md');
+}
+
+@include sm {
+	@include generate-align('sm');
+}
+
+@include xs {
+	@include generate-align('xs');
+}
+
+@include vxs {
+	@include generate-align('vxs');
 }

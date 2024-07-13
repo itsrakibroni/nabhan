@@ -156,6 +156,10 @@
       }
     }
   }
+  @include vxs{
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @include xs {

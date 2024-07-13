@@ -32,7 +32,7 @@
         width: 100%;
         opacity: 1;
     }
-    
+
     .service-btn-wrapper {
         display: flex;
         align-items: center;
@@ -71,7 +71,7 @@
             }
         }
     }
-    
+
 
     .hover-reveal-bg {
         position: absolute;
@@ -116,16 +116,26 @@
             }
         }
     }
-    &.style-2{
+
+    &.style-2 {
         padding: 40px 0;
+
         .hover-thumb {
             display: none
         }
-        @include md{
+
+        @include md {
             .service-inner {
                 justify-content: space-between;
                 flex-direction: row;
                 text-align: left;
+            }
+        }
+
+        @include sm {
+            .service-inner {
+                flex-direction: column;
+                text-align: center;
             }
         }
     }
@@ -173,7 +183,7 @@
 }
 
 @include md {
-    .service-item .hover-reveal-bg{
+    .service-item .hover-reveal-bg {
         display: none;
     }
 
@@ -189,6 +199,12 @@
             .service-title {
                 font-size: 24px;
                 line-height: 32px;
+                margin: 0 !important;
+                width: 330px;
+
+                br {
+                    display: none;
+                }
             }
 
             .service-list {
@@ -223,6 +239,7 @@
 }
 
 @include xs {
+
     .service-inner {
         flex-direction: column;
         align-items: center;
@@ -230,7 +247,7 @@
         padding: 15px 0;
 
         .service-left {
-            flex-direction: row;
+            flex-direction: column;
             gap: 20px;
 
             .service-title {
@@ -250,7 +267,7 @@
         }
 
         .service-btn-wrapper {
-            margin-top: 15px;
+            margin-top: 20px;
 
             .service-btn {
                 width: 40px;
@@ -290,8 +307,6 @@
 @include vxs {
     .service-inner {
         .service-left {
-            flex-direction: column;
-            gap: 20px;
             .service-title {
                 margin-left: 25px !important;
                 margin-right: 25px !important;
@@ -302,7 +317,7 @@
 }
 
 /* Service 2 ---------------------------------- */
-.service-area.style-two{
+.service-area.style-two {
     .service-thumb-wrapper {
         .hover-thumb img {
             border-radius: 10px;
@@ -322,6 +337,11 @@
     .title-upper_area {
         border-top: 0;
         padding-top: 0;
+
+        @include sm {
+            align-items: center;
+            text-align: center;
+        }
 
         .right {
             width: 80%;
