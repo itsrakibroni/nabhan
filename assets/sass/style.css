@@ -8369,6 +8369,16 @@ ul.wp-block-latest-posts li:last-child {
     margin-right: 10px;
   }
 }
+@media (max-width: 575px) and (max-width: 340px) {
+  .copyright-wrap .footer-menu-list li:nth-child(1) {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .copyright-wrap .footer-menu-list li:last-child {
+    margin-right: 0;
+  }
+}
 
 .copyright-text {
   margin: 0;

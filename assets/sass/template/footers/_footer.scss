@@ -37,6 +37,14 @@
             li {
                 display: inline-block;
                 margin-right: 10px;
+                @media (max-width:340px){
+                    &:nth-child(1){
+                        margin-left: 10px;
+                    }
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
             }
         }
     }
