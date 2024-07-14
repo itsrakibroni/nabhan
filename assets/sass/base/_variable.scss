@@ -19,6 +19,7 @@
   --container-gutters: 24px;
   --section-space: 120px;
   --section-space-mobile: 80px;
+  --section-space-small-mobile: 60px;
   --section-title-space: 65px;
   --ripple-ani-duration: 5s;
 }
@@ -72,6 +73,7 @@ $space-extra2: calc(var(--section-space) - 40px);
 
 // Section Space On small Device
 $space-mobile: var(--section-space-mobile);
+$space-small-mobile: var(--section-space-small-mobile);
 $space-mobile-extra: calc(var(--section-space-mobile) - 30px);
 
 

@@ -152,7 +152,7 @@
     position: relative;
     padding-top: 236px;
     @include md {
-        padding-top: 200px;
+        padding-top: 174px;
         padding-bottom: 0;
     }
     @include sm {
@@ -160,6 +160,9 @@
     }
     @include xs {
         padding-top: 165px;
+    }
+    @include vxs {
+        padding-top: 135px;
     }
     .text {
         font-size: 48px;

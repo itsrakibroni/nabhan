@@ -15,6 +15,9 @@
 }
 
 .portfolio-filter {
+    @include xs{
+        text-align: center;
+    }
     li {
         cursor: pointer;
         display: inline-block;
@@ -24,11 +27,11 @@
         color: $white-color;
         transition: all 0.3s ease;
         position: relative;
+        &:last-child{
+            margin-right: 0;
+        }
 
-        @include sm {
-            background: $black-color2;
-            margin-bottom: 5px;
-            border-radius: 5px;
+        @include vxs {
             margin-right: 0;
         }
 
@@ -39,7 +42,7 @@
             color: $white-color;
             right: -10px;
 
-            @include sm {
+            @include vxs {
                 display: none;
             }
         }
@@ -411,12 +414,22 @@
 
 /* Portfolio Inner Page---------------------------------- */
 .portfolio-area.style-three {
+    padding: 100px 0 120px;
+    @include md{
+        padding: 60px 0 80px;
+    }
+    @include vxs{
+        padding: 40px 0 60px;
+    }
     .title-upper_area {
         border-top: 0;
         padding-top: 0;
 
         .right {
             width: 80%;
+            @include md{
+                width: 100%;
+            }
 
             .title {
                 color: $theme-color;

@@ -4,6 +4,9 @@
 
 body.magic-cursor #magic-cursor {
     display: block;
+	@include md{
+		display: none;
+	}
 }
 
 #magic-cursor {

@@ -30,6 +30,7 @@
 
 
 @include md {
+
   .space,
   .space-top {
     padding-top: $space-mobile;
@@ -63,10 +64,57 @@
   .space-extra2-bottom {
     padding-bottom: 70px;
   }
+
   .pb-105 {
     padding-bottom: 65px;
   }
+
   .pt-105 {
     padding-top: 65px;
+  }
 }
+
+@include vxs {
+
+  .space,
+  .space-top {
+    padding-top: $space-small-mobile;
+  }
+
+  .space,
+  .space-bottom {
+    padding-bottom: $space-small-mobile;
+  }
+
+  .space-extra,
+  .space-extra-top {
+    padding-top: $space-mobile-extra;
+  }
+
+  .space-extra,
+  .space-extra-bottom {
+    padding-bottom: $space-mobile-extra;
+  }
+
+  .space-top-md-none {
+    padding-top: 0;
+  }
+
+  .space-extra2,
+  .space-extra2-top {
+    padding-top: 70px;
+  }
+
+  .space-extra2,
+  .space-extra2-bottom {
+    padding-bottom: 70px;
+  }
+
+  .pb-105 {
+    padding-bottom: 65px;
+  }
+
+  .pt-105 {
+    padding-top: 65px;
+  }
 }

@@ -1,5 +1,12 @@
 /*contact area 1***********************/
 .contact-area {
+    padding: 105px 0 120px;
+    @include md{
+        padding: 65px 0 80px;
+    }
+    @include vxs{
+        padding: 45px 0 60px;
+    }
     .contact-title{
         &.title-font2{
             font-family: $title-font2;

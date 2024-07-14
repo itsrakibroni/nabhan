@@ -352,39 +352,54 @@ h6 {
 	}
 }
 
-/* Include breakpoint-specific padding classes */
+@mixin generate-dnone($prefix) {
+	.#{$prefix}-d-none {
+		display: none !important;
+	}
+}
+
+/* Include classes */
 @include hd {
 	@include generate-align('hd');
+	@include generate-dnone('hd');
 }
 
 @include xxl {
 	@include generate-align('xxl');
+	@include generate-dnone('xxl');
 }
 
 @include ml {
 	@include generate-align('ml');
+	@include generate-dnone('ml');
 }
 
 @include xl {
 	@include generate-align('xl');
+	@include generate-dnone('xl');
 }
 
 @include lg {
 	@include generate-align('lg');
+	@include generate-dnone('lg');
 }
 
 @include md {
 	@include generate-align('md');
+	@include generate-dnone('md');
 }
 
 @include sm {
 	@include generate-align('sm');
+	@include generate-dnone('sm');
 }
 
 @include xs {
 	@include generate-align('xs');
+	@include generate-dnone('xs');
 }
 
 @include vxs {
 	@include generate-align('vxs');
+	@include generate-dnone('vxs');
 }

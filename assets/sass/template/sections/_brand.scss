@@ -68,7 +68,7 @@ $brand-prefix: 'brand';
     position: relative;
     overflow: hidden;
     text-align: center;
-    line-height: 1;
+    display: flex;
 
     a {
       position: relative;

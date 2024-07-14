@@ -125,7 +125,10 @@
         font-size: 14px;
     }
     .breadcumb-wrapper {
-        padding: 100px 0;
+        padding: 72px 0;
+        @include vxs {
+            padding: 42px 0;
+        }
         margin-top: 86px;
         &.style2 {
             padding: 24px 0px;
