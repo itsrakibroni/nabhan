@@ -8,6 +8,16 @@
   padding-bottom: $space;
 }
 
+.space-minimize,
+.space-minimize-top {
+  padding-top: calc($space - 26px);
+}
+
+.space-minimize,
+.space-minimize-bottom {
+  padding-bottom: $space;
+}
+
 .space-extra,
 .space-extra-top {
   padding-top: $space-extra;
@@ -38,6 +48,16 @@
 
   .space,
   .space-bottom {
+    padding-bottom: $space-mobile;
+  }
+
+  .space-minimize,
+  .space-minimize-top {
+    padding-top: calc($space-mobile - 26px);
+  }
+
+  .space-minimize,
+  .space-minimize-bottom {
     padding-bottom: $space-mobile;
   }
 
@@ -86,6 +106,16 @@
     padding-bottom: $space-small-mobile;
   }
 
+  .space-minimize,
+  .space-minimize-top {
+    padding-top: calc($space-small-mobile - 26px);
+  }
+
+  .space-minimize,
+  .space-minimize-bottom {
+    padding-bottom: $space-small-mobile;
+  }
+
   .space-extra,
   .space-extra-top {
     padding-top: $space-mobile-extra;
@@ -118,3 +148,18 @@
     padding-top: 65px;
   }
 }
+
+@mixin generate-space-minimizes {
+  @for $i from 1 through $space-count {
+    .space-top-minimize-#{5 * $i} {
+      padding-top: calc(#{$space} - #{5 * $i}px) !important;
+    }
+
+    .space-bottom-minimize-#{5 * $i} {
+      padding-bottom: calc(#{$space} - #{5 * $i}px) !important;
+    }
+  }
+}
+
+// Generate space minimize classes
+@include generate-space-minimizes;

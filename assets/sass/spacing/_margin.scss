@@ -1,6 +1,7 @@
 // Global Main margin classes
 @mixin global-main-margins {
   @for $i from 1 through $space-count {
+
     /*-- margin Left And Right --*/
     .mx-#{5 * $i} {
       margin-right: 5px * $i !important;
@@ -42,19 +43,24 @@
       margin-right: $sign * 5px * $i !important;
       margin-left: $sign * 5px * $i !important;
     }
+
     .#{$prefix}-my#{if($sign == -1, '--', '-')}#{5 * $i} {
       margin-top: $sign * 5px * $i !important;
       margin-bottom: $sign * 5px * $i !important;
     }
+
     .#{$prefix}-mt#{if($sign == -1, '--', '-')}#{5 * $i} {
       margin-top: $sign * 5px * $i !important;
     }
+
     .#{$prefix}-mb#{if($sign == -1, '--', '-')}#{5 * $i} {
       margin-bottom: $sign * 5px * $i !important;
     }
+
     .#{$prefix}-ml#{if($sign == -1, '--', '-')}#{5 * $i} {
       margin-left: $sign * 5px * $i !important;
     }
+
     .#{$prefix}-mr#{if($sign == -1, '--', '-')}#{5 * $i} {
       margin-right: $sign * 5px * $i !important;
     }
@@ -67,22 +73,28 @@
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
+
   .#{$prefix}-my-0 {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
+
   .#{$prefix}-mt-0 {
     margin-top: 0 !important;
   }
+
   .#{$prefix}-mb-0 {
     margin-bottom: 0 !important;
   }
+
   .#{$prefix}-ml-0 {
     margin-left: 0 !important;
   }
+
   .#{$prefix}-mr-0 {
     margin-right: 0 !important;
   }
+
   .#{$prefix}-m-0 {
     margin: 0 !important;
   }
@@ -97,55 +109,55 @@
 
 @include global-margins;
 
-@include hd { 
+@include hd {
   @include generate-margins('hd');
   @include generate-zero-margins('hd');
   @include generate-margins('hd', -1);
 }
 
-@include xxl { 
+@include xxl {
   @include generate-margins('xxl');
   @include generate-zero-margins('xxl');
   @include generate-margins('xxl', -1);
 }
 
-@include ml { 
+@include ml {
   @include generate-margins('ml');
   @include generate-zero-margins('ml');
   @include generate-margins('ml', -1);
 }
 
-@include xl { 
+@include xl {
   @include generate-margins('xl');
   @include generate-zero-margins('xl');
   @include generate-margins('xl', -1);
 }
 
-@include lg { 
+@include lg {
   @include generate-margins('lg');
   @include generate-zero-margins('lg');
   @include generate-margins('lg', -1);
 }
 
-@include md { 
+@include md {
   @include generate-margins('md');
   @include generate-zero-margins('md');
   @include generate-margins('md', -1);
 }
 
-@include sm { 
+@include sm {
   @include generate-margins('sm');
   @include generate-zero-margins('sm');
   @include generate-margins('sm', -1);
 }
 
-@include xs { 
+@include xs {
   @include generate-margins('xs');
   @include generate-zero-margins('xs');
   @include generate-margins('xs', -1);
 }
 
-@include vxs { 
+@include vxs {
   @include generate-margins('vxs');
   @include generate-zero-margins('vxs');
   @include generate-margins('vxs', -1);
@@ -155,36 +167,41 @@
 .mt-n1 {
   margin-top: -0.25rem;
 }
+
 .mt-n2 {
   margin-top: -0.65rem;
 }
+
 .mt-n3 {
   margin-top: -0.8rem;
 }
+
 .mt-n4 {
   margin-top: -1.5rem;
 }
+
 .mt-n5 {
   margin-top: -3rem;
 }
+
 .mt-80 {
   margin-top: 80px;
+
   @include md {
     margin-top: 40px;
   }
 }
+
 .mb-80 {
   margin-bottom: 80px;
+
   @include md {
     margin-bottom: 40px;
   }
 }
+
 @include xs {
   .mb-115 {
     margin-bottom: 60px;
   }
 }
-
-
-
-
