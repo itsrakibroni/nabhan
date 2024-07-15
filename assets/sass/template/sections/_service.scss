@@ -153,6 +153,11 @@
         @include flex-center;
         gap: 120px;
 
+        .service-icon img {
+            width: 70px;
+            filter: brightness(1)invert(1);
+        }
+
         .service-title {
             font-size: 30px;
             line-height: 40px;

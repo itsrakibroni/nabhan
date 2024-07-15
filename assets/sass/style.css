@@ -11311,6 +11311,10 @@ ul.wp-block-latest-posts li:last-child {
   justify-content: center;
   gap: 120px;
 }
+.service-inner .service-left .service-icon img {
+  width: 70px;
+  filter: brightness(1) invert(1);
+}
 .service-inner .service-left .service-title {
   font-size: 30px;
   line-height: 40px;
