@@ -53597,7 +53597,7 @@ ul.wp-block-latest-posts li:last-child {
   }
   .space-minimize,
   .space-minimize-top {
-    padding-top: calc(var(--section-space-mobile) - 26px);
+    padding-top: calc(var(--section-space-mobile) - 22px);
   }
   .space-minimize,
   .space-minimize-bottom {
@@ -53641,7 +53641,7 @@ ul.wp-block-latest-posts li:last-child {
   }
   .space-minimize,
   .space-minimize-top {
-    padding-top: calc(var(--section-space-small-mobile) - 26px);
+    padding-top: calc(var(--section-space-small-mobile) - 22px);
   }
   .space-minimize,
   .space-minimize-bottom {
