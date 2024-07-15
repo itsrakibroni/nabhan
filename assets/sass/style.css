@@ -9473,7 +9473,7 @@ ul.wp-block-latest-posts li:last-child {
   font-size: 52px;
   line-height: 62px;
   font-weight: 700;
-  margin-bottom: 98px;
+  margin-bottom: 50px;
 }
 
 .contact-map iframe {
@@ -11098,6 +11098,17 @@ ul.wp-block-latest-posts li:last-child {
     text-align: center;
   }
 }
+.feature-box-details br {
+  display: none;
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .feature-box-details {
+    width: 55%;
+  }
+  .feature-box-details br {
+    display: block;
+  }
+}
 .feature-box-icon {
   max-width: 90px;
   width: 100%;
@@ -11119,6 +11130,12 @@ ul.wp-block-latest-posts li:last-child {
   line-height: 30px;
   font-weight: 600;
   margin-bottom: 0;
+  /* Medium devices */
+}
+@media (max-width: 991px) {
+  .feature-box-text br {
+    display: none;
+  }
 }
 
 /*------------------- 4.00. CTA -------------------*/
@@ -11255,8 +11272,14 @@ ul.wp-block-latest-posts li:last-child {
 }
 .service-item.style-2 {
   padding: 40px 0;
+  /* Extra small devices */
   /* Medium devices */
   /* Small devices */
+}
+@media (max-width: 575px) {
+  .service-item.style-2 {
+    padding: 10px 0;
+  }
 }
 .service-item.style-2 .hover-thumb {
   display: none;
@@ -11413,6 +11436,14 @@ ul.wp-block-latest-posts li:last-child {
   }
 }
 /* Service 2 ---------------------------------- */
+.service-area.style-two .service-thumb-wrapper {
+  /* Medium devices */
+}
+@media (max-width: 991px) {
+  .service-area.style-two .service-thumb-wrapper {
+    display: none;
+  }
+}
 .service-area.style-two .service-thumb-wrapper .hover-thumb img {
   border-radius: 10px;
   -o-object-fit: cover;
@@ -12311,6 +12342,7 @@ ul.wp-block-latest-posts li:last-child {
 .portfolio-wraper .portfolio-thumb {
   display: inline-block;
   overflow: hidden;
+  width: 100%;
 }
 .portfolio-wraper .portfolio-thumb img {
   transform: scale(1.03);
@@ -12321,18 +12353,6 @@ ul.wp-block-latest-posts li:last-child {
   align-items: center;
   justify-content: space-between;
   padding: 22px 0 0 0;
-  /* Medium devices */
-  /* Small devices */
-}
-@media (max-width: 991px) {
-  .portfolio-wraper .portfolio-details {
-    padding-right: 13%;
-  }
-}
-@media (max-width: 767px) {
-  .portfolio-wraper .portfolio-details {
-    padding-right: 0;
-  }
 }
 .portfolio-wraper .portfolio-details .portfolio-meta {
   color: var(--white-color);

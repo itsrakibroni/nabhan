@@ -119,6 +119,9 @@
 
     &.style-2 {
         padding: 40px 0;
+        @include xs{
+            padding: 10px 0;
+        }
 
         .hover-thumb {
             display: none
@@ -319,6 +322,9 @@
 /* Service 2 ---------------------------------- */
 .service-area.style-two {
     .service-thumb-wrapper {
+        @include md{
+            display: none;
+        }
         .hover-thumb img {
             border-radius: 10px;
             object-fit: cover;

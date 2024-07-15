@@ -296,6 +296,7 @@
     .portfolio-thumb {
         display: inline-block;
         overflow: hidden;
+        width: 100%;
 
         img {
             transform: scale(1.03);
@@ -309,13 +310,13 @@
         justify-content: space-between;
         padding: 22px 0 0 0;
 
-        @include md {
-            padding-right: 13%;
-        }
+        // @include md {
+        //     padding-right: 13%;
+        // }
 
-        @include sm {
-            padding-right: 0;
-        }
+        // @include sm {
+        //     padding-right: 0;
+        // }
 
         .portfolio-meta {
             color: $white-color;

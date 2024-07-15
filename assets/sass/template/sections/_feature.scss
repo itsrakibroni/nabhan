@@ -12,6 +12,18 @@
         text-align: center;
     }
 
+    &-details{
+        br{
+            display: none;
+        }
+        @media (min-width: $sm) and (max-width: $md) {
+            width: 55%;
+            br{
+                display: block;
+            }
+        }
+    }
+
     &-icon {
         max-width: 90px;
         width: 100%;
@@ -35,5 +47,10 @@
         line-height: 30px;
         font-weight: 600;
         margin-bottom: 0;
+        @include md{
+            br {
+                display: none;
+            }
+        }
     }
 }

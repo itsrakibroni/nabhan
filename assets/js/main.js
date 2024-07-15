@@ -597,39 +597,42 @@
         });
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const sections = [".service-area.style-two", ".service-area", ".awards-area"];
-        const items = ['.service-item', '.single-experience-list', '.single-awards-list'];
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     if (window.innerWidth > 767) {
+    //         const sections = [".service-area.style-two", ".service-area", ".awards-area"];
+    //         const items = ['.service-item', '.single-experience-list', '.single-awards-list'];
 
-        // Animation for the entire section
-        gsap.from(sections.join(','), {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            scrollTrigger: {
-                trigger: sections.join(','),
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play none none none"
-            }
-        });
+    //         // Animation for the entire section
+    //         gsap.from(sections.join(','), {
+    //             opacity: 0,
+    //             y: 50,
+    //             duration: 0.5,
+    //             scrollTrigger: {
+    //                 trigger: sections.join(','),
+    //                 start: "top 80%",
+    //                 end: "bottom 20%",
+    //                 toggleActions: "play none none none"
+    //             }
+    //         });
 
-        // Animation for each item
-        gsap.utils.toArray(items.join(',')).forEach((item, i) => {
-            gsap.from(item, {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                delay: i * 0.2,
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top 90%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none none"
-                }
-            });
-        });
-    });
+    //         // Animation for each item
+    //         gsap.utils.toArray(items.join(',')).forEach((item, i) => {
+    //             gsap.from(item, {
+    //                 opacity: 0,
+    //                 y: 50,
+    //                 duration: 1,
+    //                 delay: i * 0.1,
+    //                 scrollTrigger: {
+    //                     trigger: item,
+    //                     start: "top 90%",
+    //                     end: "bottom 20%",
+    //                     toggleActions: "play none none none"
+    //                 }
+    //             });
+    //         });
+    //     }
+    // });
+
 
 
 
@@ -660,23 +663,6 @@
             end: "bottom bottom"
         });
     }
-
-    // gsap.to('.blog__details-wrap', {
-    //     scrollTrigger: {
-    //         trigger: '.blog__sidebar',
-    //         start: 'top top',
-    //         end: 'bottom top',
-    //         pin: true,
-    //         pinSpacing: false
-    //     }
-    // });
-
-
-
-
-
-
-
 
 
 
@@ -1032,63 +1018,65 @@
 
     // button hover end
 
-    // Button Bounce
-    function setupButtonBounce(areaConfigurations) {
-        areaConfigurations.forEach(config => {
-            const {
-                areaClass,
-                bounceHeight
-            } = config;
-            if ($(areaClass).length > 0) {
-                gsap.set(".btn-bounce-1", {
-                    y: -bounceHeight,
-                    opacity: 0
-                });
-                gsap.utils.toArray(".btn-bounce-1").forEach(btn => {
-                    const $this = $(btn);
-                    gsap.to(btn, {
-                        scrollTrigger: {
-                            trigger: $this.closest(areaClass),
-                            start: "bottom bottom",
-                            markers: false
-                        },
-                        duration: 1,
-                        ease: "bounce.out",
-                        y: 0,
-                        opacity: 1,
+    if (window.innerWidth > 991) {
+        // Button Bounce
+        function setupButtonBounce(areaConfigurations) {
+            areaConfigurations.forEach(config => {
+                const {
+                    areaClass,
+                    bounceHeight
+                } = config;
+                if ($(areaClass).length > 0) {
+                    gsap.set(".btn-bounce-1", {
+                        y: -bounceHeight,
+                        opacity: 0
                     });
-                });
-            }
-        });
-    }
-
-    const areaConfigurations = [{
-            areaClass: '.about-area',
-            bounceHeight: 100
-        },
-        {
-            areaClass: '.contact-btn_wrapper',
-            bounceHeight: 100
-        },
-        {
-            areaClass: '.btn-bounce-1',
-            bounceHeight: 100
-        },
-        {
-            areaClass: '.experience-area',
-            bounceHeight: 100
-        },
-        {
-            areaClass: '.portfolio-area',
-            bounceHeight: 100
-        },
-        {
-            areaClass: '.contact-area',
-            bounceHeight: 100
+                    gsap.utils.toArray(".btn-bounce-1").forEach(btn => {
+                        const $this = $(btn);
+                        gsap.to(btn, {
+                            scrollTrigger: {
+                                trigger: $this.closest(areaClass),
+                                start: "bottom bottom",
+                                markers: false
+                            },
+                            duration: 1,
+                            ease: "bounce.out",
+                            y: 0,
+                            opacity: 1,
+                        });
+                    });
+                }
+            });
         }
-    ];
 
-    setupButtonBounce(areaConfigurations);
+        const areaConfigurations = [{
+                areaClass: '.about-area',
+                bounceHeight: 100
+            },
+            {
+                areaClass: '.contact-btn_wrapper',
+                bounceHeight: 100
+            },
+            {
+                areaClass: '.btn-bounce-1',
+                bounceHeight: 100
+            },
+            {
+                areaClass: '.experience-area',
+                bounceHeight: 100
+            },
+            {
+                areaClass: '.portfolio-area',
+                bounceHeight: 100
+            },
+            {
+                areaClass: '.contact-area',
+                bounceHeight: 100
+            }
+        ];
+
+        setupButtonBounce(areaConfigurations);
+    }
 
 
     //////////////////////////////////////////////////
@@ -1390,7 +1378,7 @@
     /*===========================================
 	=         Pricing Item         =
     =============================================*/
-    $(".pricing-item.upper").each(function() {
+    $(".pricing-item.upper").each(function () {
         $(this).find('.link-btn').addClass('bg-black');
     });
 
@@ -1399,8 +1387,8 @@
         $('.pricing-item').not(this).removeClass('upper').find('.link-btn').removeClass('bg-black');
     });
 
-    
 
-    
+
+
 
 })(jQuery);
