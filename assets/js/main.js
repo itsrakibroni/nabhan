@@ -597,44 +597,6 @@
         });
     }
 
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     if (window.innerWidth > 767) {
-    //         const sections = [".service-area.style-two", ".service-area", ".awards-area"];
-    //         const items = ['.service-item', '.single-experience-list', '.single-awards-list'];
-
-    //         // Animation for the entire section
-    //         gsap.from(sections.join(','), {
-    //             opacity: 0,
-    //             y: 50,
-    //             duration: 0.5,
-    //             scrollTrigger: {
-    //                 trigger: sections.join(','),
-    //                 start: "top 80%",
-    //                 end: "bottom 20%",
-    //                 toggleActions: "play none none none"
-    //             }
-    //         });
-
-    //         // Animation for each item
-    //         gsap.utils.toArray(items.join(',')).forEach((item, i) => {
-    //             gsap.from(item, {
-    //                 opacity: 0,
-    //                 y: 50,
-    //                 duration: 1,
-    //                 delay: i * 0.1,
-    //                 scrollTrigger: {
-    //                     trigger: item,
-    //                     start: "top 90%",
-    //                     end: "bottom 20%",
-    //                     toggleActions: "play none none none"
-    //                 }
-    //             });
-    //         });
-    //     }
-    // });
-
-
-
 
     // Check if .service-area-2 exists
     const serviceArea2 = document.querySelector(".service-area.style-two");
@@ -944,7 +906,7 @@
     ///////////////////////////////////////////////////////
     // GSAP Register
 
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, TweenMax, ScrollToPlugin);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
     gsap.config({
         nullTargetWarn: false,
